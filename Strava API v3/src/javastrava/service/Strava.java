@@ -233,7 +233,7 @@ public class Strava implements ActivityService, AthleteService, ChallengeService
 	public Strava(final String token, final AuthorisationScope... scopes) {
 		this.token = new Token();
 		this.token.setScopes(Arrays.asList(scopes));
-		this.token.setToken(token);
+		this.token.setAccessToken(token);
 		this.token.setTokenType(null);
 		addServices();
 		this.token.setAthlete(this.athleteService.getAuthenticatedAthlete());

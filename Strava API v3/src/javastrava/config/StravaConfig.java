@@ -11,6 +11,8 @@ import java.util.ResourceBundle;
  *
  */
 public class StravaConfig {
+
+	private StravaConfig() {}
 	/**
 	 * Name of the configuration file
 	 */
@@ -54,12 +56,12 @@ public class StravaConfig {
 	/**
 	 * The percentage of request limits that, if exceeded, should log a warning
 	 */
-	public static final int WARN_AT_REQUEST_LIMIT_PERCENT = integer("strava.warn_at_request_limit_percent").intValue(); //$NON-NLS-1$
+	public static final int WARN_AT_REQUEST_LIMIT_PERCENT = integer("strava.warn_at_request_limit_percent"); //$NON-NLS-1$
 
 	/**
 	 * The number of parallel pages to request simultaneously when running a listAll method
 	 */
-	public static final int PAGING_LIST_ALL_PARALLELISM = integer("strava.paging_list_all_parallelism").intValue(); //$NON-NLS-1$
+	public static final int PAGING_LIST_ALL_PARALLELISM = integer("strava.paging_list_all_parallelism"); //$NON-NLS-1$
 
 	/**
 	 * @param key

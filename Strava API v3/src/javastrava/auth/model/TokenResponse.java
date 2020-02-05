@@ -13,24 +13,18 @@ import javastrava.model.reference.StravaResourceState;
  * @author Dan Shannon
  */
 public class TokenResponse implements StravaEntity {
-	/**
-	 * The value of the access token
-	 */
+
 	private String accessToken;
+	private Long expiresAt;
+	private String refreshToken;
 
 	/**
 	 * The type of token (usually "Bearer" - is used to create the authentication request header - see {@link API#instance(Class, Token)}
 	 */
 	private String tokenType;
 
-	/**
-	 * Strava returns details of the athlete along with the access token
-	 */
 	private StravaAthlete athlete;
 
-	/**
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(final Object obj) {
 		if (this == obj) {
@@ -43,6 +37,7 @@ public class TokenResponse implements StravaEntity {
 			return false;
 		}
 		final TokenResponse other = (TokenResponse) obj;
+
 		if (this.accessToken == null) {
 			if (other.accessToken != null) {
 				return false;
@@ -50,6 +45,15 @@ public class TokenResponse implements StravaEntity {
 		} else if (!this.accessToken.equals(other.accessToken)) {
 			return false;
 		}
+
+		if (this.refreshToken == null) {
+			if (other.refreshToken != null) {
+				return false;
+			}
+		} else if (!this.refreshToken.equals(other.refreshToken)) {
+			return false;
+		}
+
 		if (this.athlete == null) {
 			if (other.athlete != null) {
 				return false;
@@ -57,14 +61,10 @@ public class TokenResponse implements StravaEntity {
 		} else if (!this.athlete.equals(other.athlete)) {
 			return false;
 		}
+
 		if (this.tokenType == null) {
-			if (other.tokenType != null) {
-				return false;
-			}
-		} else if (!this.tokenType.equals(other.tokenType)) {
-			return false;
-		}
-		return true;
+			return other.tokenType == null;
+		} else return this.tokenType.equals(other.tokenType);
 	}
 
 	/**
@@ -93,6 +93,22 @@ public class TokenResponse implements StravaEntity {
 		return this.tokenType;
 	}
 
+	public Long getExpiresAt() {
+		return expiresAt;
+	}
+
+	public void setExpiresAt(Long expiresAt) {
+		this.expiresAt = expiresAt;
+	}
+
+	public String getRefreshToken() {
+		return refreshToken;
+	}
+
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
+
 	/**
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -101,6 +117,7 @@ public class TokenResponse implements StravaEntity {
 		final int prime = 31;
 		int result = 1;
 		result = (prime * result) + ((this.accessToken == null) ? 0 : this.accessToken.hashCode());
+		result = (prime * result) + ((this.refreshToken == null) ? 0 : this.refreshToken.hashCode());
 		result = (prime * result) + ((this.athlete == null) ? 0 : this.athlete.hashCode());
 		result = (prime * result) + ((this.tokenType == null) ? 0 : this.tokenType.hashCode());
 		return result;
@@ -130,12 +147,14 @@ public class TokenResponse implements StravaEntity {
 		this.tokenType = tokenType;
 	}
 
-	/**
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "TokenResponse [accessToken=" + this.accessToken + ", tokenType=" + this.tokenType + ", athlete=" + this.athlete + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "TokenResponse{" +
+				"accessToken='" + accessToken + '\'' +
+				", expiresAt=" + expiresAt +
+				", refreshToken='" + refreshToken + '\'' +
+				", tokenType='" + tokenType + '\'' +
+				", athlete=" + athlete +
+				'}';
 	}
-
 }

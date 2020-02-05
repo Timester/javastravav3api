@@ -139,7 +139,7 @@ public class API {
 				.setEndpoint(StravaConfig.ENDPOINT)
 				// Request interceptor adds the access token into headers for each request
 				.setRequestInterceptor(request -> request.addHeader(StravaConfig.string("strava.authorization_header_name"), //$NON-NLS-1$
-						token.getTokenType() + " " + token.getToken())) //$NON-NLS-1$
+						token.getTokenType() + " " + token.getAccessToken())) //$NON-NLS-1$
 				// Error handler deals with Strava's implementations of 400, 401, 403, 404 errors etc.
 				.setErrorHandler(new RetrofitErrorHandler()).build().create(class1);
 	}
@@ -259,7 +259,7 @@ public class API {
 	public API(final String tokenValue, AuthorisationScope... scopes) {
 		final Token token = new Token();
 		token.setScopes(Arrays.asList(scopes));
-		token.setToken(tokenValue);
+		token.setAccessToken(tokenValue);
 		addAPIInstances(token);
 		token.setAthlete(this.athleteAPI.getAuthenticatedAthlete());
 	}

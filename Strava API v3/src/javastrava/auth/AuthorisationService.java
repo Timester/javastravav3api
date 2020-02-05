@@ -92,5 +92,7 @@ public interface AuthorisationService {
 	 * @throws BadRequestException Where the request does not contain all the required information
 	 * @throws UnauthorizedException If client secret is invalid
 	 */
-	public Token tokenExchange(final Integer clientId, final String clientSecret, final String code, final AuthorisationScope... scopes) throws BadRequestException, UnauthorizedException;
+	Token tokenExchange(final Integer clientId, final String clientSecret, final String code, final AuthorisationScope... scopes);
+
+	Token getTokenForAuthorizedUser(final Integer clientId, final String clientSecret, Integer userId, String refreshToken);
 }

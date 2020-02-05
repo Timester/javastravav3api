@@ -7,39 +7,50 @@ import javastrava.auth.TokenManager;
 import javastrava.auth.model.Token;
 import javastrava.auth.model.TokenResponse;
 import javastrava.auth.ref.AuthorisationScope;
-import javastrava.service.exception.BadRequestException;
-import javastrava.service.exception.UnauthorizedException;
-import retrofit.RestAdapter;
 
-/**
- * @author Dan Shannon
- *
- */
+import java.time.Instant;
+
 public class AuthorisationServiceImpl implements AuthorisationService {
 
-	/**
-	 * Authorisation API instance
-	 */
-	private final AuthorisationAPI api;
+	private static final String GRANT_TYPE_REFRESH_TOKEN = "refresh_token";
+	private static final String GRANT_TYPE_AUTH_CODE = "authorization_code";
 
-	/**
-	 * <p>
-	 * Default constructor creates a {@link RestAdapter} which is the actual implementation of the REST interface
-	 * </p>
-	 */
+	private final AuthorisationAPI api;
+	private final TokenManager tokenManager;
+
 	public AuthorisationServiceImpl() {
 		this.api = API.authorisationInstance();
+		this.tokenManager = TokenManager.instance();
 	}
 
-	/**
-	 * @see javastrava.auth.AuthorisationService#tokenExchange(java.lang.Integer, java.lang.String, java.lang.String, AuthorisationScope...)
-	 */
 	@Override
-	public Token tokenExchange(final Integer clientId, final String clientSecret, final String code, final AuthorisationScope... scopes) throws BadRequestException, UnauthorizedException {
-		final TokenResponse response = this.api.tokenExchange(clientId, clientSecret, code);
+	public Token tokenExchange(final Integer clientId, final String clientSecret, final String code, final AuthorisationScope... scopes) {
+		final TokenResponse response = this.api.tokenExchange(clientId, clientSecret, code, GRANT_TYPE_AUTH_CODE);
 		final Token token = new Token(response, scopes);
 		TokenManager.instance().storeToken(token);
 		return token;
 	}
 
+	@Override
+	public Token getTokenForAuthorizedUser(final Integer clientId, final String clientSecret, Integer userId, String refreshToken) {
+		Token token = tokenManager.retrieveToken(userId);
+
+		if (isExpired(token)) {
+			Token newToken = getNewToken(clientId, clientSecret, refreshToken);
+			token.setAccessToken(newToken.getAccessToken());
+			token.setRefreshToken(newToken.getRefreshToken());
+			token.setExpiresAt(newToken.getExpiresAt());
+		}
+
+		return token;
+	}
+
+	private Token getNewToken(final Integer clientId, final String clientSecret, final String refreshToken) {
+		TokenResponse newTokenResponse = this.api.getAuthToken(clientId, clientSecret, refreshToken, GRANT_TYPE_REFRESH_TOKEN);
+		return new Token(newTokenResponse);
+	}
+
+	private boolean isExpired(Token token) {
+		return token.getExpiresAt() < Instant.now().getEpochSecond();
+	}
 }

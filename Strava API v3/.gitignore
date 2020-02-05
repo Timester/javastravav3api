@@ -39,3 +39,41 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+
+# Certificates
+*.crt
+
+# Idea project file
+*.iml
+
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+bin/
+build/
+.checkstyle
+
+# Gradle
+.gradle/
+
+# Certificate
+*.jks
+
+# GraphHopper
+graphhopper/
+
+# Mac
+.DS_Store
+#gradle/wrapper/gradle-wrapper.jar

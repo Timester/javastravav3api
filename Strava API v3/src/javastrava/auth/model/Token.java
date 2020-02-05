@@ -70,30 +70,14 @@ import javastrava.service.impl.WebhookServiceImpl;
  *
  */
 public class Token implements StravaEntity {
-	/**
-	 * The {@link StravaAthlete athlete} to whom this token is assigned
-	 */
 	private StravaAthlete athlete;
-
-	/**
-	 * The value of the access token, which is used in requests issued via the API
-	 */
-	private String token;
-
-	/**
-	 * List of {@link AuthorisationScope authorisation scopes} granted for this token
-	 */
+	private String accessToken;
+	private String refreshToken;
+	private long expiresAt;
+	private String tokenType;
 	private List<AuthorisationScope> scopes;
 
-	/**
-	 * List of service implementations associated with this token
-	 */
 	private HashMap<Class<? extends StravaService>, StravaService> services;
-
-	/**
-	 * Token type used in the authorisation header of requests to the Strava API - usually set to "Bearer"
-	 */
-	private String tokenType;
 
 	/**
 	 * No-args constructor
@@ -117,7 +101,9 @@ public class Token implements StravaEntity {
 	 */
 	public Token(final TokenResponse tokenResponse, final AuthorisationScope... scopes) {
 		this.athlete = tokenResponse.getAthlete();
-		this.token = tokenResponse.getAccessToken();
+		this.accessToken = tokenResponse.getAccessToken();
+		this.refreshToken = tokenResponse.getRefreshToken();
+		this.expiresAt = tokenResponse.getExpiresAt();
 		this.tokenType = tokenResponse.getTokenType();
 		this.scopes = Arrays.asList(scopes);
 
@@ -126,7 +112,7 @@ public class Token implements StravaEntity {
 	}
 
 	private void addServiceInstances() {
-		this.services = new HashMap<Class<? extends StravaService>, StravaService>();
+		this.services = new HashMap<>();
 		this.addService(ActivityService.class, ActivityServiceImpl.instance(this));
 		this.addService(AthleteService.class, AthleteServiceImpl.instance(this));
 		this.addService(ChallengeService.class, ChallengeServiceImpl.instance(this));
@@ -193,21 +179,23 @@ public class Token implements StravaEntity {
 		} else if (!this.services.equals(other.services)) {
 			return false;
 		}
-		if (this.token == null) {
-			if (other.token != null) {
+		if (this.accessToken == null) {
+			if (other.accessToken != null) {
 				return false;
 			}
-		} else if (!this.token.equals(other.token)) {
+		} else if (!this.accessToken.equals(other.accessToken)) {
+			return false;
+		}
+		if (this.refreshToken == null) {
+			if (other.refreshToken != null) {
+				return false;
+			}
+		} else if (!this.refreshToken.equals(other.refreshToken)) {
 			return false;
 		}
 		if (this.tokenType == null) {
-			if (other.tokenType != null) {
-				return false;
-			}
-		} else if (!this.tokenType.equals(other.tokenType)) {
-			return false;
-		}
-		return true;
+			return other.tokenType == null;
+		} else return this.tokenType.equals(other.tokenType);
 	}
 
 	/**
@@ -255,8 +243,8 @@ public class Token implements StravaEntity {
 	/**
 	 * @return the token
 	 */
-	public String getToken() {
-		return this.token;
+	public String getAccessToken() {
+		return this.accessToken;
 	}
 
 	/**
@@ -276,7 +264,8 @@ public class Token implements StravaEntity {
 		result = (prime * result) + ((this.athlete == null) ? 0 : this.athlete.hashCode());
 		result = (prime * result) + ((this.scopes == null) ? 0 : this.scopes.hashCode());
 		result = (prime * result) + ((this.services == null) ? 0 : this.services.hashCode());
-		result = (prime * result) + ((this.token == null) ? 0 : this.token.hashCode());
+		result = (prime * result) + ((this.accessToken == null) ? 0 : this.accessToken.hashCode());
+		result = (prime * result) + ((this.refreshToken == null) ? 0 : this.refreshToken.hashCode());
 		result = (prime * result) + ((this.tokenType == null) ? 0 : this.tokenType.hashCode());
 		return result;
 	}
@@ -290,10 +279,7 @@ public class Token implements StravaEntity {
 	 * @return <code>true</code> if the token contains the {@link AuthorisationScope#VIEW_PRIVATE}
 	 */
 	public boolean hasViewPrivate() {
-		if ((this.scopes != null) && this.scopes.contains(AuthorisationScope.VIEW_PRIVATE)) {
-			return true;
-		}
-		return false;
+		return (this.scopes != null) && this.scopes.contains(AuthorisationScope.VIEW_PRIVATE);
 	}
 
 	/**
@@ -347,11 +333,11 @@ public class Token implements StravaEntity {
 	}
 
 	/**
-	 * @param token
+	 * @param accessToken
 	 *            the token to set
 	 */
-	public void setToken(final String token) {
-		this.token = token;
+	public void setAccessToken(final String accessToken) {
+		this.accessToken = accessToken;
 	}
 
 	/**
@@ -362,12 +348,28 @@ public class Token implements StravaEntity {
 		this.tokenType = tokenType;
 	}
 
+	public String getRefreshToken() {
+		return refreshToken;
+	}
+
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
+
+	public long getExpiresAt() {
+		return expiresAt;
+	}
+
+	public void setExpiresAt(long expiresAt) {
+		this.expiresAt = expiresAt;
+	}
+
 	/**
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Token [athlete=" + this.athlete + ", token=" + this.token + ", scopes=" + this.scopes + ", services=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "Token [athlete=" + this.athlete + ", token=" + this.accessToken + ", scopes=" + this.scopes + ", services=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 				+ this.services + ", tokenType=" //$NON-NLS-1$
 				+ this.tokenType + "]"; //$NON-NLS-1$
 	}
