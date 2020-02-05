@@ -51,20 +51,18 @@ public class PagingForkJoinTask<T> extends RecursiveTask<List<T>> {
 				pageOfData = PagingUtils.ignoreLastN(pageOfData, pagingInstruction.getIgnoreLastN());
 				pageOfData = PagingUtils.ignoreFirstN(pageOfData, pagingInstruction.getIgnoreFirstN());
 				return pageOfData;
-			} catch (final NotFoundException e) {
-				return null;
-			} catch (final BadRequestException e) {
+			} catch (final NotFoundException | BadRequestException e) {
 				return null;
 			}
 		}
 
 		final int middle = this.pages.size() / 2;
 		final List<Paging> leftPages = this.pages.subList(0, middle);
-		final PagingForkJoinTask<T> leftTask = new PagingForkJoinTask<T>(this.callback, leftPages);
+		final PagingForkJoinTask<T> leftTask = new PagingForkJoinTask<>(this.callback, leftPages);
 		leftTask.fork();
 
 		final List<Paging> rightPages = this.pages.subList(middle, this.pages.size());
-		final PagingForkJoinTask<T> rightTask = new PagingForkJoinTask<T>(this.callback, rightPages);
+		final PagingForkJoinTask<T> rightTask = new PagingForkJoinTask<>(this.callback, rightPages);
 		final List<T> rightResult = rightTask.compute();
 
 		final List<T> leftResult = leftTask.join();

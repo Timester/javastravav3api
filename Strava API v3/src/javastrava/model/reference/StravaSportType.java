@@ -17,25 +17,25 @@ public enum StravaSportType implements StravaReferenceType<String> {
 	/**
 	 * Cycling
 	 */
-	CYCLING(StravaConfig.string("StravaSportType.cycling"), Messages.string("StravaSportType.cycling.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CYCLING(StravaConfig.string("StravaSportType.cycling"), Messages.string("StravaSportType.cycling.description")),
 	/**
 	 * Running
 	 */
-	RUNNING(StravaConfig.string("StravaSportType.running"), Messages.string("StravaSportType.running.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	RUNNING(StravaConfig.string("StravaSportType.running"), Messages.string("StravaSportType.running.description")),
 	/**
 	 * Triathlon
 	 */
-	TRIATHLON(StravaConfig.string("StravaSportType.triathlon"), Messages.string("StravaSportType.triathlon.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TRIATHLON(StravaConfig.string("StravaSportType.triathlon"), Messages.string("StravaSportType.triathlon.description")),
 	/**
 	 * Other sport types
 	 */
-	OTHER(StravaConfig.string("StravaSportType.other"), Messages.string("StravaSportType.other.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	OTHER(StravaConfig.string("StravaSportType.other"), Messages.string("StravaSportType.other.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -67,7 +67,7 @@ public enum StravaSportType implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaSportType(final String id, final String description) {
+    StravaSportType(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

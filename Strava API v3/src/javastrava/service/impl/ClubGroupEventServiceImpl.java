@@ -53,7 +53,7 @@ public class ClubGroupEventServiceImpl extends StravaServiceImpl implements Club
 
 	private ClubGroupEventServiceImpl(Token token) {
 		super(token);
-		this.clubEventCache = new StravaCacheImpl<StravaClubEvent, Integer>(StravaClubEvent.class, token);
+		this.clubEventCache = new StravaCacheImpl<>(StravaClubEvent.class, token);
 	}
 
 	@Override
@@ -119,9 +119,7 @@ public class ClubGroupEventServiceImpl extends StravaServiceImpl implements Club
 
 	@Override
 	public CompletableFuture<StravaClubEvent> getEventAsync(Integer id) {
-		return StravaServiceImpl.future(() -> {
-			return getEvent(id);
-		});
+		return StravaServiceImpl.future(() -> getEvent(id));
 	}
 
 	@Override
@@ -141,9 +139,7 @@ public class ClubGroupEventServiceImpl extends StravaServiceImpl implements Club
 
 	@Override
 	public CompletableFuture<StravaClubEventJoinResponse> joinEventAsync(Integer id) {
-		return StravaServiceImpl.future(() -> {
-			return joinEvent(id);
-		});
+		return StravaServiceImpl.future(() -> joinEvent(id));
 	}
 
 	@Override
@@ -163,9 +159,7 @@ public class ClubGroupEventServiceImpl extends StravaServiceImpl implements Club
 
 	@Override
 	public CompletableFuture<StravaClubEventJoinResponse> leaveEventAsync(Integer id) {
-		return StravaServiceImpl.future(() -> {
-			return leaveEvent(id);
-		});
+		return StravaServiceImpl.future(() -> leaveEvent(id));
 	}
 
 	@Override
@@ -175,9 +169,7 @@ public class ClubGroupEventServiceImpl extends StravaServiceImpl implements Club
 
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listAllEventJoinedAthletesAsync(Integer eventId) {
-		return StravaServiceImpl.future(() -> {
-			return listAllEventJoinedAthletes(eventId);
-		});
+		return StravaServiceImpl.future(() -> listAllEventJoinedAthletes(eventId));
 	}
 
 	@Override
@@ -188,7 +180,7 @@ public class ClubGroupEventServiceImpl extends StravaServiceImpl implements Club
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaAthlete>();
+			return new ArrayList<>();
 		}
 
 		return list;
@@ -197,9 +189,7 @@ public class ClubGroupEventServiceImpl extends StravaServiceImpl implements Club
 
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listEventJoinedAthletesAsync(Integer eventId, Paging pagingInstruction) {
-		return StravaServiceImpl.future(() -> {
-			return listEventJoinedAthletes(eventId, pagingInstruction);
-		});
+		return StravaServiceImpl.future(() -> listEventJoinedAthletes(eventId, pagingInstruction));
 	}
 
 }

@@ -20,13 +20,13 @@ public enum AuthorisationResponseType {
 	 * Currently Strava requires the use of this value when exchanging authorisation via OAuth. This is the only valid value.
 	 * </p>
 	 */
-	CODE(StravaConfig.string("AuthorisationResponseType.code")), //$NON-NLS-1$
+	CODE(StravaConfig.string("AuthorisationResponseType.code")), 
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown")); //$NON-NLS-1$
+	UNKNOWN(StravaConfig.string("Common.unknown")); 
 
 	/**
 	 * Required by GSON serialiser
@@ -57,7 +57,7 @@ public enum AuthorisationResponseType {
 	 * </p>
 	 * @param id The identifier of the response type
 	 */
-	private AuthorisationResponseType(final String id) {
+    AuthorisationResponseType(final String id) {
 		this.id = id;
 	}
 

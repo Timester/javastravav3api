@@ -27,14 +27,9 @@ public class StravaClubEventJoinResponse implements StravaEntity {
 		}
 		final StravaClubEventJoinResponse other = (StravaClubEventJoinResponse) obj;
 		if (this.joined == null) {
-			if (other.joined != null) {
-				return false;
-			}
-		} else if (!this.joined.equals(other.joined)) {
-			return false;
-		}
-		return true;
-	}
+            return other.joined == null;
+		} else return this.joined.equals(other.joined);
+    }
 
 	/**
 	 * @return the joined
@@ -66,7 +61,7 @@ public class StravaClubEventJoinResponse implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaClubEventJoinResponse [joined=" + this.joined + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaClubEventJoinResponse [joined=" + this.joined + "]";
 	}
 
 }

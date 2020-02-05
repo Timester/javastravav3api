@@ -65,14 +65,9 @@ public class StravaClubMembershipResponse implements StravaEntity {
 			return false;
 		}
 		if (this.success == null) {
-			if (other.success != null) {
-				return false;
-			}
-		} else if (!this.success.equals(other.success)) {
-			return false;
-		}
-		return true;
-	}
+            return other.success == null;
+		} else return this.success.equals(other.success);
+    }
 
 	/**
 	 * @return the active
@@ -144,7 +139,7 @@ public class StravaClubMembershipResponse implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaClubMembershipResponse [success=" + this.success + ", active=" + this.active + ", membership=" + this.membership //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ "]"; //$NON-NLS-1$
+		return "StravaClubMembershipResponse [success=" + this.success + ", active=" + this.active + ", membership=" + this.membership
+				+ "]"; 
 	}
 }

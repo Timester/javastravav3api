@@ -16,29 +16,29 @@ public enum StravaClubType implements StravaReferenceType<String> {
 	/**
 	 * Casual
 	 */
-	CASUAL(StravaConfig.string("StravaClubType.casual"), Messages.string("StravaClubType.casual.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CASUAL(StravaConfig.string("StravaClubType.casual"), Messages.string("StravaClubType.casual.description")),
 	/**
 	 * Racing team
 	 */
-	TEAM(StravaConfig.string("StravaClubType.racing"), Messages.string("StravaClubType.racing.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TEAM(StravaConfig.string("StravaClubType.racing"), Messages.string("StravaClubType.racing.description")),
 	/**
 	 * Shop club
 	 */
-	SHOP(StravaConfig.string("StravaClubType.shop"), Messages.string("StravaClubType.shop.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	SHOP(StravaConfig.string("StravaClubType.shop"), Messages.string("StravaClubType.shop.description")),
 	/**
 	 * Company club
 	 */
-	COMPANY(StravaConfig.string("StravaClubType.company"), Messages.string("StravaClubType.company.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	COMPANY(StravaConfig.string("StravaClubType.company"), Messages.string("StravaClubType.company.description")),
 	/**
 	 * Other type of club
 	 */
-	OTHER(StravaConfig.string("StravaClubType.other"), Messages.string("StravaClubType.other.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	OTHER(StravaConfig.string("StravaClubType.other"), Messages.string("StravaClubType.other.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -69,7 +69,7 @@ public enum StravaClubType implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaClubType(final String id, final String description) {
+    StravaClubType(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

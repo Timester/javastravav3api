@@ -306,14 +306,9 @@ public class StravaLap implements StravaCacheableEntity<Long> {
 			return false;
 		}
 		if (this.totalElevationGain == null) {
-			if (other.totalElevationGain != null) {
-				return false;
-			}
-		} else if (!this.totalElevationGain.equals(other.totalElevationGain)) {
-			return false;
-		}
-		return true;
-	}
+            return other.totalElevationGain == null;
+		} else return this.totalElevationGain.equals(other.totalElevationGain);
+    }
 
 	/**
 	 * @return the activity
@@ -701,13 +696,13 @@ public class StravaLap implements StravaCacheableEntity<Long> {
 	 */
 	@Override
 	public String toString() {
-		return "StravaLap [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", activity=" + this.activity + ", athlete=" + this.athlete + ", elapsedTime=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.elapsedTime + ", movingTime=" //$NON-NLS-1$
-				+ this.movingTime + ", startDate=" + this.startDate + ", startDateLocal=" + this.startDateLocal + ", distance=" + this.distance + ", startIndex=" + this.startIndex + ", endIndex=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ this.endIndex + ", totalElevationGain=" + this.totalElevationGain + ", averageSpeed=" + this.averageSpeed + ", maxSpeed=" + this.maxSpeed + ", averageCadence=" + this.averageCadence //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ ", averageWatts=" + this.averageWatts //$NON-NLS-1$
-				+ ", deviceWatts=" + this.deviceWatts + ", averageHeartrate=" + this.averageHeartrate + ", maxHeartrate=" + this.maxHeartrate + ", lapIndex=" + this.lapIndex + ", paceZone=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ this.paceZone + ", split=" //$NON-NLS-1$
-				+ this.split + "]"; //$NON-NLS-1$
+		return "StravaLap [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", activity=" + this.activity + ", athlete=" + this.athlete + ", elapsedTime="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.elapsedTime + ", movingTime=" 
+				+ this.movingTime + ", startDate=" + this.startDate + ", startDateLocal=" + this.startDateLocal + ", distance=" + this.distance + ", startIndex=" + this.startIndex + ", endIndex="     //$NON-NLS-5$
+				+ this.endIndex + ", totalElevationGain=" + this.totalElevationGain + ", averageSpeed=" + this.averageSpeed + ", maxSpeed=" + this.maxSpeed + ", averageCadence=" + this.averageCadence
+				+ ", averageWatts=" + this.averageWatts 
+				+ ", deviceWatts=" + this.deviceWatts + ", averageHeartrate=" + this.averageHeartrate + ", maxHeartrate=" + this.maxHeartrate + ", lapIndex=" + this.lapIndex + ", paceZone="     //$NON-NLS-5$
+				+ this.paceZone + ", split=" 
+				+ this.split + "]"; 
 	}
 }

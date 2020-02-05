@@ -22,8 +22,7 @@ public class WeekOfMonthSerializer implements JsonSerializer<StravaWeekOfMonth>,
 	@Override
 	public StravaWeekOfMonth deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {
 		try {
-			final StravaWeekOfMonth week = StravaWeekOfMonth.create(Integer.valueOf(json.getAsInt()));
-			return week;
+			return StravaWeekOfMonth.create(json.getAsInt());
 		} catch (final NumberFormatException e) {
 			throw new JsonParseException(e);
 		}

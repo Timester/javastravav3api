@@ -196,11 +196,8 @@ public class StravaRoute implements StravaEntity {
 		} else if (!this.timestamp.equals(other.timestamp)) {
 			return false;
 		}
-		if (this.type != other.type) {
-			return false;
-		}
-		return true;
-	}
+        return this.type == other.type;
+    }
 
 	/**
 	 * @return the athlete
@@ -452,8 +449,8 @@ public class StravaRoute implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaRoute [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", description=" + this.description + ", athlete=" + this.athlete + ", distance=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.distance + ", elevationGain=" + this.elevationGain + ", map=" + this.map + ", type=" + this.type + ", subType=" + this.subType + ", isPrivate=" + this.isPrivate + ", starred=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.starred + ", timestamp=" + this.timestamp + ", segments=" + this.segments + ", estimatedMovingTime=" + this.estimatedMovingTime + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaRoute [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", description=" + this.description + ", athlete=" + this.athlete + ", distance="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.distance + ", elevationGain=" + this.elevationGain + ", map=" + this.map + ", type=" + this.type + ", subType=" + this.subType + ", isPrivate=" + this.isPrivate + ", starred="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.starred + ", timestamp=" + this.timestamp + ", segments=" + this.segments + ", estimatedMovingTime=" + this.estimatedMovingTime + "]";
 	}
 }

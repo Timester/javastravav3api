@@ -17,25 +17,25 @@ public enum StravaLeaderboardDateRange implements StravaReferenceType<String> {
 	/**
 	 * This calendar year
 	 */
-	THIS_YEAR(StravaConfig.string("StravaLeaderboardDateRange.thisYear"), Messages.string("StravaLeaderboardDateRange.thisYear.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	THIS_YEAR(StravaConfig.string("StravaLeaderboardDateRange.thisYear"), Messages.string("StravaLeaderboardDateRange.thisYear.description")),
 	/**
 	 * This calendar month
 	 */
-	THIS_MONTH(StravaConfig.string("StravaLeaderboardDateRange.thisMonth"), Messages.string("StravaLeaderboardDateRange.thisMonth.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	THIS_MONTH(StravaConfig.string("StravaLeaderboardDateRange.thisMonth"), Messages.string("StravaLeaderboardDateRange.thisMonth.description")),
 	/**
 	 * This calendar week
 	 */
-	THIS_WEEK(StravaConfig.string("StravaLeaderboardDateRange.thisWeek"), Messages.string("StravaLeaderboardDateRange.thisWeek.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	THIS_WEEK(StravaConfig.string("StravaLeaderboardDateRange.thisWeek"), Messages.string("StravaLeaderboardDateRange.thisWeek.description")),
 	/**
 	 * Today
 	 */
-	TODAY(StravaConfig.string("StravaLeaderboardDateRange.today"), Messages.string("StravaLeaderboardDateRange.today.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TODAY(StravaConfig.string("StravaLeaderboardDateRange.today"), Messages.string("StravaLeaderboardDateRange.today.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -65,7 +65,7 @@ public enum StravaLeaderboardDateRange implements StravaReferenceType<String> {
 	 * @param id Identifier
 	 * @param description Text description
 	 */
-	private StravaLeaderboardDateRange(final String id, final String description) {
+    StravaLeaderboardDateRange(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

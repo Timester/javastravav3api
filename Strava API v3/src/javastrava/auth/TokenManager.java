@@ -188,17 +188,17 @@ public class TokenManager {
     public void storeToken(final Token token) {
         Integer userId;
         if (token == null) {
-            throw new IllegalArgumentException(Messages.string("TokenManager.0")); //$NON-NLS-1$
+            throw new IllegalArgumentException(Messages.string("TokenManager.0")); 
         }
 
         if (token.getAthlete() == null) {
-            throw new IllegalArgumentException(Messages.string("TokenManager.1")); //$NON-NLS-1$
+            throw new IllegalArgumentException(Messages.string("TokenManager.1")); 
         }
         if (token.getAthlete().getId() == null) {
-            throw new IllegalArgumentException(Messages.string("TokenManager.2")); //$NON-NLS-1$
+            throw new IllegalArgumentException(Messages.string("TokenManager.2")); 
         }
         if (token.getScopes() == null) {
-            throw new IllegalArgumentException(Messages.string("TokenManager.3")); //$NON-NLS-1$
+            throw new IllegalArgumentException(Messages.string("TokenManager.3")); 
         }
         userId = token.getAthlete().getId();
         this.tokens.put(userId, token);

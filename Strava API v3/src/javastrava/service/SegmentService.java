@@ -63,7 +63,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of up to 10, by default, {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is
 	 *         deprecated, use entry_count instead.
 	 */
-	public StravaSegmentLeaderboard getAllSegmentLeaderboard(final Integer segmentId);
+    StravaSegmentLeaderboard getAllSegmentLeaderboard(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -105,8 +105,8 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an the entire set of {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is deprecated,
 	 *         use entry_count instead.
 	 */
-	public StravaSegmentLeaderboard getAllSegmentLeaderboard(final Integer segmentId, final StravaGender gender, final StravaAgeGroup ageGroup, final StravaWeightClass weightClass,
-			final Boolean following, final Integer clubId, final StravaLeaderboardDateRange dateRange);
+    StravaSegmentLeaderboard getAllSegmentLeaderboard(final Integer segmentId, final StravaGender gender, final StravaAgeGroup ageGroup, final StravaWeightClass weightClass,
+                                                      final Boolean following, final Integer clubId, final StravaLeaderboardDateRange dateRange);
 
 	/**
 	 * <p>
@@ -136,7 +136,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of up to 10, by default, {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is
 	 *         deprecated, use entry_count instead.
 	 */
-	public CompletableFuture<StravaSegmentLeaderboard> getAllSegmentLeaderboardAsync(final Integer segmentId);
+    CompletableFuture<StravaSegmentLeaderboard> getAllSegmentLeaderboardAsync(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -178,8 +178,8 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an the entire set of {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is deprecated,
 	 *         use entry_count instead.
 	 */
-	public CompletableFuture<StravaSegmentLeaderboard> getAllSegmentLeaderboardAsync(final Integer segmentId, final StravaGender gender, final StravaAgeGroup ageGroup,
-			final StravaWeightClass weightClass, final Boolean following, final Integer clubId, final StravaLeaderboardDateRange dateRange);
+    CompletableFuture<StravaSegmentLeaderboard> getAllSegmentLeaderboardAsync(final Integer segmentId, final StravaGender gender, final StravaAgeGroup ageGroup,
+                                                                              final StravaWeightClass weightClass, final Boolean following, final Integer clubId, final StravaLeaderboardDateRange dateRange);
 
 	/**
 	 * <p>
@@ -202,7 +202,7 @@ public interface SegmentService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If authorisation fails
 	 */
-	public StravaSegment getSegment(final Integer segmentId);
+    StravaSegment getSegment(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -225,7 +225,7 @@ public interface SegmentService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If authorisation fails
 	 */
-	public CompletableFuture<StravaSegment> getSegmentAsync(final Integer segmentId);
+    CompletableFuture<StravaSegment> getSegmentAsync(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -255,7 +255,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of up to 10, by default, {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is
 	 *         deprecated, use entry_count instead.
 	 */
-	public StravaSegmentLeaderboard getSegmentLeaderboard(final Integer segmentId);
+    StravaSegmentLeaderboard getSegmentLeaderboard(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -287,7 +287,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of up to 10, by default, {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is
 	 *         deprecated, use entry_count instead.
 	 */
-	public StravaSegmentLeaderboard getSegmentLeaderboard(final Integer segmentId, final Paging pagingInstruction);
+    StravaSegmentLeaderboard getSegmentLeaderboard(final Integer segmentId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -333,8 +333,8 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of up to 10, by default, {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is
 	 *         deprecated, use entry_count instead.
 	 */
-	public StravaSegmentLeaderboard getSegmentLeaderboard(final Integer segmentId, final StravaGender gender, final StravaAgeGroup ageGroup, final StravaWeightClass weightClass,
-			final Boolean following, final Integer clubId, final StravaLeaderboardDateRange dateRange, final Paging pagingInstruction, final Integer contextEntries);
+    StravaSegmentLeaderboard getSegmentLeaderboard(final Integer segmentId, final StravaGender gender, final StravaAgeGroup ageGroup, final StravaWeightClass weightClass,
+                                                   final Boolean following, final Integer clubId, final StravaLeaderboardDateRange dateRange, final Paging pagingInstruction, final Integer contextEntries);
 
 	/**
 	 * <p>
@@ -364,7 +364,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of up to 10, by default, {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is
 	 *         deprecated, use entry_count instead.
 	 */
-	public CompletableFuture<StravaSegmentLeaderboard> getSegmentLeaderboardAsync(final Integer segmentId);
+    CompletableFuture<StravaSegmentLeaderboard> getSegmentLeaderboardAsync(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -396,7 +396,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of up to 10, by default, {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is
 	 *         deprecated, use entry_count instead.
 	 */
-	public CompletableFuture<StravaSegmentLeaderboard> getSegmentLeaderboardAsync(final Integer segmentId, final Paging pagingInstruction);
+    CompletableFuture<StravaSegmentLeaderboard> getSegmentLeaderboardAsync(final Integer segmentId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -442,9 +442,9 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of up to 10, by default, {@link StravaSegmentLeaderboardEntry leaderboard entry} objects. Note that effort ids should be considered 64-bit integers and effort_count is
 	 *         deprecated, use entry_count instead.
 	 */
-	public CompletableFuture<StravaSegmentLeaderboard> getSegmentLeaderboardAsync(final Integer segmentId, final StravaGender gender, final StravaAgeGroup ageGroup,
-			final StravaWeightClass weightClass, final Boolean following, final Integer clubId, final StravaLeaderboardDateRange dateRange, final Paging pagingInstruction,
-			final Integer contextEntries);
+    CompletableFuture<StravaSegmentLeaderboard> getSegmentLeaderboardAsync(final Integer segmentId, final StravaGender gender, final StravaAgeGroup ageGroup,
+                                                                           final StravaWeightClass weightClass, final Boolean following, final Integer clubId, final StravaLeaderboardDateRange dateRange, final Paging pagingInstruction,
+                                                                           final Integer contextEntries);
 
 	/**
 	 * <p>
@@ -463,7 +463,7 @@ public interface SegmentService extends StravaService {
 	 *
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the authenticated {@link StravaAthlete}.
 	 */
-	public List<StravaSegment> listAllAuthenticatedAthleteStarredSegments();
+    List<StravaSegment> listAllAuthenticatedAthleteStarredSegments();
 
 	/**
 	 * <p>
@@ -482,7 +482,7 @@ public interface SegmentService extends StravaService {
 	 *
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the authenticated {@link StravaAthlete}.
 	 */
-	public CompletableFuture<List<StravaSegment>> listAllAuthenticatedAthleteStarredSegmentsAsync();
+    CompletableFuture<List<StravaSegment>> listAllAuthenticatedAthleteStarredSegmentsAsync();
 
 	/**
 	 * <p>
@@ -508,7 +508,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public List<StravaSegmentEffort> listAllSegmentEfforts(final Integer segmentId);
+    List<StravaSegmentEffort> listAllSegmentEfforts(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -550,7 +550,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public List<StravaSegmentEffort> listAllSegmentEfforts(final Integer segmentId, final Integer athleteId, final LocalDateTime startDate, final LocalDateTime endDate);
+    List<StravaSegmentEffort> listAllSegmentEfforts(final Integer segmentId, final Integer athleteId, final LocalDateTime startDate, final LocalDateTime endDate);
 
 	/**
 	 * <p>
@@ -576,7 +576,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listAllSegmentEffortsAsync(final Integer segmentId);
+    CompletableFuture<List<StravaSegmentEffort>> listAllSegmentEffortsAsync(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -618,7 +618,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listAllSegmentEffortsAsync(final Integer segmentId, final Integer athleteId, final LocalDateTime startDate, final LocalDateTime endDate);
+    CompletableFuture<List<StravaSegmentEffort>> listAllSegmentEffortsAsync(final Integer segmentId, final Integer athleteId, final LocalDateTime startDate, final LocalDateTime endDate);
 
 	/**
 	 * <p>
@@ -643,7 +643,7 @@ public interface SegmentService extends StravaService {
 	 *            Identifier of the {@link StravaAthlete} for which starred {@link StravaSegment segments} are to be returned
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the identified {@link StravaAthlete}.
 	 */
-	public List<StravaSegment> listAllStarredSegments(final Integer athleteId);
+    List<StravaSegment> listAllStarredSegments(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -668,7 +668,7 @@ public interface SegmentService extends StravaService {
 	 *            Identifier of the {@link StravaAthlete} for which starred {@link StravaSegment segments} are to be returned
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the identified {@link StravaAthlete}.
 	 */
-	public CompletableFuture<List<StravaSegment>> listAllStarredSegmentsAsync(final Integer athleteId);
+    CompletableFuture<List<StravaSegment>> listAllStarredSegmentsAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -687,7 +687,7 @@ public interface SegmentService extends StravaService {
 	 *
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the authenticated {@link StravaAthlete}.
 	 */
-	public List<StravaSegment> listAuthenticatedAthleteStarredSegments();
+    List<StravaSegment> listAuthenticatedAthleteStarredSegments();
 
 	/**
 	 * <p>
@@ -708,7 +708,7 @@ public interface SegmentService extends StravaService {
 	 *            (Optional) paging instructions
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the authenticated {@link StravaAthlete}.
 	 */
-	public List<StravaSegment> listAuthenticatedAthleteStarredSegments(final Paging pagingInstruction);
+    List<StravaSegment> listAuthenticatedAthleteStarredSegments(final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -727,7 +727,7 @@ public interface SegmentService extends StravaService {
 	 *
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the authenticated {@link StravaAthlete}.
 	 */
-	public CompletableFuture<List<StravaSegment>> listAuthenticatedAthleteStarredSegmentsAsync();
+    CompletableFuture<List<StravaSegment>> listAuthenticatedAthleteStarredSegmentsAsync();
 
 	/**
 	 * <p>
@@ -748,7 +748,7 @@ public interface SegmentService extends StravaService {
 	 *            (Optional) paging instructions
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the authenticated {@link StravaAthlete}.
 	 */
-	public CompletableFuture<List<StravaSegment>> listAuthenticatedAthleteStarredSegmentsAsync(final Paging pagingInstruction);
+    CompletableFuture<List<StravaSegment>> listAuthenticatedAthleteStarredSegmentsAsync(final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -774,7 +774,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public List<StravaSegmentEffort> listSegmentEfforts(final Integer segmentId);
+    List<StravaSegmentEffort> listSegmentEfforts(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -816,7 +816,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public List<StravaSegmentEffort> listSegmentEfforts(final Integer segmentId, final Integer athleteId, final LocalDateTime startDateLocal, final LocalDateTime endDateLocal);
+    List<StravaSegmentEffort> listSegmentEfforts(final Integer segmentId, final Integer athleteId, final LocalDateTime startDateLocal, final LocalDateTime endDateLocal);
 
 	/**
 	 * <p>
@@ -860,8 +860,8 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public List<StravaSegmentEffort> listSegmentEfforts(final Integer segmentId, final Integer athleteId, final LocalDateTime startDateLocal, final LocalDateTime endDateLocal,
-			final Paging pagingInstruction);
+    List<StravaSegmentEffort> listSegmentEfforts(final Integer segmentId, final Integer athleteId, final LocalDateTime startDateLocal, final LocalDateTime endDateLocal,
+                                                 final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -889,7 +889,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public List<StravaSegmentEffort> listSegmentEfforts(final Integer segmentId, final Paging pagingInstruction);
+    List<StravaSegmentEffort> listSegmentEfforts(final Integer segmentId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -915,7 +915,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listSegmentEffortsAsync(final Integer segmentId);
+    CompletableFuture<List<StravaSegmentEffort>> listSegmentEffortsAsync(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -957,7 +957,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listSegmentEffortsAsync(final Integer segmentId, final Integer athleteId, final LocalDateTime startDateLocal, final LocalDateTime endDateLocal);
+    CompletableFuture<List<StravaSegmentEffort>> listSegmentEffortsAsync(final Integer segmentId, final Integer athleteId, final LocalDateTime startDateLocal, final LocalDateTime endDateLocal);
 
 	/**
 	 * <p>
@@ -1001,8 +1001,8 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listSegmentEffortsAsync(final Integer segmentId, final Integer athleteId, final LocalDateTime startDateLocal, final LocalDateTime endDateLocal,
-			final Paging pagingInstruction);
+    CompletableFuture<List<StravaSegmentEffort>> listSegmentEffortsAsync(final Integer segmentId, final Integer athleteId, final LocalDateTime startDateLocal, final LocalDateTime endDateLocal,
+                                                                         final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1030,7 +1030,7 @@ public interface SegmentService extends StravaService {
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary {@link StravaResourceState representations} sorted by start_date_local ascending or by elapsed_time if an
 	 *         athlete_id is provided.
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listSegmentEffortsAsync(final Integer segmentId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaSegmentEffort>> listSegmentEffortsAsync(final Integer segmentId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1055,7 +1055,7 @@ public interface SegmentService extends StravaService {
 	 *            Identifier of the {@link StravaAthlete} for which starred {@link StravaSegment segments} are to be returned
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the identified {@link StravaAthlete}.
 	 */
-	public List<StravaSegment> listStarredSegments(final Integer athleteId);
+    List<StravaSegment> listStarredSegments(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -1082,7 +1082,7 @@ public interface SegmentService extends StravaService {
 	 *            (Optional) paging instructions
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the identified {@link StravaAthlete}.
 	 */
-	public List<StravaSegment> listStarredSegments(final Integer athleteId, final Paging pagingInstruction);
+    List<StravaSegment> listStarredSegments(final Integer athleteId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1107,7 +1107,7 @@ public interface SegmentService extends StravaService {
 	 *            Identifier of the {@link StravaAthlete} for which starred {@link StravaSegment segments} are to be returned
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the identified {@link StravaAthlete}.
 	 */
-	public CompletableFuture<List<StravaSegment>> listStarredSegmentsAsync(final Integer athleteId);
+    CompletableFuture<List<StravaSegment>> listStarredSegmentsAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -1134,7 +1134,7 @@ public interface SegmentService extends StravaService {
 	 *            (Optional) paging instructions
 	 * @return Returns a {@link StravaResourceState#SUMMARY summary representation} of the {@link StravaSegment segments} starred by the identified {@link StravaAthlete}.
 	 */
-	public CompletableFuture<List<StravaSegment>> listStarredSegmentsAsync(final Integer athleteId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaSegment>> listStarredSegmentsAsync(final Integer athleteId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1163,8 +1163,8 @@ public interface SegmentService extends StravaService {
 	 *            (Optional) Maximum climb category filter
 	 * @return Returns an array of up to 10 segment objects
 	 */
-	public StravaSegmentExplorerResponse segmentExplore(final StravaMapPoint southwestCorner, final StravaMapPoint northeastCorner, final StravaSegmentExplorerActivityType activityType,
-			final StravaClimbCategory minCat, final StravaClimbCategory maxCat);
+    StravaSegmentExplorerResponse segmentExplore(final StravaMapPoint southwestCorner, final StravaMapPoint northeastCorner, final StravaSegmentExplorerActivityType activityType,
+                                                 final StravaClimbCategory minCat, final StravaClimbCategory maxCat);
 
 	/**
 	 * <p>
@@ -1193,8 +1193,8 @@ public interface SegmentService extends StravaService {
 	 *            (Optional) Maximum climb category filter
 	 * @return Returns an array of up to 10 segment objects
 	 */
-	public CompletableFuture<StravaSegmentExplorerResponse> segmentExploreAsync(final StravaMapPoint southwestCorner, final StravaMapPoint northeastCorner,
-			final StravaSegmentExplorerActivityType activityType, final StravaClimbCategory minCat, final StravaClimbCategory maxCat);
+    CompletableFuture<StravaSegmentExplorerResponse> segmentExploreAsync(final StravaMapPoint southwestCorner, final StravaMapPoint northeastCorner,
+                                                                         final StravaSegmentExplorerActivityType activityType, final StravaClimbCategory minCat, final StravaClimbCategory maxCat);
 
 	/**
 	 * <p>
@@ -1208,7 +1208,7 @@ public interface SegmentService extends StravaService {
 	 * @return Detailed representation of the segment, will be <code>null</code> if the segment does not exist, or will be one with PRIVATE resource state if the segment is flagged as private and
 	 *         cannot be accessed
 	 */
-	public StravaSegment starSegment(final Integer segmentId, final Boolean starred);
+    StravaSegment starSegment(final Integer segmentId, final Boolean starred);
 
 	/**
 	 * <p>
@@ -1221,5 +1221,5 @@ public interface SegmentService extends StravaService {
 	 *            <code>true</code> if segment is to be starred, <code>false</code> if segment is to be unstarred
 	 * @return Detailed representation of the segment
 	 */
-	public CompletableFuture<StravaSegment> starSegmentAsync(final Integer segmentId, final Boolean starred);
+    CompletableFuture<StravaSegment> starSegmentAsync(final Integer segmentId, final Boolean starred);
 }

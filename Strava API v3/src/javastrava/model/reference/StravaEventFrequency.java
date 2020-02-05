@@ -13,19 +13,19 @@ public enum StravaEventFrequency implements StravaReferenceType<String> {
 	/**
 	 * Does not repeat
 	 */
-	NO_REPEAT(StravaConfig.string("StravaEventFrequency.no_repeat"), Messages.string("StravaEventFrequency.no_repeat.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	NO_REPEAT(StravaConfig.string("StravaEventFrequency.no_repeat"), Messages.string("StravaEventFrequency.no_repeat.description")),
 	/**
 	 * Weekly
 	 */
-	WEEKLY(StravaConfig.string("StravaEventFrequency.weekly"), Messages.string("StravaEventFrequency.weekly")), //$NON-NLS-1$ //$NON-NLS-2$
+	WEEKLY(StravaConfig.string("StravaEventFrequency.weekly"), Messages.string("StravaEventFrequency.weekly")),
 	/**
 	 * Monthly
 	 */
-	MONTHLY(StravaConfig.string("StravaEventFrequency.monthly"), Messages.string("StravaEventFrequency.monthly")), //$NON-NLS-1$ //$NON-NLS-2$
+	MONTHLY(StravaConfig.string("StravaEventFrequency.monthly"), Messages.string("StravaEventFrequency.monthly")),
 	/**
 	 * Unknown
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * @param id
@@ -51,7 +51,7 @@ public enum StravaEventFrequency implements StravaReferenceType<String> {
 	 */
 	private final String description;
 
-	private StravaEventFrequency(final String id, final String description) {
+	StravaEventFrequency(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

@@ -25,7 +25,7 @@ public class AthleteTypeSerializer implements JsonSerializer<StravaAthleteType>,
 	public StravaAthleteType deserialize(final JsonElement json, final Type type, final JsonDeserializationContext context)
 			throws JsonParseException {
 		try {
-			return StravaAthleteType.create(Integer.valueOf(json.getAsInt()));
+			return StravaAthleteType.create(json.getAsInt());
 		} catch (final NumberFormatException e) {
 			throw new JsonParseException(e);
 		}

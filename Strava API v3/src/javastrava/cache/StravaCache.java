@@ -28,7 +28,7 @@ public interface StravaCache<T extends StravaCacheableEntity<U>, U> {
 	 *            The key
 	 * @return the object, or <code>null</code> if not in cache
 	 */
-	public T get(U key);
+    T get(U key);
 
 	/**
 	 * <p>
@@ -37,7 +37,7 @@ public interface StravaCache<T extends StravaCacheableEntity<U>, U> {
 	 *
 	 * @return List of the objects in the cache
 	 */
-	public List<T> list();
+    List<T> list();
 
 	/**
 	 * <p>
@@ -47,7 +47,7 @@ public interface StravaCache<T extends StravaCacheableEntity<U>, U> {
 	 * @param object
 	 *            Object
 	 */
-	public void put(T object);
+    void put(T object);
 
 	/**
 	 * <p>
@@ -57,7 +57,7 @@ public interface StravaCache<T extends StravaCacheableEntity<U>, U> {
 	 * @param list
 	 *            List of objects to be stored in cache
 	 */
-	public void putAll(List<T> list);
+    void putAll(List<T> list);
 
 	/**
 	 * <p>
@@ -67,14 +67,14 @@ public interface StravaCache<T extends StravaCacheableEntity<U>, U> {
 	 * @param key
 	 *            The key of the object to be removed
 	 */
-	public void remove(U key);
+    void remove(U key);
 
 	/**
 	 * <p>
 	 * Removes all elements from the cache that are associated with the token
 	 * </p>
 	 */
-	public void removeAll();
+    void removeAll();
 
 	/**
 	 * <p>
@@ -83,5 +83,5 @@ public interface StravaCache<T extends StravaCacheableEntity<U>, U> {
 	 *
 	 * @return Number of objects in the cache
 	 */
-	public int size();
+    int size();
 }

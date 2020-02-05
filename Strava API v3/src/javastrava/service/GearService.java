@@ -47,7 +47,7 @@ public interface GearService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If service token is invalid
 	 */
-	public StravaGear getGear(final String gearId);
+    StravaGear getGear(final String gearId);
 
 	/**
 	 * <p>
@@ -71,5 +71,5 @@ public interface GearService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If service token is invalid
 	 */
-	public CompletableFuture<StravaGear> getGearAsync(final String gearId);
+    CompletableFuture<StravaGear> getGearAsync(final String gearId);
 }

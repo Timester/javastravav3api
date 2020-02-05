@@ -34,7 +34,7 @@ public interface ClubAPI {
 	 *             If the club with the given id doesn't exist
 	 */
 	@GET("/clubs/{id}")
-	public StravaClub getClub(@Path("id") final Integer clubId) throws NotFoundException;
+    StravaClub getClub(@Path("id") final Integer clubId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ClubService#getClub(java.lang.Integer)
@@ -47,7 +47,7 @@ public interface ClubAPI {
 	 *             If the club with the given id doesn't exist
 	 */
 	@GET("/clubs/{id}")
-	public void getClub(@Path("id") final Integer clubId, final StravaAPICallback<StravaClub> callback) throws NotFoundException;
+    void getClub(@Path("id") final Integer clubId, final StravaAPICallback<StravaClub> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ClubService#getClub(java.lang.Integer)
@@ -59,7 +59,7 @@ public interface ClubAPI {
 	 *             If the club with the given id doesn't exist
 	 */
 	@GET("/clubs/{id}")
-	public Response getClubRaw(@Path("id") final Integer clubId) throws NotFoundException;
+    Response getClubRaw(@Path("id") final Integer clubId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ClubService#joinClub(java.lang.Integer)
@@ -71,7 +71,7 @@ public interface ClubAPI {
 	 *             If the club with the given id doesn't exist
 	 */
 	@POST("/clubs/{id}/join")
-	public StravaClubMembershipResponse joinClub(@Path("id") final Integer clubId) throws NotFoundException;
+    StravaClubMembershipResponse joinClub(@Path("id") final Integer clubId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ClubService#joinClub(java.lang.Integer)
@@ -84,7 +84,7 @@ public interface ClubAPI {
 	 *             If the club with the given id doesn't exist
 	 */
 	@POST("/clubs/{id}/join")
-	public void joinClub(@Path("id") final Integer clubId, final StravaAPICallback<StravaClubMembershipResponse> callback) throws NotFoundException;
+    void joinClub(@Path("id") final Integer clubId, final StravaAPICallback<StravaClubMembershipResponse> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ClubService#leaveClub(java.lang.Integer)
@@ -96,7 +96,7 @@ public interface ClubAPI {
 	 *             If the club with the given id doesn't exist
 	 */
 	@POST("/clubs/{id}/leave")
-	public StravaClubMembershipResponse leaveClub(@Path("id") final Integer clubId) throws NotFoundException;
+    StravaClubMembershipResponse leaveClub(@Path("id") final Integer clubId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ClubService#leaveClub(java.lang.Integer)
@@ -109,7 +109,7 @@ public interface ClubAPI {
 	 *             If the club with the given id doesn't exist
 	 */
 	@POST("/clubs/{id}/leave")
-	public void leaveClub(@Path("id") final Integer clubId, StravaAPICallback<StravaClubMembershipResponse> callback) throws NotFoundException;
+    void leaveClub(@Path("id") final Integer clubId, StravaAPICallback<StravaClubMembershipResponse> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ClubService#listAuthenticatedAthleteClubs()
@@ -117,7 +117,7 @@ public interface ClubAPI {
 	 * @return Array of clubs that the authenticated athlete belongs to
 	 */
 	@GET("/athlete/clubs")
-	public StravaClub[] listAuthenticatedAthleteClubs();
+    StravaClub[] listAuthenticatedAthleteClubs();
 
 	/**
 	 * @see javastrava.service.ClubService#listAuthenticatedAthleteClubs()
@@ -126,7 +126,7 @@ public interface ClubAPI {
 	 *            The callback to execute on completion
 	 */
 	@GET("/athlete/clubs")
-	public void listAuthenticatedAthleteClubs(final StravaAPICallback<StravaClub[]> callback);
+    void listAuthenticatedAthleteClubs(final StravaAPICallback<StravaClub[]> callback);
 
 	/**
 	 * @see javastrava.service.ClubService#listAuthenticatedAthleteClubs()
@@ -134,7 +134,7 @@ public interface ClubAPI {
 	 * @return Array of clubs that the authenticated athlete belongs to
 	 */
 	@GET("/athlete/clubs")
-	public Response listAuthenticatedAthleteClubsRaw();
+    Response listAuthenticatedAthleteClubsRaw();
 
 	/**
 	 * Retrieve summary information about admins of a specific club, with the owner on top and sorted by first names. Pagination is supported.
@@ -150,7 +150,7 @@ public interface ClubAPI {
 	 *             if club id is invalid
 	 */
 	@GET("/clubs/{id}/admins")
-	public StravaAthlete[] listClubAdmins(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException;
+    StravaAthlete[] listClubAdmins(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException;
 
 	/**
 	 * Retrieve summary information about admins of a specific club, with the owner on top and sorted by first names. Pagination is supported.
@@ -167,7 +167,7 @@ public interface ClubAPI {
 	 *             if club id is invalid
 	 */
 	@GET("/clubs/{id}/admins")
-	public void listClubAdmins(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
+    void listClubAdmins(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
 			throws NotFoundException;
 
 	/**
@@ -184,7 +184,7 @@ public interface ClubAPI {
 	 *             if club id is invalid
 	 */
 	@GET("/clubs/{id}/admins")
-	public Response listClubAdminsRaw(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException;
+    Response listClubAdminsRaw(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException;
 
 	/**
 	 * @param clubId
@@ -194,7 +194,7 @@ public interface ClubAPI {
 	 *             If the club does not exist
 	 */
 	@GET("/clubs/{id}/announcements")
-	public StravaClubAnnouncement[] listClubAnnouncements(@Path("id") final Integer clubId) throws NotFoundException;
+    StravaClubAnnouncement[] listClubAnnouncements(@Path("id") final Integer clubId) throws NotFoundException;
 
 	/**
 	 * @param clubId
@@ -205,7 +205,7 @@ public interface ClubAPI {
 	 *             If the club does not exist
 	 */
 	@GET("/clubs/{id}/announcements")
-	public void listClubAnnouncements(@Path("id") final Integer clubId, StravaAPICallback<StravaClubAnnouncement[]> callback) throws NotFoundException;
+    void listClubAnnouncements(@Path("id") final Integer clubId, StravaAPICallback<StravaClubAnnouncement[]> callback) throws NotFoundException;
 
 	/**
 	 * @param clubId
@@ -215,7 +215,7 @@ public interface ClubAPI {
 	 *             If the club does not exist
 	 */
 	@GET("/clubs/{id}/announcements")
-	public Response listClubAnnouncementsRaw(@Path("id") final Integer clubId) throws NotFoundException;
+    Response listClubAnnouncementsRaw(@Path("id") final Integer clubId) throws NotFoundException;
 
 	/**
 	 * @param clubId
@@ -223,7 +223,7 @@ public interface ClubAPI {
 	 * @return Array of summary events
 	 */
 	@GET("/clubs/{id}/group_events")
-	public StravaClubEvent[] listClubGroupEvents(@Path("id") final Integer clubId);
+    StravaClubEvent[] listClubGroupEvents(@Path("id") final Integer clubId);
 
 	/**
 	 * @param clubId
@@ -232,7 +232,7 @@ public interface ClubAPI {
 	 *            The callback to execute on completion
 	 */
 	@GET("/clubs/{id}/group_events")
-	public void listClubGroupEvents(@Path("id") final Integer clubId, final StravaAPICallback<StravaClubEvent[]> callback);
+    void listClubGroupEvents(@Path("id") final Integer clubId, final StravaAPICallback<StravaClubEvent[]> callback);
 
 	/**
 	 * @param clubId
@@ -240,7 +240,7 @@ public interface ClubAPI {
 	 * @return Array of summary events
 	 */
 	@GET("/clubs/{id}/group_events")
-	public Response listClubGroupEventsRaw(@Path("id") final Integer clubId);
+    Response listClubGroupEventsRaw(@Path("id") final Integer clubId);
 
 	/**
 	 * @see javastrava.service.ClubService#listClubMembers(Integer, javastrava.util.Paging)
@@ -258,7 +258,7 @@ public interface ClubAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/clubs/{id}/members")
-	public StravaAthlete[] listClubMembers(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, BadRequestException;
+    StravaAthlete[] listClubMembers(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.ClubService#listClubMembers(Integer, javastrava.util.Paging)
@@ -277,7 +277,7 @@ public interface ClubAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/clubs/{id}/members")
-	public void listClubMembers(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
+    void listClubMembers(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -296,7 +296,7 @@ public interface ClubAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/clubs/{id}/members")
-	public Response listClubMembersRaw(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, BadRequestException;
+    Response listClubMembersRaw(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.ClubService#listRecentClubActivities(Integer, javastrava.util.Paging)
@@ -314,7 +314,7 @@ public interface ClubAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/clubs/{id}/activities")
-	public StravaActivity[] listRecentClubActivities(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    StravaActivity[] listRecentClubActivities(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -334,8 +334,8 @@ public interface ClubAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/clubs/{id}/activities")
-	public void listRecentClubActivities(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
-			final StravaAPICallback<StravaActivity[]> callback) throws NotFoundException, BadRequestException;
+    void listRecentClubActivities(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
+                                  final StravaAPICallback<StravaActivity[]> callback) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.ClubService#listRecentClubActivities(Integer, javastrava.util.Paging)
@@ -353,6 +353,6 @@ public interface ClubAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/clubs/{id}/activities")
-	public Response listRecentClubActivitiesRaw(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    Response listRecentClubActivitiesRaw(@Path("id") final Integer clubId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 }

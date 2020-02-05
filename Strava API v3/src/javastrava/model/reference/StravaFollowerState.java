@@ -16,21 +16,21 @@ public enum StravaFollowerState implements StravaReferenceType<String> {
 	/**
 	 * Follower has been requested but neither accepted nor blocked at this time
 	 */
-	PENDING(StravaConfig.string("StravaFollowerState.pending"), Messages.string("StravaFollowerState.pending.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	PENDING(StravaConfig.string("StravaFollowerState.pending"), Messages.string("StravaFollowerState.pending.description")),
 	/**
 	 * Follower has been accepted
 	 */
-	ACCEPTED(StravaConfig.string("StravaFollowerState.accepted"), Messages.string("StravaFollowerState.accepted.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	ACCEPTED(StravaConfig.string("StravaFollowerState.accepted"), Messages.string("StravaFollowerState.accepted.description")),
 	/**
 	 * Follower has been blocked
 	 */
-	BLOCKED(StravaConfig.string("StravaFollowerState.blocked"), Messages.string("StravaFollowerState.blocked.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	BLOCKED(StravaConfig.string("StravaFollowerState.blocked"), Messages.string("StravaFollowerState.blocked.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -61,7 +61,7 @@ public enum StravaFollowerState implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaFollowerState(final String id, final String description) {
+    StravaFollowerState(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

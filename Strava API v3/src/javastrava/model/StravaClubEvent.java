@@ -323,14 +323,9 @@ public class StravaClubEvent implements StravaCacheableEntity<Integer> {
 			return false;
 		}
 		if (this.zone == null) {
-			if (other.zone != null) {
-				return false;
-			}
-		} else if (!this.zone.equals(other.zone)) {
-			return false;
-		}
-		return true;
-	}
+            return other.zone == null;
+		} else return this.zone.equals(other.zone);
+    }
 
 	/**
 	 * @return the activityType
@@ -789,15 +784,15 @@ public class StravaClubEvent implements StravaCacheableEntity<Integer> {
 	 */
 	@Override
 	public String toString() {
-		return "StravaClubEvent [id=" + this.id + ", resourceState=" + this.resourceState + ", title=" + this.title + ", description=" + this.description + ", club=" + this.club + ", clubId=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.clubId + ", activityType=" //$NON-NLS-1$
-				+ this.activityType + ", createdAt=" + this.createdAt + ", routeId=" + this.routeId + ", womenOnly=" + this.womenOnly + ", privateEvent=" + this.privateEvent + ", skillLevels=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ this.skillLevels + ", terrain=" //$NON-NLS-1$
-				+ this.terrain + ", upcomingOccurrences=" + this.upcomingOccurrences + ", address=" + this.address + ", joined=" + this.joined + ", organizingAthlete=" + this.organizingAthlete //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ ", startLatlng=" + this.startLatlng //$NON-NLS-1$
-				+ ", route=" + this.route + ", zone=" + this.zone + ", viewerPermissions=" + this.viewerPermissions + ", startDatetime=" + this.startDatetime + ", frequency=" + this.frequency //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ ", weekOfMonth=" + this.weekOfMonth //$NON-NLS-1$
-				+ ", dayOfWeek=" + this.dayOfWeek + ", daysOfWeek=" + this.daysOfWeek + ", weeklyInterval=" + this.weeklyInterval + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaClubEvent [id=" + this.id + ", resourceState=" + this.resourceState + ", title=" + this.title + ", description=" + this.description + ", club=" + this.club + ", clubId="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.clubId + ", activityType=" 
+				+ this.activityType + ", createdAt=" + this.createdAt + ", routeId=" + this.routeId + ", womenOnly=" + this.womenOnly + ", privateEvent=" + this.privateEvent + ", skillLevels="     //$NON-NLS-5$
+				+ this.skillLevels + ", terrain=" 
+				+ this.terrain + ", upcomingOccurrences=" + this.upcomingOccurrences + ", address=" + this.address + ", joined=" + this.joined + ", organizingAthlete=" + this.organizingAthlete
+				+ ", startLatlng=" + this.startLatlng 
+				+ ", route=" + this.route + ", zone=" + this.zone + ", viewerPermissions=" + this.viewerPermissions + ", startDatetime=" + this.startDatetime + ", frequency=" + this.frequency     //$NON-NLS-5$
+				+ ", weekOfMonth=" + this.weekOfMonth 
+				+ ", dayOfWeek=" + this.dayOfWeek + ", daysOfWeek=" + this.daysOfWeek + ", weeklyInterval=" + this.weeklyInterval + "]";
 	}
 
 }

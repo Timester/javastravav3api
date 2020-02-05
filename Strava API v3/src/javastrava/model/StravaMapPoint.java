@@ -64,14 +64,9 @@ public class StravaMapPoint implements StravaEntity {
 			return false;
 		}
 		if (this.longitude == null) {
-			if (other.longitude != null) {
-				return false;
-			}
-		} else if (!this.longitude.equals(other.longitude)) {
-			return false;
-		}
-		return true;
-	}
+            return other.longitude == null;
+		} else return this.longitude.equals(other.longitude);
+    }
 
 	/**
 	 * @return the latitude
@@ -125,7 +120,7 @@ public class StravaMapPoint implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaMapPoint [latitude=" + this.latitude + ", longitude=" + this.longitude + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "StravaMapPoint [latitude=" + this.latitude + ", longitude=" + this.longitude + "]";
 	}
 
 }

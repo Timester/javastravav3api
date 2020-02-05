@@ -162,7 +162,7 @@ public class JsonUtilImpl implements JsonUtil {
 	 * @see javastrava.json.JsonUtil#deserialise(java.io.InputStream, java.lang.Class)
 	 */
 	@Override
-	public <T> T deserialise(final InputStream is, final Class<T> class1) throws JsonSerialisationException {
+	public <T> T deserialise(final InputStream is, final Class<T> class1) {
 		if (is == null) {
 			return null;
 		}
@@ -177,7 +177,7 @@ public class JsonUtilImpl implements JsonUtil {
 		try {
 			return this.gson.fromJson(is, class1);
 		} catch (final JsonParseException e) {
-			throw new JsonSerialisationException(String.format(Messages.string("JsonUtilImpl.failedToDeserialiseString"), is, class1.getName()), e); //$NON-NLS-1$
+			throw new JsonSerialisationException(String.format(Messages.string("JsonUtilImpl.failedToDeserialiseString"), is, class1.getName()), e); 
 		}
 	}
 
@@ -192,7 +192,7 @@ public class JsonUtilImpl implements JsonUtil {
 	 * @see javastrava.json.JsonUtil#serialise(Object)
 	 */
 	@Override
-	public <T> String serialise(final T object) throws JsonSerialisationException {
+	public <T> String serialise(final T object) {
 		return this.gson.toJson(object);
 	}
 }

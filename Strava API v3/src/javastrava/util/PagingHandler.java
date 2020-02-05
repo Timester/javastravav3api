@@ -72,27 +72,25 @@ public class PagingHandler {
 			parallelismUsed = StravaConfig.PAGING_LIST_ALL_PARALLELISM;
 		}
 		boolean loop = true;
-		final List<T> records = new ArrayList<T>();
+		final List<T> records = new ArrayList<>();
 		int page = 0;
-		final Integer pageSize = Integer.valueOf(StravaConfig.MAX_PAGE_SIZE.intValue() * parallelismUsed);
+		final Integer pageSize = StravaConfig.MAX_PAGE_SIZE * parallelismUsed;
 
 		while (loop) {
 			page++;
 			List<T> currentPage;
 			try {
-				currentPage = handlePaging(new Paging(Integer.valueOf(page), pageSize), callback);
+				currentPage = handlePaging(new Paging(page, pageSize), callback);
 			} catch (final NotFoundException e) {
 				return null;
-			} catch (final UnauthorizedException e) {
-				return new ArrayList<T>();
-			} catch (final BadRequestException e) {
-				return new ArrayList<T>();
+			} catch (final UnauthorizedException | BadRequestException e) {
+				return new ArrayList<>();
 			}
 			if (currentPage == null) {
 				return null; // Activity doesn't exist
 			}
 			records.addAll(currentPage);
-			if (currentPage.size() < pageSize.intValue()) {
+			if (currentPage.size() < pageSize) {
 				loop = false;
 			}
 		}
@@ -133,13 +131,11 @@ public class PagingHandler {
 			}
 
 			// But if there is more than one, get them in parallel
-			records = pool.invoke(new PagingForkJoinTask<T>(callback, pages));
+			records = pool.invoke(new PagingForkJoinTask<>(callback, pages));
 		} catch (final NotFoundException e) {
 			return null;
-		} catch (final UnauthorizedException e) {
-			return new ArrayList<T>();
-		} catch (final BadRequestException e) {
-			return new ArrayList<T>();
+		} catch (final UnauthorizedException | BadRequestException e) {
+			return new ArrayList<>();
 		}
 		return records;
 

@@ -213,14 +213,9 @@ public class StravaRunningRace implements StravaCacheableEntity<Integer> {
 			return false;
 		}
 		if (this.websiteUrl == null) {
-			if (other.websiteUrl != null) {
-				return false;
-			}
-		} else if (!this.websiteUrl.equals(other.websiteUrl)) {
-			return false;
-		}
-		return true;
-	}
+            return other.websiteUrl == null;
+		} else return this.websiteUrl.equals(other.websiteUrl);
+    }
 
 	/**
 	 * @return the city
@@ -457,8 +452,8 @@ public class StravaRunningRace implements StravaCacheableEntity<Integer> {
 
 	@Override
 	public String toString() {
-		return "StravaRunningRace [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", runningRaceType=" + this.runningRaceType + ", distance=" + this.distance //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ ", startDateLocal=" + this.startDateLocal + ", city=" + this.city + ", state=" + this.state + ", country=" + this.country + ", routeIds=" + this.routeIds + ", measurementPreference=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.measurementPreference + ", url=" + this.url + ", websiteUrl=" + this.websiteUrl + ", status=" + this.status + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaRunningRace [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", runningRaceType=" + this.runningRaceType + ", distance=" + this.distance     //$NON-NLS-5$
+				+ ", startDateLocal=" + this.startDateLocal + ", city=" + this.city + ", state=" + this.state + ", country=" + this.country + ", routeIds=" + this.routeIds + ", measurementPreference="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.measurementPreference + ", url=" + this.url + ", websiteUrl=" + this.websiteUrl + ", status=" + this.status + "]";
 	}
 }

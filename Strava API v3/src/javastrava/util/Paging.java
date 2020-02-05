@@ -18,8 +18,8 @@ public class Paging {
 	 * @return If requested page number is zero, return 1
 	 */
 	private static Integer validatePage(final Integer page) {
-		if ((page == null) || (page.intValue() == 0)) {
-			return Integer.valueOf(1);
+		if ((page == null) || (page == 0)) {
+			return 1;
 		}
 		return page;
 	}
@@ -32,7 +32,7 @@ public class Paging {
 	 * @return If requested page size is zero, return the default page size
 	 */
 	private static Integer validatePageSize(final Integer pageSize) {
-		if ((pageSize == null) || (pageSize.intValue() == 0)) {
+		if ((pageSize == null) || (pageSize == 0)) {
 			return StravaConfig.DEFAULT_PAGE_SIZE;
 		}
 		return pageSize;
@@ -70,7 +70,7 @@ public class Paging {
 	 * Default no-argument constructor assumes that you want the first page, and it should be the default size
 	 */
 	public Paging() {
-		this.page = Integer.valueOf(1);
+		this.page = 1;
 		this.pageSize = StravaConfig.DEFAULT_PAGE_SIZE;
 	}
 
@@ -137,13 +137,8 @@ public class Paging {
 			return false;
 		}
 		if (this.pageSize == null) {
-			if (other.pageSize != null) {
-				return false;
-			}
-		} else if (!this.pageSize.equals(other.pageSize)) {
-			return false;
-		}
-		return true;
+			return other.pageSize == null;
+		} else return this.pageSize.equals(other.pageSize);
 	}
 
 	/**

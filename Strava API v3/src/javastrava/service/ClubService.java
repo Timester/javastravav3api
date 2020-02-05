@@ -56,7 +56,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} to be retrieved
 	 * @return Returns a detailed club representation.
 	 */
-	public StravaClub getClub(final Integer clubId);
+    StravaClub getClub(final Integer clubId);
 
 	/**
 	 * <p>
@@ -81,7 +81,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} to be retrieved
 	 * @return Returns a detailed club representation.
 	 */
-	public CompletableFuture<StravaClub> getClubAsync(final Integer clubId);
+    CompletableFuture<StravaClub> getClubAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -92,7 +92,7 @@ public interface ClubService extends StravaService {
 	 *            ID of the {@link StravaClub} to join
 	 * @return Response detailing whether request was successful and whether the member is active
 	 */
-	public StravaClubMembershipResponse joinClub(final Integer clubId);
+    StravaClubMembershipResponse joinClub(final Integer clubId);
 
 	/**
 	 * <p>
@@ -103,7 +103,7 @@ public interface ClubService extends StravaService {
 	 *            ID of the {@link StravaClub} to join
 	 * @return Response detailing whether request was successful and whether the member is active
 	 */
-	public CompletableFuture<StravaClubMembershipResponse> joinClubAsync(final Integer clubId);
+    CompletableFuture<StravaClubMembershipResponse> joinClubAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -114,7 +114,7 @@ public interface ClubService extends StravaService {
 	 *            ID of the club to join
 	 * @return Response detailing whether request was successful and whether the member is active
 	 */
-	public StravaClubMembershipResponse leaveClub(final Integer clubId);
+    StravaClubMembershipResponse leaveClub(final Integer clubId);
 
 	/**
 	 * <p>
@@ -125,7 +125,7 @@ public interface ClubService extends StravaService {
 	 *            ID of the club to join
 	 * @return Response detailing whether request was successful and whether the member is active
 	 */
-	public CompletableFuture<StravaClubMembershipResponse> leaveClubAsync(final Integer clubId);
+    CompletableFuture<StravaClubMembershipResponse> leaveClubAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -143,7 +143,7 @@ public interface ClubService extends StravaService {
 	 * @param clubId The club whose administrators should be listed
 	 * @return List of administrators
 	 */
-	public List<StravaAthlete> listAllClubAdmins(final Integer clubId);
+    List<StravaAthlete> listAllClubAdmins(final Integer clubId);
 
 	/**
 	 * <p>
@@ -161,7 +161,7 @@ public interface ClubService extends StravaService {
 	 * @param clubId The club whose administrators should be listed
 	 * @return List of administrators - call {@link CompletableFuture#complete(Object)} when ready.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAllClubAdminsAsync(final Integer clubId);
+    CompletableFuture<List<StravaAthlete>> listAllClubAdminsAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -198,7 +198,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} whose member {@link StravaAthlete athletes} should be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary {@link StravaResourceState representations}.
 	 */
-	public List<StravaAthlete> listAllClubMembers(final Integer clubId);
+    List<StravaAthlete> listAllClubMembers(final Integer clubId);
 
 	/**
 	 * <p>
@@ -235,7 +235,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} whose member {@link StravaAthlete athletes} should be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary {@link StravaResourceState representations}.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAllClubMembersAsync(final Integer clubId);
+    CompletableFuture<List<StravaAthlete>> listAllClubMembersAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -264,7 +264,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} for which recent {@link StravaActivity activities} are to be returned.
 	 * @return Returns an array of {@link StravaActivity activity} summary {@link StravaResourceState representations}.
 	 */
-	public List<StravaActivity> listAllRecentClubActivities(final Integer clubId);
+    List<StravaActivity> listAllRecentClubActivities(final Integer clubId);
 
 	/**
 	 * <p>
@@ -293,7 +293,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} for which recent {@link StravaActivity activities} are to be returned.
 	 * @return Returns an array of {@link StravaActivity activity} summary {@link StravaResourceState representations}.
 	 */
-	public CompletableFuture<List<StravaActivity>> listAllRecentClubActivitiesAsync(final Integer clubId);
+    CompletableFuture<List<StravaActivity>> listAllRecentClubActivitiesAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -312,7 +312,7 @@ public interface ClubService extends StravaService {
 	 *
 	 * @return Returns a list of {@link StravaClub club} {@link StravaResourceState summary} representations.
 	 */
-	public List<StravaClub> listAuthenticatedAthleteClubs();
+    List<StravaClub> listAuthenticatedAthleteClubs();
 
 	/**
 	 * <p>
@@ -331,7 +331,7 @@ public interface ClubService extends StravaService {
 	 *
 	 * @return Returns a list of {@link StravaClub club} {@link StravaResourceState summary} representations.
 	 */
-	public CompletableFuture<List<StravaClub>> listAuthenticatedAthleteClubsAsync();
+    CompletableFuture<List<StravaClub>> listAuthenticatedAthleteClubsAsync();
 
 	/**
 	 * <p>
@@ -349,7 +349,7 @@ public interface ClubService extends StravaService {
 	 * @param clubId The club whose administrators should be listed
 	 * @return List of administrators
 	 */
-	public List<StravaAthlete> listClubAdmins(final Integer clubId);
+    List<StravaAthlete> listClubAdmins(final Integer clubId);
 
 	/**
 	 * <p>
@@ -368,7 +368,7 @@ public interface ClubService extends StravaService {
 	 * @param paging Paging instruction
 	 * @return List of administrators
 	 */
-	public List<StravaAthlete> listClubAdmins(final Integer clubId, final Paging paging);
+    List<StravaAthlete> listClubAdmins(final Integer clubId, final Paging paging);
 
 	/**
 	 * <p>
@@ -386,7 +386,7 @@ public interface ClubService extends StravaService {
 	 * @param clubId The club whose administrators should be listed
 	 * @return {@link CompletableFuture} which will return the List of administrators
 	 */
-	public CompletableFuture<List<StravaAthlete>> listClubAdminsAsync(final Integer clubId);
+    CompletableFuture<List<StravaAthlete>> listClubAdminsAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -405,7 +405,7 @@ public interface ClubService extends StravaService {
 	 * @param paging Paging instruction
 	 * @return {@link CompletableFuture} which will return the List of administrators
 	 */
-	public CompletableFuture<List<StravaAthlete>> listClubAdminsAsync(final Integer clubId, final Paging paging);
+    CompletableFuture<List<StravaAthlete>> listClubAdminsAsync(final Integer clubId, final Paging paging);
 
 	/**
 	 * <p>Announcements are posts sent by Club Admins or Owners to the members of a club.</p>
@@ -425,7 +425,7 @@ public interface ClubService extends StravaService {
 	 * @param clubId The id of the {@link StravaClub} for which announcements should be returned.
 	 * @return Returns a list of {@link StravaClubAnnouncement announcements}
 	 */
-	public List<StravaClubAnnouncement> listClubAnnouncements(final Integer clubId);
+    List<StravaClubAnnouncement> listClubAnnouncements(final Integer clubId);
 
 	/**
 	 * <p>Announcements are posts sent by Club Admins or Owners to the members of a club.</p>
@@ -445,7 +445,7 @@ public interface ClubService extends StravaService {
 	 * @param clubId The id of the {@link StravaClub} for which announcements should be returned.
 	 * @return Returns a list of {@link StravaClubAnnouncement announcements}
 	 */
-	public CompletableFuture<List<StravaClubAnnouncement>> listClubAnnouncementsAsync(final Integer clubId);
+    CompletableFuture<List<StravaClubAnnouncement>> listClubAnnouncementsAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -466,7 +466,7 @@ public interface ClubService extends StravaService {
 	 * @param clubId Club identifier
 	 * @return List of all club events
 	 */
-	public List<StravaClubEvent> listClubGroupEvents(final Integer clubId);
+    List<StravaClubEvent> listClubGroupEvents(final Integer clubId);
 
 	/**
 	 * <p>
@@ -487,7 +487,7 @@ public interface ClubService extends StravaService {
 	 * @param clubId Club identifier
 	 * @return List of all club events (to retrieve call {@link CompletableFuture#get()})
 	 */
-	public CompletableFuture<List<StravaClubEvent>> listClubGroupEventsAsync(final Integer clubId);
+    CompletableFuture<List<StravaClubEvent>> listClubGroupEventsAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -516,7 +516,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} whose member {@link StravaAthlete athletes} should be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary {@link StravaResourceState representations}.
 	 */
-	public List<StravaAthlete> listClubMembers(final Integer clubId);
+    List<StravaAthlete> listClubMembers(final Integer clubId);
 
 	/**
 	 * <p>
@@ -547,7 +547,7 @@ public interface ClubService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary {@link StravaResourceState representations}.
 	 */
-	public List<StravaAthlete> listClubMembers(final Integer clubId, final Paging pagingInstruction);
+    List<StravaAthlete> listClubMembers(final Integer clubId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -576,7 +576,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} whose member {@link StravaAthlete athletes} should be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary {@link StravaResourceState representations}.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listClubMembersAsync(final Integer clubId);
+    CompletableFuture<List<StravaAthlete>> listClubMembersAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -607,7 +607,7 @@ public interface ClubService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary {@link StravaResourceState representations}.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listClubMembersAsync(final Integer clubId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaAthlete>> listClubMembersAsync(final Integer clubId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -636,7 +636,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} for which recent {@link StravaActivity activities} are to be returned.
 	 * @return Returns an array of {@link StravaActivity activity} summary {@link StravaResourceState representations}.
 	 */
-	public List<StravaActivity> listRecentClubActivities(final Integer clubId);
+    List<StravaActivity> listRecentClubActivities(final Integer clubId);
 
 	/**
 	 * <p>
@@ -667,7 +667,7 @@ public interface ClubService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaActivity activity} summary {@link StravaResourceState representations}.
 	 */
-	public List<StravaActivity> listRecentClubActivities(final Integer clubId, final Paging pagingInstruction);
+    List<StravaActivity> listRecentClubActivities(final Integer clubId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -696,7 +696,7 @@ public interface ClubService extends StravaService {
 	 *            The id of the {@link StravaClub} for which recent {@link StravaActivity activities} are to be returned.
 	 * @return Returns an array of {@link StravaActivity activity} summary {@link StravaResourceState representations}.
 	 */
-	public CompletableFuture<List<StravaActivity>> listRecentClubActivitiesAsync(final Integer clubId);
+    CompletableFuture<List<StravaActivity>> listRecentClubActivitiesAsync(final Integer clubId);
 
 	/**
 	 * <p>
@@ -727,5 +727,5 @@ public interface ClubService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaActivity activity} summary {@link StravaResourceState representations}.
 	 */
-	public CompletableFuture<List<StravaActivity>> listRecentClubActivitiesAsync(final Integer clubId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaActivity>> listRecentClubActivitiesAsync(final Integer clubId, final Paging pagingInstruction);
 }

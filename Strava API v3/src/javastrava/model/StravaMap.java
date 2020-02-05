@@ -75,13 +75,8 @@ public class StravaMap implements StravaEntity {
 			return false;
 		}
 		if (this.summaryPolyline == null) {
-			if (other.summaryPolyline != null) {
-				return false;
-			}
-		} else if (!this.summaryPolyline.equals(other.summaryPolyline)) {
-			return false;
-		}
-		return true;
+			return other.summaryPolyline == null;
+		} else return this.summaryPolyline.equals(other.summaryPolyline);
 	}
 
 	/**
@@ -164,7 +159,7 @@ public class StravaMap implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaMap [id=" + this.id + ", polyline=" + this.polyline + ", summaryPolyline=" + this.summaryPolyline + ", resourceState=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ this.resourceState + "]"; //$NON-NLS-1$
+		return "StravaMap [id=" + this.id + ", polyline=" + this.polyline + ", summaryPolyline=" + this.summaryPolyline + ", resourceState="
+				+ this.resourceState + "]"; 
 	}
 }

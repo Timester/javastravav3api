@@ -11,21 +11,21 @@ public enum StravaSkillLevel implements StravaReferenceType<Integer> {
 	/**
 	 * Casual
 	 */
-	CASUAL(StravaConfig.integer("StravaSkillLevel.casual"), Messages.string("StravaSkillLevel.casual.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CASUAL(StravaConfig.integer("StravaSkillLevel.casual"), Messages.string("StravaSkillLevel.casual.description")),
 	/**
 	 * Tempo
 	 */
-	TEMPO(StravaConfig.integer("StravaSkillLevel.tempo"), Messages.string("StravaSkillLevel.tempo.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TEMPO(StravaConfig.integer("StravaSkillLevel.tempo"), Messages.string("StravaSkillLevel.tempo.description")),
 	/**
 	 * Hammerfest!
 	 */
-	HAMMERFEST(StravaConfig.integer("StravaSkillLevel.hammerfest"), Messages.string("StravaSkillLevel.hammerfest.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	HAMMERFEST(StravaConfig.integer("StravaSkillLevel.hammerfest"), Messages.string("StravaSkillLevel.hammerfest.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -56,7 +56,7 @@ public enum StravaSkillLevel implements StravaReferenceType<Integer> {
 	 * @param description Description
 	 *
 	 */
-	private StravaSkillLevel(final Integer id, final String description) {
+    StravaSkillLevel(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

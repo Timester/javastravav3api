@@ -95,14 +95,9 @@ public class StravaUploadResponse implements StravaEntity {
 			return false;
 		}
 		if (this.status == null) {
-			if (other.status != null) {
-				return false;
-			}
-		} else if (!this.status.equals(other.status)) {
-			return false;
-		}
-		return true;
-	}
+            return other.status == null;
+		} else return this.status.equals(other.status);
+    }
 
 	/**
 	 * @return the activityId
@@ -204,7 +199,7 @@ public class StravaUploadResponse implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaUploadResponse [id=" + this.id + ", externalId=" + this.externalId + ", error=" + this.error + ", status=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ this.status + ", activityId=" + this.activityId + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaUploadResponse [id=" + this.id + ", externalId=" + this.externalId + ", error=" + this.error + ", status="
+				+ this.status + ", activityId=" + this.activityId + "]";
 	}
 }

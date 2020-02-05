@@ -34,7 +34,7 @@ public interface AthleteAPI {
 	 *             If the athlete doesn't exist
 	 */
 	@GET("/athletes/{id}")
-	public StravaAthlete getAthlete(@Path("id") final Integer athleteId) throws NotFoundException;
+    StravaAthlete getAthlete(@Path("id") final Integer athleteId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.AthleteService#getAthlete(java.lang.Integer)
@@ -47,7 +47,7 @@ public interface AthleteAPI {
 	 *             If the athlete doesn't exist
 	 */
 	@GET("/athletes/{id}")
-	public void getAthlete(@Path("id") final Integer athleteId, final StravaAPICallback<StravaAthlete> callback) throws NotFoundException;
+    void getAthlete(@Path("id") final Integer athleteId, final StravaAPICallback<StravaAthlete> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.AthleteService#getAthlete(java.lang.Integer)
@@ -59,7 +59,7 @@ public interface AthleteAPI {
 	 *             If the athlete doesn't exist
 	 */
 	@GET("/athletes/{id}")
-	public Response getAthleteRaw(@Path("id") final Integer athleteId) throws NotFoundException;
+    Response getAthleteRaw(@Path("id") final Integer athleteId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.AthleteService#getAuthenticatedAthlete()
@@ -67,7 +67,7 @@ public interface AthleteAPI {
 	 * @return Full details of the authenticated athlete
 	 */
 	@GET("/athlete")
-	public StravaAthlete getAuthenticatedAthlete();
+    StravaAthlete getAuthenticatedAthlete();
 
 	/**
 	 * @see javastrava.service.AthleteService#getAuthenticatedAthlete()
@@ -76,7 +76,7 @@ public interface AthleteAPI {
 	 *            Callback to be executed once the call is completed
 	 */
 	@GET("/athlete")
-	public void getAuthenticatedAthlete(final StravaAPICallback<StravaAthlete> callback);
+    void getAuthenticatedAthlete(final StravaAPICallback<StravaAthlete> callback);
 
 	/**
 	 * @see javastrava.service.AthleteService#getAuthenticatedAthlete()
@@ -84,7 +84,7 @@ public interface AthleteAPI {
 	 * @return Full details of the authenticated athlete
 	 */
 	@GET("/athlete")
-	public Response getAuthenticatedAthleteRaw();
+    Response getAuthenticatedAthleteRaw();
 
 	/**
 	 * <p>
@@ -98,7 +98,7 @@ public interface AthleteAPI {
 	 * @return The athlete zones object
 	 */
 	@GET("/athlete/zones")
-	public StravaAthleteZones getAuthenticatedAthleteZones();
+    StravaAthleteZones getAuthenticatedAthleteZones();
 
 	/**
 	 * <p>
@@ -113,7 +113,7 @@ public interface AthleteAPI {
 	 *            The callback used to return the asynchronous result
 	 */
 	@GET("/athlete/zones")
-	public void getAuthenticatedAthleteZones(StravaAPICallback<StravaAthleteZones> callback);
+    void getAuthenticatedAthleteZones(StravaAPICallback<StravaAthleteZones> callback);
 
 	/**
 	 * @param athleteId
@@ -123,7 +123,7 @@ public interface AthleteAPI {
 	 *             If the identified athlete doesn't exist
 	 */
 	@GET("/athletes/{id}/stats")
-	public StravaStatistics getStatistics(@Path("id") final Integer athleteId) throws NotFoundException;
+    StravaStatistics getStatistics(@Path("id") final Integer athleteId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.AthleteService#statistics(Integer)
@@ -136,7 +136,7 @@ public interface AthleteAPI {
 	 *             If the identified athlete doesn't exist
 	 */
 	@GET("/athletes/{id}/stats")
-	public void getStatistics(@Path("id") final Integer athleteId, StravaAPICallback<StravaStatistics> callback) throws NotFoundException;
+    void getStatistics(@Path("id") final Integer athleteId, StravaAPICallback<StravaStatistics> callback) throws NotFoundException;
 
 	/**
 	 * @param athleteId
@@ -146,7 +146,7 @@ public interface AthleteAPI {
 	 *             If the identified athlete doesn't exist
 	 */
 	@GET("/athletes/{id}/stats")
-	public Response getStatisticsRaw(@Path("id") final Integer athleteId) throws NotFoundException;
+    Response getStatisticsRaw(@Path("id") final Integer athleteId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.AthleteService#listAthleteFriends(Integer, javastrava.util.Paging)
@@ -164,7 +164,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/friends")
-	public StravaAthlete[] listAthleteFriends(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    StravaAthlete[] listAthleteFriends(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -184,7 +184,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/friends")
-	public void listAthleteFriends(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
+    void listAthleteFriends(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -203,7 +203,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/friends")
-	public Response listAthleteFriendsRaw(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    Response listAthleteFriendsRaw(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -222,7 +222,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/koms")
-	public StravaSegmentEffort[] listAthleteKOMs(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    StravaSegmentEffort[] listAthleteKOMs(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -242,8 +242,8 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/koms")
-	public void listAthleteKOMs(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
-			final StravaAPICallback<StravaSegmentEffort[]> callback) throws NotFoundException, BadRequestException;
+    void listAthleteKOMs(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
+                         final StravaAPICallback<StravaSegmentEffort[]> callback) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.AthleteService#listAthleteKOMs(Integer, javastrava.util.Paging)
@@ -261,7 +261,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/koms")
-	public Response listAthleteKOMsRaw(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, BadRequestException;
+    Response listAthleteKOMsRaw(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.AthleteService#listAthletesBothFollowing(Integer, javastrava.util.Paging)
@@ -279,7 +279,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/both-following")
-	public StravaAthlete[] listAthletesBothFollowing(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    StravaAthlete[] listAthletesBothFollowing(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -299,8 +299,8 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/both-following")
-	public void listAthletesBothFollowing(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
-			final StravaAPICallback<StravaAthlete[]> callback) throws NotFoundException, BadRequestException;
+    void listAthletesBothFollowing(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
+                                   final StravaAPICallback<StravaAthlete[]> callback) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.AthleteService#listAthletesBothFollowing(Integer, javastrava.util.Paging)
@@ -318,7 +318,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athletes/{id}/both-following")
-	public Response listAthletesBothFollowingRaw(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    Response listAthletesBothFollowingRaw(@Path("id") final Integer athleteId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -333,7 +333,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athlete/friends")
-	public StravaAthlete[] listAuthenticatedAthleteFriends(@Query("page") final Integer page, @Query("per_page") final Integer perPage) throws BadRequestException;
+    StravaAthlete[] listAuthenticatedAthleteFriends(@Query("page") final Integer page, @Query("per_page") final Integer perPage) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.AthleteService#listAuthenticatedAthleteFriends(javastrava.util.Paging)
@@ -348,7 +348,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athlete/friends")
-	public void listAuthenticatedAthleteFriends(@Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
+    void listAuthenticatedAthleteFriends(@Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
 			throws BadRequestException;
 
 	/**
@@ -363,7 +363,7 @@ public interface AthleteAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/athlete/friends")
-	public Response listAuthenticatedAthleteFriendsRaw(@Query("page") final Integer page, @Query("per_page") final Integer perPage) throws BadRequestException;
+    Response listAuthenticatedAthleteFriendsRaw(@Query("page") final Integer page, @Query("per_page") final Integer perPage) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.AthleteService#updateAuthenticatedAthlete(String, String, String, StravaGender, Float)
@@ -381,8 +381,8 @@ public interface AthleteAPI {
 	 * @return Athlete details as updated on Strava
 	 */
 	@PUT("/athlete")
-	public StravaAthlete updateAuthenticatedAthlete(@Query("city") final String city, @Query("state") final String state, @Query("country") final String country, @Query("sex") final StravaGender sex,
-			@Query("weight") final Float weight);
+    StravaAthlete updateAuthenticatedAthlete(@Query("city") final String city, @Query("state") final String state, @Query("country") final String country, @Query("sex") final StravaGender sex,
+                                             @Query("weight") final Float weight);
 
 	/**
 	 * @see javastrava.service.AthleteService#updateAuthenticatedAthlete(String, String, String, StravaGender, Float)
@@ -401,6 +401,6 @@ public interface AthleteAPI {
 	 *            Callback to be executed once the call is completed
 	 */
 	@PUT("/athlete")
-	public void updateAuthenticatedAthlete(@Query("city") final String city, @Query("state") final String state, @Query("country") final String country, @Query("sex") final StravaGender sex,
-			@Query("weight") final Float weight, final StravaAPICallback<StravaAthlete> callback);
+    void updateAuthenticatedAthlete(@Query("city") final String city, @Query("state") final String state, @Query("country") final String country, @Query("sex") final StravaGender sex,
+                                    @Query("weight") final Float weight, final StravaAPICallback<StravaAthlete> callback);
 }

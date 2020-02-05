@@ -22,5 +22,5 @@ public interface PagingCallback<T> {
 	 * @throws NotFoundException If the thing being paged itself throws a {@link NotFoundException}
 	 * @throws BadRequestException If the paging instructions are invalid
 	 */
-	public List<T> getPageOfData(final Paging thisPage) throws NotFoundException, BadRequestException;
+    List<T> getPageOfData(final Paging thisPage) throws NotFoundException, BadRequestException;
 }

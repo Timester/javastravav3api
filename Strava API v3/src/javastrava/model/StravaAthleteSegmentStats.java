@@ -63,14 +63,9 @@ public class StravaAthleteSegmentStats implements StravaEntity {
 			return false;
 		}
 		if (this.prElapsedTime == null) {
-			if (other.prElapsedTime != null) {
-				return false;
-			}
-		} else if (!this.prElapsedTime.equals(other.prElapsedTime)) {
-			return false;
-		}
-		return true;
-	}
+            return other.prElapsedTime == null;
+		} else return this.prElapsedTime.equals(other.prElapsedTime);
+    }
 
 	/**
 	 * @return the effortCount
@@ -140,6 +135,6 @@ public class StravaAthleteSegmentStats implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaAthleteSegmentStats [effortCount=" + this.effortCount + ", prElapsedTime=" + this.prElapsedTime + ", prDate=" + this.prDate + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaAthleteSegmentStats [effortCount=" + this.effortCount + ", prElapsedTime=" + this.prElapsedTime + ", prDate=" + this.prDate + "]";
 	}
 }

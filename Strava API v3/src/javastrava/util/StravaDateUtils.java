@@ -18,8 +18,8 @@ public class StravaDateUtils {
 		if (date == null) {
 			return null;
 		}
-		final Long timeInSeconds = Long.valueOf(date.toEpochSecond(ZoneOffset.UTC));
-		return Integer.valueOf(timeInSeconds.intValue());
+		final Long timeInSeconds = date.toEpochSecond(ZoneOffset.UTC);
+		return timeInSeconds.intValue();
 	}
 
 }

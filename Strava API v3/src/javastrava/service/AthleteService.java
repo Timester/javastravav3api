@@ -38,7 +38,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the {@link StravaAthlete athlete} to be returned
 	 * @return Returns a summary representation of the {@link StravaAthlete athlete} even if the indicated athlete matches the authenticated athlete.
 	 */
-	public StravaAthlete getAthlete(final Integer athleteId);
+    StravaAthlete getAthlete(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -59,7 +59,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the {@link StravaAthlete athlete} to be returned
 	 * @return Returns a summary representation of the {@link StravaAthlete athlete} even if the indicated athlete matches the authenticated athlete.
 	 */
-	public CompletableFuture<StravaAthlete> getAthleteAsync(final Integer athleteId);
+    CompletableFuture<StravaAthlete> getAthleteAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -75,7 +75,7 @@ public interface AthleteService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If the service's access token is invalid
 	 */
-	public StravaAthlete getAuthenticatedAthlete();
+    StravaAthlete getAuthenticatedAthlete();
 
 	/**
 	 * <p>
@@ -91,7 +91,7 @@ public interface AthleteService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If the service's access token is invalid
 	 */
-	public CompletableFuture<StravaAthlete> getAuthenticatedAthleteAsync();
+    CompletableFuture<StravaAthlete> getAuthenticatedAthleteAsync();
 
 	/**
 	 * <p>
@@ -104,7 +104,7 @@ public interface AthleteService extends StravaService {
 	 *
 	 * @return The athlete zones object
 	 */
-	public StravaAthleteZones getAuthenticatedAthleteZones();
+    StravaAthleteZones getAuthenticatedAthleteZones();
 
 	/**
 	 * <p>
@@ -117,7 +117,7 @@ public interface AthleteService extends StravaService {
 	 *
 	 * @return The athlete zones object (via a {@link CompletableFuture})
 	 */
-	public CompletableFuture<StravaAthleteZones> getAuthenticatedAthleteZonesAsync();
+    CompletableFuture<StravaAthleteZones> getAuthenticatedAthleteZonesAsync();
 
 	/**
 	 * <p>
@@ -150,7 +150,7 @@ public interface AthleteService extends StravaService {
 	 *            The athlete whose friends are to be listed
 	 * @return List of athlete's friends, or <code>null</code> if the athlete does not exist
 	 */
-	public List<StravaAthlete> listAllAthleteFriends(final Integer athleteId);
+    List<StravaAthlete> listAllAthleteFriends(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -183,7 +183,7 @@ public interface AthleteService extends StravaService {
 	 *            The athlete whose friends are to be listed
 	 * @return List of athlete's friends, or <code>null</code> if the athlete does not exist
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAllAthleteFriendsAsync(final Integer athleteId);
+    CompletableFuture<List<StravaAthlete>> listAllAthleteFriendsAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -216,7 +216,7 @@ public interface AthleteService extends StravaService {
 	 *            The athlete whose KOM'ss are to be listed
 	 * @return List of segment efforts for which the athlete is KOM, or <code>null</code> if the athlete does not exist
 	 */
-	public List<StravaSegmentEffort> listAllAthleteKOMs(final Integer athleteId);
+    List<StravaSegmentEffort> listAllAthleteKOMs(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -249,7 +249,7 @@ public interface AthleteService extends StravaService {
 	 *            The athlete whose KOM'ss are to be listed
 	 * @return List of segment efforts for which the athlete is KOM, or <code>null</code> if the athlete does not exist
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listAllAthleteKOMsAsync(final Integer athleteId);
+    CompletableFuture<List<StravaSegmentEffort>> listAllAthleteKOMsAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -279,7 +279,7 @@ public interface AthleteService extends StravaService {
 	 *
 	 * @return List of the authenticated athlete's friends
 	 */
-	public List<StravaAthlete> listAllAthletesBothFollowing(final Integer athleteId);
+    List<StravaAthlete> listAllAthletesBothFollowing(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -309,7 +309,7 @@ public interface AthleteService extends StravaService {
 	 *
 	 * @return List of the authenticated athlete's friends
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAllAthletesBothFollowingAsync(final Integer athleteId);
+    CompletableFuture<List<StravaAthlete>> listAllAthletesBothFollowingAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -336,7 +336,7 @@ public interface AthleteService extends StravaService {
 	 *
 	 * @return List of the authenticated athlete's friends
 	 */
-	public List<StravaAthlete> listAllAuthenticatedAthleteFriends();
+    List<StravaAthlete> listAllAuthenticatedAthleteFriends();
 
 	/**
 	 * <p>
@@ -363,7 +363,7 @@ public interface AthleteService extends StravaService {
 	 *
 	 * @return List of the authenticated athlete's friends
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAllAuthenticatedAthleteFriendsAsync();
+    CompletableFuture<List<StravaAthlete>> listAllAuthenticatedAthleteFriendsAsync();
 
 	/**
 	 * <p>
@@ -392,7 +392,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the {@link StravaAthlete athlete} whose friends are to be listed
 	 * @return List of {@link StravaAthlete athletes} who are friends of the identified athlete. Will be empty if the identified athlete has blocked the currently authenticated athlete.
 	 */
-	public List<StravaAthlete> listAthleteFriends(final Integer athleteId);
+    List<StravaAthlete> listAthleteFriends(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -423,7 +423,7 @@ public interface AthleteService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return List of {@link StravaAthlete athletes} who are friends of the identified athlete. Will be empty if the identified athlete has blocked the currently authenticated athlete.
 	 */
-	public List<StravaAthlete> listAthleteFriends(final Integer athleteId, final Paging pagingInstruction);
+    List<StravaAthlete> listAthleteFriends(final Integer athleteId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -452,7 +452,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the {@link StravaAthlete athlete} whose friends are to be listed
 	 * @return List of {@link StravaAthlete athletes} who are friends of the identified athlete. Will be empty if the identified athlete has blocked the currently authenticated athlete.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAthleteFriendsAsync(final Integer athleteId);
+    CompletableFuture<List<StravaAthlete>> listAthleteFriendsAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -483,7 +483,7 @@ public interface AthleteService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return List of {@link StravaAthlete athletes} who are friends of the identified athlete. Will be empty if the identified athlete has blocked the currently authenticated athlete.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAthleteFriendsAsync(final Integer athleteId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaAthlete>> listAthleteFriendsAsync(final Integer athleteId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -512,7 +512,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the {@link StravaAthlete athlete} whose KOM's are to be returned
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary representations
 	 */
-	public List<StravaSegmentEffort> listAthleteKOMs(final Integer athleteId);
+    List<StravaSegmentEffort> listAthleteKOMs(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -543,7 +543,7 @@ public interface AthleteService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary representations
 	 */
-	public List<StravaSegmentEffort> listAthleteKOMs(final Integer athleteId, final Paging pagingInstruction);
+    List<StravaSegmentEffort> listAthleteKOMs(final Integer athleteId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -572,7 +572,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the {@link StravaAthlete athlete} whose KOM's are to be returned
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary representations
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listAthleteKOMsAsync(final Integer athleteId);
+    CompletableFuture<List<StravaSegmentEffort>> listAthleteKOMsAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -603,7 +603,7 @@ public interface AthleteService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaSegmentEffort segment effort} summary representations
 	 */
-	public CompletableFuture<List<StravaSegmentEffort>> listAthleteKOMsAsync(final Integer athleteId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaSegmentEffort>> listAthleteKOMsAsync(final Integer athleteId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -628,59 +628,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the {@link StravaAthlete athlete} for whom the list of mutual friends is to be generated
 	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
 	 */
-	public List<StravaAthlete> listAthletesBothFollowing(final Integer athleteId);
-
-	/**
-	 * <p>
-	 * Retrieve the {@link StravaAthlete athletes} who both the authenticated athlete and the indicated athlete are following.
-	 * </p>
-	 *
-	 * <p>
-	 * Pagination is supported.
-	 * </p>
-	 *
-	 * <p>
-	 * Returns <code>null</code> if athlete with the given id is not found.
-	 * </p>
-	 *
-	 * <p>
-	 * URL GET https://www.strava.com/api/v3/athletes/:id/both-following
-	 * </p>
-	 *
-	 * @see <a href="http://strava.github.io/api/v3/follow/">http://strava.github.io/api/v3/follow/</a>
-	 *
-	 * @param athleteId
-	 *            The id of the {@link StravaAthlete athlete} for whom the list of mutual friends is to be generated
-	 * @param pagingInstruction
-	 *            (Optional) The page to be returned
-	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
-	 */
-	public List<StravaAthlete> listAthletesBothFollowing(final Integer athleteId, final Paging pagingInstruction);
-
-	/**
-	 * <p>
-	 * Retrieve the {@link StravaAthlete athletes} who both the authenticated athlete and the indicated athlete are following.
-	 * </p>
-	 *
-	 * <p>
-	 * Pagination is not supported. Returns only the first page of athletes.
-	 * </p>
-	 *
-	 * <p>
-	 * Returns <code>null</code> if athlete with the given id is not found.
-	 * </p>
-	 *
-	 * <p>
-	 * URL GET https://www.strava.com/api/v3/athletes/:id/both-following
-	 * </p>
-	 *
-	 * @see <a href="http://strava.github.io/api/v3/follow/">http://strava.github.io/api/v3/follow/</a>
-	 *
-	 * @param athleteId
-	 *            The id of the {@link StravaAthlete athlete} for whom the list of mutual friends is to be generated
-	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
-	 */
-	public CompletableFuture<List<StravaAthlete>> listAthletesBothFollowingAsync(final Integer athleteId);
+    List<StravaAthlete> listAthletesBothFollowing(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -707,7 +655,59 @@ public interface AthleteService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAthletesBothFollowingAsync(final Integer athleteId, final Paging pagingInstruction);
+    List<StravaAthlete> listAthletesBothFollowing(final Integer athleteId, final Paging pagingInstruction);
+
+	/**
+	 * <p>
+	 * Retrieve the {@link StravaAthlete athletes} who both the authenticated athlete and the indicated athlete are following.
+	 * </p>
+	 *
+	 * <p>
+	 * Pagination is not supported. Returns only the first page of athletes.
+	 * </p>
+	 *
+	 * <p>
+	 * Returns <code>null</code> if athlete with the given id is not found.
+	 * </p>
+	 *
+	 * <p>
+	 * URL GET https://www.strava.com/api/v3/athletes/:id/both-following
+	 * </p>
+	 *
+	 * @see <a href="http://strava.github.io/api/v3/follow/">http://strava.github.io/api/v3/follow/</a>
+	 *
+	 * @param athleteId
+	 *            The id of the {@link StravaAthlete athlete} for whom the list of mutual friends is to be generated
+	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
+	 */
+    CompletableFuture<List<StravaAthlete>> listAthletesBothFollowingAsync(final Integer athleteId);
+
+	/**
+	 * <p>
+	 * Retrieve the {@link StravaAthlete athletes} who both the authenticated athlete and the indicated athlete are following.
+	 * </p>
+	 *
+	 * <p>
+	 * Pagination is supported.
+	 * </p>
+	 *
+	 * <p>
+	 * Returns <code>null</code> if athlete with the given id is not found.
+	 * </p>
+	 *
+	 * <p>
+	 * URL GET https://www.strava.com/api/v3/athletes/:id/both-following
+	 * </p>
+	 *
+	 * @see <a href="http://strava.github.io/api/v3/follow/">http://strava.github.io/api/v3/follow/</a>
+	 *
+	 * @param athleteId
+	 *            The id of the {@link StravaAthlete athlete} for whom the list of mutual friends is to be generated
+	 * @param pagingInstruction
+	 *            (Optional) The page to be returned
+	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
+	 */
+    CompletableFuture<List<StravaAthlete>> listAthletesBothFollowingAsync(final Integer athleteId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -730,7 +730,7 @@ public interface AthleteService extends StravaService {
 	 *
 	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
 	 */
-	public List<StravaAthlete> listAuthenticatedAthleteFriends();
+    List<StravaAthlete> listAuthenticatedAthleteFriends();
 
 	/**
 	 * <p>
@@ -755,7 +755,7 @@ public interface AthleteService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
 	 */
-	public List<StravaAthlete> listAuthenticatedAthleteFriends(final Paging pagingInstruction);
+    List<StravaAthlete> listAuthenticatedAthleteFriends(final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -778,7 +778,7 @@ public interface AthleteService extends StravaService {
 	 *
 	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAuthenticatedAthleteFriendsAsync();
+    CompletableFuture<List<StravaAthlete>> listAuthenticatedAthleteFriendsAsync();
 
 	/**
 	 * <p>
@@ -803,7 +803,7 @@ public interface AthleteService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary representations.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAuthenticatedAthleteFriendsAsync(final Paging pagingInstruction);
+    CompletableFuture<List<StravaAthlete>> listAuthenticatedAthleteFriendsAsync(final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -828,7 +828,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the athlete (must match authenticated athlete)
 	 * @return Strava statistics object; values are in seconds and metres.
 	 */
-	public StravaStatistics statistics(final Integer athleteId);
+    StravaStatistics statistics(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -853,7 +853,7 @@ public interface AthleteService extends StravaService {
 	 *            The id of the athlete (must match authenticated athlete)
 	 * @return Strava statistics object; values are in seconds and metres.
 	 */
-	public CompletableFuture<StravaStatistics> statisticsAsync(final Integer athleteId);
+    CompletableFuture<StravaStatistics> statisticsAsync(final Integer athleteId);
 
 	/**
 	 * <p>
@@ -886,7 +886,7 @@ public interface AthleteService extends StravaService {
 	 *            The weight that the athlete wants Strava to believe that they are
 	 * @return Detailed representation of the updated athlete
 	 */
-	public StravaAthlete updateAuthenticatedAthlete(final String city, final String state, final String country, final StravaGender sex, final Float weight);
+    StravaAthlete updateAuthenticatedAthlete(final String city, final String state, final String country, final StravaGender sex, final Float weight);
 
 	/**
 	 * <p>
@@ -919,5 +919,5 @@ public interface AthleteService extends StravaService {
 	 *            The weight that the athlete wants Strava to believe that they are
 	 * @return Detailed representation of the updated athlete
 	 */
-	public CompletableFuture<StravaAthlete> updateAuthenticatedAthleteAsync(final String city, final String state, final String country, final StravaGender sex, final Float weight);
+    CompletableFuture<StravaAthlete> updateAuthenticatedAthleteAsync(final String city, final String state, final String country, final StravaGender sex, final Float weight);
 }

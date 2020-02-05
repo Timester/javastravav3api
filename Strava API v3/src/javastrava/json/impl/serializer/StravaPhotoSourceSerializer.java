@@ -26,7 +26,7 @@ public class StravaPhotoSourceSerializer implements JsonSerializer<StravaPhotoSo
 			throws JsonParseException {
 		StravaPhotoSource photoSource = null;
 		try {
-			photoSource = StravaPhotoSource.create(Integer.valueOf(json.getAsInt()));
+			photoSource = StravaPhotoSource.create(json.getAsInt());
 		} catch (NumberFormatException e) {
 			throw new JsonParseException(e);
 		}

@@ -145,11 +145,8 @@ public class StravaGear implements StravaCacheableEntity<String> {
 		} else if (!this.primary.equals(other.primary)) {
 			return false;
 		}
-		if (this.resourceState != other.resourceState) {
-			return false;
-		}
-		return true;
-	}
+        return this.resourceState == other.resourceState;
+    }
 
 	/**
 	 * @return the brandName
@@ -331,10 +328,10 @@ public class StravaGear implements StravaCacheableEntity<String> {
 	 */
 	@Override
 	public String toString() {
-		return "StravaGear [id=" + this.id + ", primary=" + this.primary + ", name=" + this.name + ", distance=" + this.distance //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ ", brandName=" //$NON-NLS-1$
-				+ this.brandName + ", modelName=" + this.modelName + ", frameType=" + this.frameType + ", description=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ this.description + ", resourceState=" //$NON-NLS-1$
-				+ this.resourceState + ", gearType=" + this.gearType + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaGear [id=" + this.id + ", primary=" + this.primary + ", name=" + this.name + ", distance=" + this.distance
+				+ ", brandName=" 
+				+ this.brandName + ", modelName=" + this.modelName + ", frameType=" + this.frameType + ", description="
+				+ this.description + ", resourceState=" 
+				+ this.resourceState + ", gearType=" + this.gearType + "]";
 	}
 }

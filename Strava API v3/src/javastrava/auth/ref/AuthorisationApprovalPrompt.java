@@ -25,19 +25,19 @@ public enum AuthorisationApprovalPrompt {
 	 * Forces Strava's authorisation process to show the authorisation prompt page, even if the user has already authorised the application with the requested authorisation scope(s)
 	 * </p>
 	 */
-	FORCE(StravaConfig.string("AuthorisationApprovalPrompt.force")),  //$NON-NLS-1$
+	FORCE(StravaConfig.string("AuthorisationApprovalPrompt.force")),  
 	/**
 	 * <p>
 	 * Tells Strava's authorisation process not to show the authorisation prompt page if the user hqs already authorised the application with the requested authorisation scope(s)
 	 * </p>
 	 */
-	AUTO(StravaConfig.string("AuthorisationApprovalPrompt.auto")),  //$NON-NLS-1$
+	AUTO(StravaConfig.string("AuthorisationApprovalPrompt.auto")),  
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown")); //$NON-NLS-1$
+	UNKNOWN(StravaConfig.string("Common.unknown")); 
 	/**
 	 * <p>Used by {@link AuthorisationApprovalPromptSerializer#deserialize(com.google.gson.JsonElement, java.lang.reflect.Type, com.google.gson.JsonDeserializationContext)} when deserialising JSON returned by the Strava API</p>
 	 * @param id The text representation returned by Strava
@@ -63,7 +63,7 @@ public enum AuthorisationApprovalPrompt {
 	 * </p>
 	 * @param id The identifier of the approval prompt
 	 */
-	private AuthorisationApprovalPrompt(final String id) {
+    AuthorisationApprovalPrompt(final String id) {
 		this.id = id;
 	}
 

@@ -13,15 +13,15 @@ public enum StravaPhotoSource implements StravaReferenceType<Integer>{
 	/**
 	 * Photo uploaded directly to Strava
 	 */
-	STRAVA(StravaConfig.integer("StravaPhotoSource.strava"),Messages.string("StravaPhotoSource.strava.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	STRAVA(StravaConfig.integer("StravaPhotoSource.strava"),Messages.string("StravaPhotoSource.strava.description")),
 	/**
 	 * Photo from Instagram
 	 */
-	INSTAGRAM(StravaConfig.integer("StravaPhotoSource.instagram"),Messages.string("StravaPhotoSource.instagram.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	INSTAGRAM(StravaConfig.integer("StravaPhotoSource.instagram"),Messages.string("StravaPhotoSource.instagram.description")),
 	/**
 	 * Unknown
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"),Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"),Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -53,7 +53,7 @@ public enum StravaPhotoSource implements StravaReferenceType<Integer>{
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaPhotoSource(final Integer id, final String description) {
+    StravaPhotoSource(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

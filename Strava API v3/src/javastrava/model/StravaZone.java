@@ -51,13 +51,8 @@ public class StravaZone implements StravaEntity {
 			return false;
 		}
 		if (this.min == null) {
-			if (other.min != null) {
-				return false;
-			}
-		} else if (!this.min.equals(other.min)) {
-			return false;
-		}
-		return true;
+			return other.min == null;
+		} else return this.min.equals(other.min);
 	}
 
 	/**
@@ -116,7 +111,7 @@ public class StravaZone implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaZone [min=" + this.min + ", max=" + this.max + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "StravaZone [min=" + this.min + ", max=" + this.max + "]";
 	}
 
 }

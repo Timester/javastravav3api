@@ -62,14 +62,9 @@ public class StravaAchievement implements StravaEntity {
 			return false;
 		}
 		if (this.typeId == null) {
-			if (other.typeId != null) {
-				return false;
-			}
-		} else if (!this.typeId.equals(other.typeId)) {
-			return false;
-		}
-		return true;
-	}
+            return other.typeId == null;
+		} else return this.typeId.equals(other.typeId);
+    }
 
 	/**
 	 * @return the rank
@@ -139,6 +134,6 @@ public class StravaAchievement implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaAchievement [typeId=" + this.typeId + ", type=" + this.type + ", rank=" + this.rank + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaAchievement [typeId=" + this.typeId + ", type=" + this.type + ", rank=" + this.rank + "]";
 	}
 }

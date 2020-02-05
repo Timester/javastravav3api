@@ -22,8 +22,7 @@ public class RunningRaceTypeSerializer implements JsonSerializer<StravaRunningRa
 	@Override
 	public StravaRunningRaceType deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {
 		try {
-			final StravaRunningRaceType raceType = StravaRunningRaceType.create(Integer.valueOf(json.getAsInt()));
-			return raceType;
+			return StravaRunningRaceType.create(json.getAsInt());
 		} catch (final NumberFormatException e) {
 			throw new JsonParseException(e);
 		}

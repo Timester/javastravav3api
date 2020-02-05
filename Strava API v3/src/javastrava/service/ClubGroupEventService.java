@@ -45,7 +45,7 @@ public interface ClubGroupEventService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If the authenticated athlete or the token does not have permission to delete the event
 	 */
-	public void deleteEvent(Integer id) throws NotFoundException, UnauthorizedException;
+    void deleteEvent(Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -59,7 +59,7 @@ public interface ClubGroupEventService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If the authenticated athlete or the token does not have permission to delete the event
 	 */
-	public void deleteEvent(StravaClubEvent event) throws NotFoundException, UnauthorizedException;
+    void deleteEvent(StravaClubEvent event) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -74,7 +74,7 @@ public interface ClubGroupEventService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If the authenticated athlete or the token does not have permission to delete the event
 	 */
-	public CompletableFuture<Void> deleteEventAsync(Integer id) throws NotFoundException, UnauthorizedException;
+    CompletableFuture<Void> deleteEventAsync(Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -89,7 +89,7 @@ public interface ClubGroupEventService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If the authenticated athlete or the token does not have permission to delete the event
 	 */
-	public CompletableFuture<Void> deleteEventAsync(StravaClubEvent event) throws NotFoundException, UnauthorizedException;
+    CompletableFuture<Void> deleteEventAsync(StravaClubEvent event) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -100,7 +100,7 @@ public interface ClubGroupEventService extends StravaService {
 	 *            The identifier of the group event
 	 * @return The group event, or <code>null</code> if the event does not exist, or an event with resource state set to PRIVATE if the club is private
 	 */
-	public StravaClubEvent getEvent(Integer id);
+    StravaClubEvent getEvent(Integer id);
 
 	/**
 	 * <p>
@@ -112,7 +112,7 @@ public interface ClubGroupEventService extends StravaService {
 	 * @return The response indicating whether the authenticated athlete has joined the event, inside a completable future. Returned event will be <code>null</code> if the event with the given id
 	 *         doesn't exist
 	 */
-	public CompletableFuture<StravaClubEvent> getEventAsync(Integer id);
+    CompletableFuture<StravaClubEvent> getEventAsync(Integer id);
 
 	/**
 	 * <p>
@@ -124,7 +124,7 @@ public interface ClubGroupEventService extends StravaService {
 	 *            The identifier of the group event
 	 * @return The response indicating whether the authenticated athlete has joined the event
 	 */
-	public StravaClubEventJoinResponse joinEvent(Integer id);
+    StravaClubEventJoinResponse joinEvent(Integer id);
 
 	/**
 	 * <p>
@@ -136,7 +136,7 @@ public interface ClubGroupEventService extends StravaService {
 	 *            The identifier of the group event
 	 * @return The response indicating whether the authenticated athlete has joined the event, inside a completable future
 	 */
-	public CompletableFuture<StravaClubEventJoinResponse> joinEventAsync(Integer id);
+    CompletableFuture<StravaClubEventJoinResponse> joinEventAsync(Integer id);
 
 	/**
 	 * <p>
@@ -148,7 +148,7 @@ public interface ClubGroupEventService extends StravaService {
 	 *            The identifier of the group event
 	 * @return The response indicating whether the authenticated athlete has joined the event
 	 */
-	public StravaClubEventJoinResponse leaveEvent(Integer id);
+    StravaClubEventJoinResponse leaveEvent(Integer id);
 
 	/**
 	 * <p>
@@ -160,7 +160,7 @@ public interface ClubGroupEventService extends StravaService {
 	 *            The identifier of the group event
 	 * @return The response indicating whether the authenticated athlete has joined the event, inside a completable future
 	 */
-	public CompletableFuture<StravaClubEventJoinResponse> leaveEventAsync(Integer id);
+    CompletableFuture<StravaClubEventJoinResponse> leaveEventAsync(Integer id);
 
 	/**
 	 * <p>
@@ -187,7 +187,7 @@ public interface ClubGroupEventService extends StravaService {
 	 *            The identifier of the event for which athletes should be listed
 	 * @return Array of athletes who have joined the event
 	 */
-	public List<StravaAthlete> listAllEventJoinedAthletes(Integer eventId);
+    List<StravaAthlete> listAllEventJoinedAthletes(Integer eventId);
 
 	/**
 	 * <p>
@@ -214,7 +214,7 @@ public interface ClubGroupEventService extends StravaService {
 	 *            The identifier of the event for which athletes should be listed
 	 * @return Array of athletes who have joined the event
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAllEventJoinedAthletesAsync(Integer eventId);
+    CompletableFuture<List<StravaAthlete>> listAllEventJoinedAthletesAsync(Integer eventId);
 
 	/**
 	 * <p>
@@ -243,7 +243,7 @@ public interface ClubGroupEventService extends StravaService {
 	 *            Paging instruction
 	 * @return Array of athletes who have joined the event
 	 */
-	public List<StravaAthlete> listEventJoinedAthletes(Integer eventId, Paging pagingInstruction);
+    List<StravaAthlete> listEventJoinedAthletes(Integer eventId, Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -262,5 +262,5 @@ public interface ClubGroupEventService extends StravaService {
 	 *            Paging instruction
 	 * @return Array of athletes who have joined the event
 	 */
-	public CompletableFuture<List<StravaAthlete>> listEventJoinedAthletesAsync(Integer eventId, Paging pagingInstruction);
+    CompletableFuture<List<StravaAthlete>> listEventJoinedAthletesAsync(Integer eventId, Paging pagingInstruction);
 }

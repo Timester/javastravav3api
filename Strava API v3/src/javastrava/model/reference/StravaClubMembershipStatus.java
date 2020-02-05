@@ -14,17 +14,17 @@ public enum StravaClubMembershipStatus implements StravaReferenceType<String> {
 	/**
 	 * Current club member
 	 */
-	MEMBER(StravaConfig.string("StravaClubMembershipStatus.member"), Messages.string("StravaClubMembershipStatus.member.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	MEMBER(StravaConfig.string("StravaClubMembershipStatus.member"), Messages.string("StravaClubMembershipStatus.member.description")),
 
 	/**
 	 * Pending membership approval
 	 */
-	PENDING(StravaConfig.string("StravaClubMembershipStatus.pending"), Messages.string("StravaClubMembershipStatus.pending.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	PENDING(StravaConfig.string("StravaClubMembershipStatus.pending"), Messages.string("StravaClubMembershipStatus.pending.description")),
 
 	/**
 	 * Unknown status
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * @param id
@@ -57,7 +57,7 @@ public enum StravaClubMembershipStatus implements StravaReferenceType<String> {
 	 * @param id The id
 	 * @param description The description
 	 */
-	private StravaClubMembershipStatus(final String id, final String description) {
+    StravaClubMembershipStatus(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

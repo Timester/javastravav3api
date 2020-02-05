@@ -167,14 +167,9 @@ public class StravaStatistics implements StravaEntity {
 			return false;
 		}
 		if (this.ytdSwimTotals == null) {
-			if (other.ytdSwimTotals != null) {
-				return false;
-			}
-		} else if (!this.ytdSwimTotals.equals(other.ytdSwimTotals)) {
-			return false;
-		}
-		return true;
-	}
+            return other.ytdSwimTotals == null;
+		} else return this.ytdSwimTotals.equals(other.ytdSwimTotals);
+    }
 
 	/**
 	 * @return the allRideTotals
@@ -380,11 +375,11 @@ public class StravaStatistics implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaStatistics [biggestRideDistance=" + this.biggestRideDistance + ", biggestClimbElevationGain=" + this.biggestClimbElevationGain + ", recentRideTotals=" + this.recentRideTotals //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", recentRunTotals=" + this.recentRunTotals + ", recentSwimTotals=" + this.recentSwimTotals + ", ytdRideTotals=" + this.ytdRideTotals + ", ytdRunTotals=" + this.ytdRunTotals //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ ", ytdSwimTotals=" //$NON-NLS-1$
-				+ this.ytdSwimTotals + ", allRideTotals=" + this.allRideTotals + ", allRunTotals=" + this.allRunTotals + ", allSwimTotals=" + this.allSwimTotals + ", resourceState=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ this.resourceState + "]"; //$NON-NLS-1$
+		return "StravaStatistics [biggestRideDistance=" + this.biggestRideDistance + ", biggestClimbElevationGain=" + this.biggestClimbElevationGain + ", recentRideTotals=" + this.recentRideTotals
+				+ ", recentRunTotals=" + this.recentRunTotals + ", recentSwimTotals=" + this.recentSwimTotals + ", ytdRideTotals=" + this.ytdRideTotals + ", ytdRunTotals=" + this.ytdRunTotals
+				+ ", ytdSwimTotals=" 
+				+ this.ytdSwimTotals + ", allRideTotals=" + this.allRideTotals + ", allRunTotals=" + this.allRunTotals + ", allSwimTotals=" + this.allSwimTotals + ", resourceState="
+				+ this.resourceState + "]"; 
 	}
 
 }

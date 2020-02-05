@@ -24,7 +24,7 @@ public class StravaAPIFuture<T> {
 	 * No argument constructor provides the wrapped future
 	 */
 	public StravaAPIFuture() {
-		this.future = new CompletableFuture<T>();
+		this.future = new CompletableFuture<>();
 	}
 
 	/**
@@ -53,9 +53,7 @@ public class StravaAPIFuture<T> {
 			result = this.future.get();
 		} catch (final ExecutionException e) {
 			throw (RuntimeException) e.getCause();
-		} catch (final CancellationException e) {
-			throw new StravaUnknownAPIException(null, null, e);
-		} catch (InterruptedException e) {
+		} catch (final CancellationException | InterruptedException e) {
 			throw new StravaUnknownAPIException(null, null, e);
 		}
 		return result;

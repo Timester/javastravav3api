@@ -37,7 +37,7 @@ public interface RouteAPI {
 	 *             If the route is private and the token has {@link AuthorisationScope#VIEW_PRIVATE view_private}
 	 */
 	@GET("/routes/{id}")
-	public StravaRoute getRoute(@Path("id") Integer routeId) throws NotFoundException, BadRequestException, UnauthorizedException;
+    StravaRoute getRoute(@Path("id") Integer routeId) throws NotFoundException, BadRequestException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -57,7 +57,7 @@ public interface RouteAPI {
 	 *             If the route is private and the token has {@link AuthorisationScope#VIEW_PRIVATE view_private}
 	 */
 	@GET("/routes/{id}")
-	public void getRoute(@Path("id") Integer routeId, StravaAPICallback<StravaRoute> callback);
+    void getRoute(@Path("id") Integer routeId, StravaAPICallback<StravaRoute> callback);
 
 	/**
 	 * <p>
@@ -76,7 +76,7 @@ public interface RouteAPI {
 	 *             If the route is private and the token has {@link AuthorisationScope#VIEW_PRIVATE view_private}
 	 */
 	@GET("/routes/{id}")
-	public Response getRouteRaw(@Path("id") Integer routeId) throws NotFoundException, BadRequestException, UnauthorizedException;
+    Response getRouteRaw(@Path("id") Integer routeId) throws NotFoundException, BadRequestException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -101,7 +101,7 @@ public interface RouteAPI {
 	 *             If the paging parameters are invalid
 	 */
 	@GET("/athletes/{id}/routes")
-	public StravaRoute[] listAthleteRoutes(@Path("id") Integer id, @Query("page") Integer page, @Query("per_page") Integer perPage) throws NotFoundException, BadRequestException;
+    StravaRoute[] listAthleteRoutes(@Path("id") Integer id, @Query("page") Integer page, @Query("per_page") Integer perPage) throws NotFoundException, BadRequestException;
 
 	/**
 	 * <p>
@@ -127,7 +127,7 @@ public interface RouteAPI {
 	 *             If the paging parameters are invalid
 	 */
 	@GET("/athletes/{id}/routes")
-	public void listAthleteRoutes(@Path("id") Integer id, @Query("page") Integer page, @Query("per_page") Integer perPage, StravaAPICallback<StravaRoute[]> callback)
+    void listAthleteRoutes(@Path("id") Integer id, @Query("page") Integer page, @Query("per_page") Integer perPage, StravaAPICallback<StravaRoute[]> callback)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -153,5 +153,5 @@ public interface RouteAPI {
 	 * @return The route
 	 */
 	@GET("/athletes/{id}/routes")
-	public Response listAthleteRoutesRaw(@Path("id") Integer id, @Query("page") Integer page, @Query("per_page") Integer perPage) throws NotFoundException, BadRequestException;
+    Response listAthleteRoutesRaw(@Path("id") Integer id, @Query("page") Integer page, @Query("per_page") Integer perPage) throws NotFoundException, BadRequestException;
 }

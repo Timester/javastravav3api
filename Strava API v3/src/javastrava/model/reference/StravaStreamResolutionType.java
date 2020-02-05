@@ -17,21 +17,21 @@ public enum StravaStreamResolutionType implements StravaReferenceType<String> {
 	/**
 	 * Low resolution (100 points)
 	 */
-	LOW(StravaConfig.string("StravaStreamResolutionType.low"), Messages.string("StravaStreamResolutionType.low.description"), 100), //$NON-NLS-1$ //$NON-NLS-2$
+	LOW(StravaConfig.string("StravaStreamResolutionType.low"), Messages.string("StravaStreamResolutionType.low.description"), 100),
 	/**
 	 * Medium resolution (1000 points)
 	 */
-	MEDIUM(StravaConfig.string("StravaStreamResolutionType.medium"), Messages.string("StravaStreamResolutionType.medium.description"), 1000), //$NON-NLS-1$ //$NON-NLS-2$
+	MEDIUM(StravaConfig.string("StravaStreamResolutionType.medium"), Messages.string("StravaStreamResolutionType.medium.description"), 1000),
 	/**
 	 * High resolution (10000 points)
 	 */
-	HIGH(StravaConfig.string("StravaStreamResolutionType.high"), Messages.string("StravaStreamResolutionType.high.description"), 10000), //$NON-NLS-1$ //$NON-NLS-2$
+	HIGH(StravaConfig.string("StravaStreamResolutionType.high"), Messages.string("StravaStreamResolutionType.high.description"), 10000),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"), 0); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"), 0);
 
 	/**
 	 * Used by JSON deserialisation
@@ -67,7 +67,7 @@ public enum StravaStreamResolutionType implements StravaReferenceType<String> {
 	 * @param description Description
 	 * @param size Maximum size in a stream with this resolution
 	 */
-	private StravaStreamResolutionType(final String id, final String description, final int size) {
+    StravaStreamResolutionType(final String id, final String description, final int size) {
 		this.id = id;
 		this.description = description;
 		this.size = size;

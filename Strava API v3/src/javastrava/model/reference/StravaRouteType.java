@@ -14,15 +14,15 @@ public enum StravaRouteType implements StravaReferenceType<Integer> {
 	/**
 	 * Ride
 	 */
-	RIDE(StravaConfig.integer("StravaRouteType.ride"), Messages.string("StravaRouteType.ride.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	RIDE(StravaConfig.integer("StravaRouteType.ride"), Messages.string("StravaRouteType.ride.description")),
 	/**
 	 * Run
 	 */
-	RUN(StravaConfig.integer("StravaRouteType.run"), Messages.string("StravaRouteType.run.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	RUN(StravaConfig.integer("StravaRouteType.run"), Messages.string("StravaRouteType.run.description")),
 	/**
 	 * Unknown type
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * @param id
@@ -52,7 +52,7 @@ public enum StravaRouteType implements StravaReferenceType<Integer> {
 	 * @param description
 	 *            Description
 	 */
-	private StravaRouteType(final Integer id, final String description) {
+    StravaRouteType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

@@ -83,7 +83,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	private ClubServiceImpl(final Token token) {
 		super(token);
-		this.clubCache = new StravaCacheImpl<StravaClub, Integer>(StravaClub.class, token);
+		this.clubCache = new StravaCacheImpl<>(StravaClub.class, token);
 	}
 
 	/**
@@ -129,9 +129,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<StravaClub> getClubAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return getClub(clubId);
-		});
+		return StravaServiceImpl.future(() -> getClub(clubId));
 	}
 
 	/**
@@ -156,9 +154,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<StravaClubMembershipResponse> joinClubAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return joinClub(clubId);
-		});
+		return StravaServiceImpl.future(() -> joinClub(clubId));
 	}
 
 	/**
@@ -183,9 +179,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<StravaClubMembershipResponse> leaveClubAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return leaveClub(clubId);
-		});
+		return StravaServiceImpl.future(() -> leaveClub(clubId));
 	}
 
 	/**
@@ -201,9 +195,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listAllClubAdminsAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return listAllClubAdmins(clubId);
-		});
+		return StravaServiceImpl.future(() -> listAllClubAdmins(clubId));
 	}
 
 	/**
@@ -220,9 +212,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listAllClubMembersAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return listAllClubMembers(clubId);
-		});
+		return StravaServiceImpl.future(() -> listAllClubMembers(clubId));
 	}
 
 	/**
@@ -238,9 +228,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaActivity>> listAllRecentClubActivitiesAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return listAllRecentClubActivities(clubId);
-		});
+		return StravaServiceImpl.future(() -> listAllRecentClubActivities(clubId));
 	}
 
 	/**
@@ -256,9 +244,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaClub>> listAuthenticatedAthleteClubsAsync() {
-		return StravaServiceImpl.future(() -> {
-			return listAuthenticatedAthleteClubs();
-		});
+		return StravaServiceImpl.future(this::listAuthenticatedAthleteClubs);
 	}
 
 	/**
@@ -279,7 +265,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaAthlete>();
+			return new ArrayList<>();
 		}
 	}
 
@@ -288,9 +274,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listClubAdminsAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return listClubAdmins(clubId);
-		});
+		return StravaServiceImpl.future(() -> listClubAdmins(clubId));
 	}
 
 	/**
@@ -298,9 +282,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listClubAdminsAsync(final Integer clubId, final Paging paging) {
-		return StravaServiceImpl.future(() -> {
-			return listClubAdmins(clubId, paging);
-		});
+		return StravaServiceImpl.future(() -> listClubAdmins(clubId, paging));
 	}
 
 	/**
@@ -314,7 +296,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaClubAnnouncement>();
+			return new ArrayList<>();
 		}
 		return announcements;
 	}
@@ -324,9 +306,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaClubAnnouncement>> listClubAnnouncementsAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return listClubAnnouncements(clubId);
-		});
+		return StravaServiceImpl.future(() -> listClubAnnouncements(clubId));
 	}
 
 	/**
@@ -340,7 +320,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaClubEvent>();
+			return new ArrayList<>();
 		}
 		return events;
 	}
@@ -350,9 +330,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaClubEvent>> listClubGroupEventsAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return Arrays.asList(this.api.listClubGroupEvents(clubId));
-		});
+		return StravaServiceImpl.future(() -> Arrays.asList(this.api.listClubGroupEvents(clubId)));
 	}
 
 	/**
@@ -373,7 +351,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaAthlete>();
+			return new ArrayList<>();
 		}
 	}
 
@@ -382,9 +360,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listClubMembersAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return listClubMembers(clubId);
-		});
+		return StravaServiceImpl.future(() -> listClubMembers(clubId));
 	}
 
 	/**
@@ -392,9 +368,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listClubMembersAsync(final Integer clubId, final Paging pagingInstruction) {
-		return StravaServiceImpl.future(() -> {
-			return listClubMembers(clubId, pagingInstruction);
-		});
+		return StravaServiceImpl.future(() -> listClubMembers(clubId, pagingInstruction));
 
 	}
 
@@ -412,7 +386,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	@Override
 	public List<StravaActivity> listRecentClubActivities(final Integer id, final Paging pagingInstruction) {
 		if (id == null) {
-			throw new IllegalArgumentException("Club id is required"); //$NON-NLS-1$
+			throw new IllegalArgumentException("Club id is required");
 		}
 
 		// Check that the club exists
@@ -433,12 +407,12 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaActivity>();
+			return new ArrayList<>();
 		}
 
 		// Strava API returns NULL instead of an empty array
 		if (activities == null) {
-			activities = new ArrayList<StravaActivity>();
+			activities = new ArrayList<>();
 		}
 		return PrivacyUtils.handlePrivateActivities(activities, this.getToken());
 	}
@@ -448,9 +422,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaActivity>> listRecentClubActivitiesAsync(final Integer clubId) {
-		return StravaServiceImpl.future(() -> {
-			return listRecentClubActivities(clubId);
-		});
+		return StravaServiceImpl.future(() -> listRecentClubActivities(clubId));
 	}
 
 	/**
@@ -458,9 +430,7 @@ public class ClubServiceImpl extends StravaServiceImpl implements ClubService {
 	 */
 	@Override
 	public CompletableFuture<List<StravaActivity>> listRecentClubActivitiesAsync(final Integer clubId, final Paging pagingInstruction) {
-		return StravaServiceImpl.future(() -> {
-			return listRecentClubActivities(clubId, pagingInstruction);
-		});
+		return StravaServiceImpl.future(() -> listRecentClubActivities(clubId, pagingInstruction));
 	}
 
 }

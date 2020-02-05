@@ -38,7 +38,7 @@ public class StravaCacheImpl<T extends StravaCacheableEntity<U>, U> implements S
      */
     public StravaCacheImpl(final Class<T> class1, final Token token) {
         this.token = token;
-        this.cache = JCS.getGroupCacheInstance("default"); //$NON-NLS-1$
+        this.cache = JCS.getGroupCacheInstance("default"); 
         this.class1 = class1;
         removeAll();
     }
@@ -67,7 +67,7 @@ public class StravaCacheImpl<T extends StravaCacheableEntity<U>, U> implements S
      * @return The group name, based on the token and the class being stored
      */
     private String groupName() {
-        return this.class1.getName() + "::" + this.token.getAccessToken(); //$NON-NLS-1$
+        return this.class1.getName() + "::" + this.token.getAccessToken(); 
     }
 
     @Override

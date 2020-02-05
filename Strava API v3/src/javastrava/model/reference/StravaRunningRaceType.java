@@ -17,23 +17,23 @@ public enum StravaRunningRaceType implements StravaReferenceType<Integer> {
 	/**
 	 * Road race
 	 */
-	ROAD(StravaConfig.integer("StravaRunningRaceType.road"), Messages.string("StravaRunningRaceType.road.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	ROAD(StravaConfig.integer("StravaRunningRaceType.road"), Messages.string("StravaRunningRaceType.road.description")),
 	/**
 	 * Trail running race
 	 */
-	TRAIL(StravaConfig.integer("StravaRunningRaceType.trail"), Messages.string("StravaRunningRaceType.trail.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TRAIL(StravaConfig.integer("StravaRunningRaceType.trail"), Messages.string("StravaRunningRaceType.trail.description")),
 	/**
 	 * Track race
 	 */
-	TRACK(StravaConfig.integer("StravaRunningRaceType.track"), Messages.string("StravaRunningRaceType.track.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TRACK(StravaConfig.integer("StravaRunningRaceType.track"), Messages.string("StravaRunningRaceType.track.description")),
 	/**
 	 * Cross-country race
 	 */
-	CROSS_COUNTRY(StravaConfig.integer("StravaRunningRaceType.xc"), Messages.string("StravaRunningRaceType.xc.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CROSS_COUNTRY(StravaConfig.integer("StravaRunningRaceType.xc"), Messages.string("StravaRunningRaceType.xc.description")),
 	/**
 	 * Unknown type
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -71,7 +71,7 @@ public enum StravaRunningRaceType implements StravaReferenceType<Integer> {
 	 * @param description
 	 *            Description
 	 */
-	private StravaRunningRaceType(final Integer id, final String description) {
+    StravaRunningRaceType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

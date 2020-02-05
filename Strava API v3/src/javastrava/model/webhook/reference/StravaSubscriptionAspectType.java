@@ -12,11 +12,11 @@ public enum StravaSubscriptionAspectType implements StravaReferenceType<Integer>
 	/**
 	 * Creation of an object (e.g.for activities, event is triggered when an activity is uploaded or manually created
 	 */
-	CREATE(StravaConfig.integer("StravaSubscriptionAspectType.create"), Messages.string("StravaSubscriptionAspectType.create.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CREATE(StravaConfig.integer("StravaSubscriptionAspectType.create"), Messages.string("StravaSubscriptionAspectType.create.description")),
 	/**
 	 * Unknown - should never occur but may do if Strava API implementation has changed
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON serialisation
@@ -45,7 +45,7 @@ public enum StravaSubscriptionAspectType implements StravaReferenceType<Integer>
 	 * @param id Unique id
 	 * @param description Description
 	 */
-	private StravaSubscriptionAspectType(final Integer id, final String description) {
+    StravaSubscriptionAspectType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

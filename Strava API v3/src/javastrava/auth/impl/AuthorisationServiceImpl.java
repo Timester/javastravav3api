@@ -33,16 +33,20 @@ public class AuthorisationServiceImpl implements AuthorisationService {
 
 	@Override
 	public Token getTokenForAuthorizedUser(final Integer clientId, final String clientSecret, Integer userId, String refreshToken) {
-		Token token = tokenManager.retrieveToken(userId);
+		Token cachedToken = tokenManager.retrieveToken(userId);
 
-		if (isExpired(token)) {
+		if (cachedToken == null || isExpired(cachedToken)) {
 			Token newToken = getNewToken(clientId, clientSecret, refreshToken);
-			token.setAccessToken(newToken.getAccessToken());
-			token.setRefreshToken(newToken.getRefreshToken());
-			token.setExpiresAt(newToken.getExpiresAt());
+			if (cachedToken == null) {
+				cachedToken = newToken;
+			} else {
+				cachedToken.setAccessToken(newToken.getAccessToken());
+				cachedToken.setRefreshToken(newToken.getRefreshToken());
+				cachedToken.setExpiresAt(newToken.getExpiresAt());
+			}
 		}
 
-		return token;
+		return cachedToken;
 	}
 
 	private Token getNewToken(final Integer clientId, final String clientSecret, final String refreshToken) {

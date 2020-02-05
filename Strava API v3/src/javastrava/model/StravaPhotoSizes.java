@@ -70,13 +70,8 @@ public class StravaPhotoSizes implements StravaEntity {
 			return false;
 		}
 		if (this.url600 == null) {
-			if (other.url600 != null) {
-				return false;
-			}
-		} else if (!this.url600.equals(other.url600)) {
-			return false;
-		}
-		return true;
+			return other.url600 == null;
+		} else return this.url600.equals(other.url600);
 	}
 
 	@Override
@@ -146,7 +141,7 @@ public class StravaPhotoSizes implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaPhotoSizes [size0=" + this.size0 + ", url100=" + this.url100 + ", url600=" + this.url600 + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaPhotoSizes [size0=" + this.size0 + ", url100=" + this.url100 + ", url600=" + this.url600 + "]";
 	}
 
 }

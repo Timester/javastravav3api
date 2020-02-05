@@ -60,7 +60,7 @@ public class ChallengeServiceImpl extends StravaServiceImpl implements Challenge
 	 */
 	private ChallengeServiceImpl(Token token) {
 		super(token);
-		this.cache = new StravaCacheImpl<StravaChallenge, Integer>(StravaChallenge.class, token);
+		this.cache = new StravaCacheImpl<>(StravaChallenge.class, token);
 	}
 
 	@Override
@@ -95,9 +95,7 @@ public class ChallengeServiceImpl extends StravaServiceImpl implements Challenge
 
 	@Override
 	public CompletableFuture<StravaChallenge> getChallengeAsync(Integer id) {
-		return StravaServiceImpl.future(() -> {
-			return getChallenge(id);
-		});
+		return StravaServiceImpl.future(() -> getChallenge(id));
 	}
 
 	@Override
@@ -133,9 +131,7 @@ public class ChallengeServiceImpl extends StravaServiceImpl implements Challenge
 
 	@Override
 	public CompletableFuture<List<StravaChallenge>> listJoinedChallengesAsync() {
-		return StravaServiceImpl.future(() -> {
-			return listJoinedChallenges();
-		});
+		return StravaServiceImpl.future(this::listJoinedChallenges);
 	}
 
 }

@@ -11,7 +11,6 @@ import javastrava.model.StravaGear;
 import javastrava.model.StravaSegment;
 import javastrava.model.StravaSegmentEffort;
 import javastrava.model.StravaSegmentLeaderboard;
-import javastrava.model.StravaSegmentLeaderboardEntry;
 import javastrava.model.reference.StravaResourceState;
 
 /**
@@ -64,7 +63,7 @@ public class PrivacyUtils {
 			return null;
 		}
 
-		final List<StravaActivity> returnedActivities = new ArrayList<StravaActivity>();
+		final List<StravaActivity> returnedActivities = new ArrayList<>();
 		for (final StravaActivity activity : activities) {
 			// If the activity is not private then it's OK to include
 			if (!activityIsPrivate(activity)) {
@@ -157,7 +156,7 @@ public class PrivacyUtils {
 			return null;
 		}
 
-		final List<StravaSegment> returnedSegments = new ArrayList<StravaSegment>();
+		final List<StravaSegment> returnedSegments = new ArrayList<>();
 		for (final StravaSegment segment : segments) {
 			// If the segment is not flagged as private then its ok to include
 			if (!segmentIsPrivate(segment)) {
@@ -280,11 +279,11 @@ public class PrivacyUtils {
 	public static StravaSegmentLeaderboard privateSegmentLeaderboard() {
 		StravaSegmentLeaderboard leaderboard = new StravaSegmentLeaderboard();
 		leaderboard = new StravaSegmentLeaderboard();
-		leaderboard.setNeighborhoodCount(Integer.valueOf(1));
-		leaderboard.setAthleteEntries(new ArrayList<StravaSegmentLeaderboardEntry>());
-		leaderboard.setEntries(new ArrayList<StravaSegmentLeaderboardEntry>());
-		leaderboard.setEffortCount(Integer.valueOf(0));
-		leaderboard.setEntryCount(Integer.valueOf(0));
+		leaderboard.setNeighborhoodCount(1);
+		leaderboard.setAthleteEntries(new ArrayList<>());
+		leaderboard.setEntries(new ArrayList<>());
+		leaderboard.setEffortCount(0);
+		leaderboard.setEntryCount(0);
 		leaderboard.setResourceState(StravaResourceState.PRIVATE);
 		return leaderboard;
 

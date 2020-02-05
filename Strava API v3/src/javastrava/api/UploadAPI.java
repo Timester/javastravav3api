@@ -30,7 +30,7 @@ public interface UploadAPI {
 	 * @return Upload response containing the upload id and activity id and current status of the upload
 	 */
 	@GET("/uploads/{id}")
-	public StravaUploadResponse checkUploadStatus(@Path("id") final Long uploadId);
+    StravaUploadResponse checkUploadStatus(@Path("id") final Long uploadId);
 
 	/**
 	 * @see javastrava.service.UploadService#checkUploadStatus(Long)
@@ -42,7 +42,7 @@ public interface UploadAPI {
 	 *            The callback to execute on completion
 	 */
 	@GET("/uploads/{id}")
-	public void checkUploadStatus(@Path("id") final Long uploadId, StravaAPICallback<StravaUploadResponse> callback);
+    void checkUploadStatus(@Path("id") final Long uploadId, StravaAPICallback<StravaUploadResponse> callback);
 
 	/**
 	 * @see javastrava.service.UploadService#upload(StravaActivityType, String, String, Boolean, Boolean, Boolean, String,
@@ -73,10 +73,10 @@ public interface UploadAPI {
 	 */
 	@Multipart
 	@POST("/uploads")
-	public StravaUploadResponse upload(@Part("activity_type") final StravaActivityType activityType,
-			@Part("name") final String name, @Part("description") final String description, @Part("private") final Boolean _private,
-			@Part("trainer") final Boolean trainer, @Part("commute") Boolean commute, @Part("data_type") final String dataType,
-			@Part("external_id") final String externalId, @Part("file") final TypedFile file) throws BadRequestException;
+    StravaUploadResponse upload(@Part("activity_type") final StravaActivityType activityType,
+                                @Part("name") final String name, @Part("description") final String description, @Part("private") final Boolean _private,
+                                @Part("trainer") final Boolean trainer, @Part("commute") Boolean commute, @Part("data_type") final String dataType,
+                                @Part("external_id") final String externalId, @Part("file") final TypedFile file) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.UploadService#upload(StravaActivityType, String, String, Boolean, Boolean, Boolean, String,
@@ -108,10 +108,10 @@ public interface UploadAPI {
 	 */
 	@Multipart
 	@POST("/uploads")
-	public void upload(@Part("activity_type") final StravaActivityType activityType, @Part("name") final String name,
-			@Part("description") final String description, @Part("private") final Boolean _private,
-			@Part("trainer") final Boolean trainer, @Part("commute") Boolean commute, @Part("data_type") final String dataType,
-			@Part("external_id") final String externalId, @Part("file") final TypedFile file,
-			final StravaAPICallback<StravaUploadResponse> callback) throws BadRequestException;
+    void upload(@Part("activity_type") final StravaActivityType activityType, @Part("name") final String name,
+                @Part("description") final String description, @Part("private") final Boolean _private,
+                @Part("trainer") final Boolean trainer, @Part("commute") Boolean commute, @Part("data_type") final String dataType,
+                @Part("external_id") final String externalId, @Part("file") final TypedFile file,
+                final StravaAPICallback<StravaUploadResponse> callback) throws BadRequestException;
 
 }

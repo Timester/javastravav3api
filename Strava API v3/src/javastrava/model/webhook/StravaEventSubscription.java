@@ -111,14 +111,9 @@ public class StravaEventSubscription implements StravaEntity {
 			return false;
 		}
 		if (this.updatedAt == null) {
-			if (other.updatedAt != null) {
-				return false;
-			}
-		} else if (!this.updatedAt.equals(other.updatedAt)) {
-			return false;
-		}
-		return true;
-	}
+            return other.updatedAt == null;
+		} else return this.updatedAt.equals(other.updatedAt);
+    }
 
 	/**
 	 * @return the applicationId
@@ -252,9 +247,9 @@ public class StravaEventSubscription implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaEventSubscription [id=" + this.id + ", applicationId=" + this.applicationId + ", objectType=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ this.objectType + ", aspectType=" //$NON-NLS-1$
-				+ this.aspectType + ", callbackURL=" + this.callbackURL + ", createdAt=" + this.createdAt + ", updatedAt=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ this.updatedAt + "]"; //$NON-NLS-1$
+		return "StravaEventSubscription [id=" + this.id + ", applicationId=" + this.applicationId + ", objectType="
+				+ this.objectType + ", aspectType=" 
+				+ this.aspectType + ", callbackURL=" + this.callbackURL + ", createdAt=" + this.createdAt + ", updatedAt="
+				+ this.updatedAt + "]"; 
 	}
 }

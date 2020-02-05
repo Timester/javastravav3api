@@ -43,7 +43,7 @@ public interface SegmentEffortService extends StravaService {
 	 *            The id of the segment to be retrieved
 	 * @return Returns a detailed segment effort representation
 	 */
-	public StravaSegmentEffort getSegmentEffort(final Long segmentEffortId);
+    StravaSegmentEffort getSegmentEffort(final Long segmentEffortId);
 
 	/**
 	 * <p>
@@ -65,5 +65,5 @@ public interface SegmentEffortService extends StravaService {
 	 *            The id of the segment to be retrieved
 	 * @return Returns a detailed segment effort representation
 	 */
-	public CompletableFuture<StravaSegmentEffort> getSegmentEffortAsync(final Long segmentEffortId);
+    CompletableFuture<StravaSegmentEffort> getSegmentEffortAsync(final Long segmentEffortId);
 }

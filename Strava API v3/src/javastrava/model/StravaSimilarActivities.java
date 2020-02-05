@@ -134,14 +134,9 @@ public class StravaSimilarActivities implements StravaEntity {
 			return false;
 		}
 		if (this.trend == null) {
-			if (other.trend != null) {
-				return false;
-			}
-		} else if (!this.trend.equals(other.trend)) {
-			return false;
-		}
-		return true;
-	}
+            return other.trend == null;
+		} else return this.trend.equals(other.trend);
+    }
 
 	/**
 	 * @return the averageSpeed
@@ -307,10 +302,10 @@ public class StravaSimilarActivities implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaSimilarActivities [effortCount=" + this.effortCount + ", averageSpeed=" + this.averageSpeed + ", minAverageSpeed=" + this.minAverageSpeed + ", midAverageSpeed=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ this.midAverageSpeed + ", maxAverageSpeed=" + this.maxAverageSpeed + ", prRank=" + this.prRank + ", frequencyMilestone=" + this.frequencyMilestone + ", trend=" + this.trend //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ ", resourceState=" //$NON-NLS-1$
-				+ this.resourceState + "]"; //$NON-NLS-1$
+		return "StravaSimilarActivities [effortCount=" + this.effortCount + ", averageSpeed=" + this.averageSpeed + ", minAverageSpeed=" + this.minAverageSpeed + ", midAverageSpeed="
+				+ this.midAverageSpeed + ", maxAverageSpeed=" + this.maxAverageSpeed + ", prRank=" + this.prRank + ", frequencyMilestone=" + this.frequencyMilestone + ", trend=" + this.trend
+				+ ", resourceState=" 
+				+ this.resourceState + "]"; 
 	}
 
 }

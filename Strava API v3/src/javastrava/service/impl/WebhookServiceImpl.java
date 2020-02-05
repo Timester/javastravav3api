@@ -50,15 +50,12 @@ public class WebhookServiceImpl extends StravaServiceImpl implements WebhookServ
 
 	@Override
 	public CompletableFuture<StravaEventSubscription> createSubscriptionAsync(Integer clientId, String clientSecret, final StravaEventSubscription subscription, final String verifyToken) {
-		return StravaServiceImpl.future(() -> {
-			return this.api.createSubscription(clientId, clientSecret, subscription.getObjectType(), subscription.getAspectType(), subscription.getCallbackURL(), verifyToken);
-		});
+		return StravaServiceImpl.future(() -> this.api.createSubscription(clientId, clientSecret, subscription.getObjectType(), subscription.getAspectType(), subscription.getCallbackURL(), verifyToken));
 	}
 
 	@Override
 	public void deleteSubscription(final Integer clientId, final String clientSecret, final Integer subscriptionId) {
 		this.api.deleteSubscription(subscriptionId, clientId, clientSecret);
-		return;
 
 	}
 
@@ -77,9 +74,7 @@ public class WebhookServiceImpl extends StravaServiceImpl implements WebhookServ
 
 	@Override
 	public CompletableFuture<List<StravaEventSubscription>> listSubscriptionsAsync(final Integer clientId, final String clientSecret) {
-		return StravaServiceImpl.future(() -> {
-			return Arrays.asList(this.api.listSubscriptions(clientId, clientSecret));
-		});
+		return StravaServiceImpl.future(() -> Arrays.asList(this.api.listSubscriptions(clientId, clientSecret)));
 	}
 
 }

@@ -59,7 +59,7 @@ public interface StreamService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If there is a security exception
 	 */
-	public List<StravaStream> getActivityStreams(final Long activityId);
+    List<StravaStream> getActivityStreams(final Long activityId);
 
 	/**
 	 * <p>
@@ -106,8 +106,8 @@ public interface StreamService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If there is a security exception
 	 */
-	public List<StravaStream> getActivityStreams(final Long activityId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
-			final StravaStreamType... types);
+    List<StravaStream> getActivityStreams(final Long activityId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
+                                          final StravaStreamType... types);
 
 	/**
 	 * <p>
@@ -146,7 +146,7 @@ public interface StreamService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If there is a security exception
 	 */
-	public CompletableFuture<List<StravaStream>> getActivityStreamsAsync(final Long activityId);
+    CompletableFuture<List<StravaStream>> getActivityStreamsAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -193,8 +193,8 @@ public interface StreamService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If there is a security exception
 	 */
-	public CompletableFuture<List<StravaStream>> getActivityStreamsAsync(final Long activityId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
-			final StravaStreamType... types);
+    CompletableFuture<List<StravaStream>> getActivityStreamsAsync(final Long activityId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
+                                                                  final StravaStreamType... types);
 
 	/**
 	 * <p>
@@ -220,68 +220,7 @@ public interface StreamService extends StravaService {
 	 *            The id of the segment effort for which streams are to be retrieved
 	 * @return Returns an array of unordered stream objects.
 	 */
-	public List<StravaStream> getEffortStreams(final Long effortId);
-
-	/**
-	 * <p>
-	 * A {@link StravaSegmentEffort segment effort} represents an attempt on a {@link StravaSegment segment}. This resource returns a subset of the
-	 * {@link StravaActivity activity} streams that correspond to that effort.
-	 * </p>
-	 *
-	 * <p>
-	 * All streams for a given segment effort will be the same length and the values at a given index correspond to the same time.
-	 * </p>
-	 *
-	 * <p>
-	 * This resource is available for all public efforts.
-	 * </p>
-	 *
-	 * <p>
-	 * URL GET https://www.strava.com/api/v3/segment_efforts/:id/streams/:types
-	 * </p>
-	 *
-	 * @see <a href="http://strava.github.io/api/v3/streams/#effort">http://strava.github.io/api/v3/streams/#effort</a>
-	 *
-	 * @param effortId
-	 *            The id of the segment effort for which streams are to be retrieved
-	 * @param types
-	 *            List of types, if the effort does not have that stream it will not be included in the response
-	 * @param resolution
-	 *            (Optional) low (100), medium (1000) or high (10000), default is all, indicates desired number of data points, streams will only be down
-	 *            sampled
-	 * @param seriesType
-	 *            (Optional) relevant only if using resolution. Either "time" or "distance", default is "distance", used to index the streams if the stream is
-	 *            being reduced
-	 * @return Returns an array of unordered stream objects.
-	 */
-	public List<StravaStream> getEffortStreams(final Long effortId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
-			final StravaStreamType... types);
-
-	/**
-	 * <p>
-	 * A {@link StravaSegmentEffort segment effort} represents an attempt on a {@link StravaSegment segment}. This resource returns a subset of the
-	 * {@link StravaActivity activity} streams that correspond to that effort.
-	 * </p>
-	 *
-	 * <p>
-	 * All streams for a given segment effort will be the same length and the values at a given index correspond to the same time.
-	 * </p>
-	 *
-	 * <p>
-	 * This resource is available for all public efforts.
-	 * </p>
-	 *
-	 * <p>
-	 * URL GET https://www.strava.com/api/v3/segment_efforts/:id/streams/:types
-	 * </p>
-	 *
-	 * @see <a href="http://strava.github.io/api/v3/streams/#effort">http://strava.github.io/api/v3/streams/#effort</a>
-	 *
-	 * @param effortId
-	 *            The id of the segment effort for which streams are to be retrieved
-	 * @return Returns an array of unordered stream objects.
-	 */
-	public CompletableFuture<List<StravaStream>> getEffortStreamsAsync(final Long effortId);
+    List<StravaStream> getEffortStreams(final Long effortId);
 
 	/**
 	 * <p>
@@ -315,8 +254,69 @@ public interface StreamService extends StravaService {
 	 *            being reduced
 	 * @return Returns an array of unordered stream objects.
 	 */
-	public CompletableFuture<List<StravaStream>> getEffortStreamsAsync(final Long effortId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
-			final StravaStreamType... types);
+    List<StravaStream> getEffortStreams(final Long effortId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
+                                        final StravaStreamType... types);
+
+	/**
+	 * <p>
+	 * A {@link StravaSegmentEffort segment effort} represents an attempt on a {@link StravaSegment segment}. This resource returns a subset of the
+	 * {@link StravaActivity activity} streams that correspond to that effort.
+	 * </p>
+	 *
+	 * <p>
+	 * All streams for a given segment effort will be the same length and the values at a given index correspond to the same time.
+	 * </p>
+	 *
+	 * <p>
+	 * This resource is available for all public efforts.
+	 * </p>
+	 *
+	 * <p>
+	 * URL GET https://www.strava.com/api/v3/segment_efforts/:id/streams/:types
+	 * </p>
+	 *
+	 * @see <a href="http://strava.github.io/api/v3/streams/#effort">http://strava.github.io/api/v3/streams/#effort</a>
+	 *
+	 * @param effortId
+	 *            The id of the segment effort for which streams are to be retrieved
+	 * @return Returns an array of unordered stream objects.
+	 */
+    CompletableFuture<List<StravaStream>> getEffortStreamsAsync(final Long effortId);
+
+	/**
+	 * <p>
+	 * A {@link StravaSegmentEffort segment effort} represents an attempt on a {@link StravaSegment segment}. This resource returns a subset of the
+	 * {@link StravaActivity activity} streams that correspond to that effort.
+	 * </p>
+	 *
+	 * <p>
+	 * All streams for a given segment effort will be the same length and the values at a given index correspond to the same time.
+	 * </p>
+	 *
+	 * <p>
+	 * This resource is available for all public efforts.
+	 * </p>
+	 *
+	 * <p>
+	 * URL GET https://www.strava.com/api/v3/segment_efforts/:id/streams/:types
+	 * </p>
+	 *
+	 * @see <a href="http://strava.github.io/api/v3/streams/#effort">http://strava.github.io/api/v3/streams/#effort</a>
+	 *
+	 * @param effortId
+	 *            The id of the segment effort for which streams are to be retrieved
+	 * @param types
+	 *            List of types, if the effort does not have that stream it will not be included in the response
+	 * @param resolution
+	 *            (Optional) low (100), medium (1000) or high (10000), default is all, indicates desired number of data points, streams will only be down
+	 *            sampled
+	 * @param seriesType
+	 *            (Optional) relevant only if using resolution. Either "time" or "distance", default is "distance", used to index the streams if the stream is
+	 *            being reduced
+	 * @return Returns an array of unordered stream objects.
+	 */
+    CompletableFuture<List<StravaStream>> getEffortStreamsAsync(final Long effortId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
+                                                                final StravaStreamType... types);
 
 	/**
 	 * <p>
@@ -337,7 +337,7 @@ public interface StreamService extends StravaService {
 	 *            The id of the segment for which streams are to be retrieved
 	 * @return Returns an array of unordered stream objects.
 	 */
-	public List<StravaStream> getSegmentStreams(final Integer segmentId);
+    List<StravaStream> getSegmentStreams(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -366,8 +366,8 @@ public interface StreamService extends StravaService {
 	 *            being reduced
 	 * @return Returns an array of unordered stream objects.
 	 */
-	public List<StravaStream> getSegmentStreams(final Integer segmentId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
-			final StravaStreamType... types);
+    List<StravaStream> getSegmentStreams(final Integer segmentId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
+                                         final StravaStreamType... types);
 
 	/**
 	 * <p>
@@ -388,7 +388,7 @@ public interface StreamService extends StravaService {
 	 *            The id of the segment for which streams are to be retrieved
 	 * @return Returns an array of unordered stream objects.
 	 */
-	public CompletableFuture<List<StravaStream>> getSegmentStreamsAsync(final Integer segmentId);
+    CompletableFuture<List<StravaStream>> getSegmentStreamsAsync(final Integer segmentId);
 
 	/**
 	 * <p>
@@ -417,7 +417,7 @@ public interface StreamService extends StravaService {
 	 *            being reduced
 	 * @return Returns an array of unordered stream objects.
 	 */
-	public CompletableFuture<List<StravaStream>> getSegmentStreamsAsync(final Integer segmentId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
-			final StravaStreamType... types);
+    CompletableFuture<List<StravaStream>> getSegmentStreamsAsync(final Integer segmentId, final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType,
+                                                                 final StravaStreamType... types);
 
 }

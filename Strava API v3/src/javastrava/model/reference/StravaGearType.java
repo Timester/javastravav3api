@@ -13,17 +13,17 @@ public enum StravaGearType implements StravaReferenceType<String> {
 	/**
 	 * Bike
 	 */
-	BIKE(StravaConfig.string("StravaGearType.bike"),Messages.string("StravaGearType.bike.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	BIKE(StravaConfig.string("StravaGearType.bike"),Messages.string("StravaGearType.bike.description")),
 	/**
 	 * Running shoes
 	 */
-	SHOES(StravaConfig.string("StravaGearType.shoes"),Messages.string("StravaGearType.shoes.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	SHOES(StravaConfig.string("StravaGearType.shoes"),Messages.string("StravaGearType.shoes.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"),Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"),Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -53,7 +53,7 @@ public enum StravaGearType implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaGearType(final String id, final String description) {
+    StravaGearType(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

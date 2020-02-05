@@ -17,33 +17,33 @@ public enum StravaAgeGroup implements StravaReferenceType<String> {
 	/**
 	 * Age 0-24
 	 */
-	AGE0_24(StravaConfig.string("StravaAgeGroup.0-24"), Messages.string("StravaAgeGroup.0-24.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	AGE0_24(StravaConfig.string("StravaAgeGroup.0-24"), Messages.string("StravaAgeGroup.0-24.description")),
 	/**
 	 * Age 25-34
 	 */
-	AGE25_34(StravaConfig.string("StravaAgeGroup.25-34"), Messages.string("StravaAgeGroup.25-34.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	AGE25_34(StravaConfig.string("StravaAgeGroup.25-34"), Messages.string("StravaAgeGroup.25-34.description")),
 	/**
 	 * Age 35-44
 	 */
-	AGE35_44(StravaConfig.string("StravaAgeGroup.35-44"), Messages.string("StravaAgeGroup.35-44.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	AGE35_44(StravaConfig.string("StravaAgeGroup.35-44"), Messages.string("StravaAgeGroup.35-44.description")),
 	/**
 	 * Age 45-54
 	 */
-	AGE45_54(StravaConfig.string("StravaAgeGroup.45-54"), Messages.string("StravaAgeGroup.45-54.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	AGE45_54(StravaConfig.string("StravaAgeGroup.45-54"), Messages.string("StravaAgeGroup.45-54.description")),
 	/**
 	 * Age 55-64
 	 */
-	AGE55_64(StravaConfig.string("StravaAgeGroup.55-64"), Messages.string("StravaAgeGroup.55-64.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	AGE55_64(StravaConfig.string("StravaAgeGroup.55-64"), Messages.string("StravaAgeGroup.55-64.description")),
 	/**
 	 * Age 65+
 	 */
-	AGE65_PLUS(StravaConfig.string("StravaAgeGroup.65plus"), Messages.string("StravaAgeGroup.65plus.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	AGE65_PLUS(StravaConfig.string("StravaAgeGroup.65plus"), Messages.string("StravaAgeGroup.65plus.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -74,7 +74,7 @@ public enum StravaAgeGroup implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaAgeGroup(final String id, final String description) {
+    StravaAgeGroup(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

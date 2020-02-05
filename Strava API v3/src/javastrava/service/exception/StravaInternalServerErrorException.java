@@ -28,7 +28,7 @@ public class StravaInternalServerErrorException extends RuntimeException impleme
 	 * @param cause Underlying cause of the exception
 	 */
 	public StravaInternalServerErrorException(final String status, final StravaResponse response, final Throwable cause) {
-		super(status + " : " + (response == null ? null : response.toString()), cause); //$NON-NLS-1$
+		super(status + " : " + (response == null ? null : response.toString()), cause); 
 		setResponse(response);
 	}
 

@@ -48,14 +48,9 @@ public class StravaSegmentExplorerResponse implements StravaEntity {
 		}
 		final StravaSegmentExplorerResponse other = (StravaSegmentExplorerResponse) obj;
 		if (this.segments == null) {
-			if (other.segments != null) {
-				return false;
-			}
-		} else if (!this.segments.equals(other.segments)) {
-			return false;
-		}
-		return true;
-	}
+            return other.segments == null;
+		} else return this.segments.equals(other.segments);
+    }
 
 	@Override
 	public StravaResourceState getResourceState() {
@@ -93,6 +88,6 @@ public class StravaSegmentExplorerResponse implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaSegmentExplorerResponse [segments=" + this.segments + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaSegmentExplorerResponse [segments=" + this.segments + "]";
 	}
 }

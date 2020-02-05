@@ -25,8 +25,7 @@ public class SubscriptionObjectTypeSerializer implements JsonSerializer<StravaSu
 	public StravaSubscriptionObjectType deserialize(final JsonElement json, final Type type, final JsonDeserializationContext context)
 			throws JsonParseException {
 		try {
-			final StravaSubscriptionObjectType activityType = StravaSubscriptionObjectType.create(Integer.valueOf(json.getAsInt()));
-			return activityType;
+			return StravaSubscriptionObjectType.create(json.getAsInt());
 		} catch (final NumberFormatException e) {
 			throw new JsonParseException(e);
 		}

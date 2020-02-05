@@ -20,57 +20,57 @@ public enum StravaWeightClass implements StravaReferenceType<String> {
 	/**
 	 * Up to 124 pounds
 	 */
-	POUNDS0_124(StravaConfig.string("StravaWeightClass.0-124lb"), Messages.string("StravaWeightClass.0-124lb.description"), StravaMeasurementMethod.IMPERIAL), //$NON-NLS-1$ //$NON-NLS-2$
+	POUNDS0_124(StravaConfig.string("StravaWeightClass.0-124lb"), Messages.string("StravaWeightClass.0-124lb.description"), StravaMeasurementMethod.IMPERIAL),
 	/**
 	 * 125-149 pounds
 	 */
-	POUNDS125_149(StravaConfig.string("StravaWeightClass.125-149lb"), Messages.string("StravaWeightClass.125-149lb.description"), StravaMeasurementMethod.IMPERIAL), //$NON-NLS-1$ //$NON-NLS-2$
+	POUNDS125_149(StravaConfig.string("StravaWeightClass.125-149lb"), Messages.string("StravaWeightClass.125-149lb.description"), StravaMeasurementMethod.IMPERIAL),
 	/**
 	 * 150-164 pounds
 	 */
-	POUNDS150_164(StravaConfig.string("StravaWeightClass.150-164lb"), Messages.string("StravaWeightClass.150-164lb.description"), StravaMeasurementMethod.IMPERIAL), //$NON-NLS-1$ //$NON-NLS-2$
+	POUNDS150_164(StravaConfig.string("StravaWeightClass.150-164lb"), Messages.string("StravaWeightClass.150-164lb.description"), StravaMeasurementMethod.IMPERIAL),
 	/**
 	 * 165-179 pounds
 	 */
-	POUNDS165_179(StravaConfig.string("StravaWeightClass.165-179lb"), Messages.string("StravaWeightClass.165-179lb.description"), StravaMeasurementMethod.IMPERIAL), //$NON-NLS-1$ //$NON-NLS-2$
+	POUNDS165_179(StravaConfig.string("StravaWeightClass.165-179lb"), Messages.string("StravaWeightClass.165-179lb.description"), StravaMeasurementMethod.IMPERIAL),
 	/**
 	 * 180-199 pounds
 	 */
-	POUNDS180_199(StravaConfig.string("StravaWeightClass.180-199lb"), Messages.string("StravaWeightClass.180-199lb.description"), StravaMeasurementMethod.IMPERIAL), //$NON-NLS-1$ //$NON-NLS-2$
+	POUNDS180_199(StravaConfig.string("StravaWeightClass.180-199lb"), Messages.string("StravaWeightClass.180-199lb.description"), StravaMeasurementMethod.IMPERIAL),
 	/**
 	 * 200 pounds and over
 	 */
-	POUNDS_200PLUS(StravaConfig.string("StravaWeightClass.200lbPlus"), Messages.string("StravaWeightClass.200lbPlus.description"), StravaMeasurementMethod.IMPERIAL), //$NON-NLS-1$ //$NON-NLS-2$
+	POUNDS_200PLUS(StravaConfig.string("StravaWeightClass.200lbPlus"), Messages.string("StravaWeightClass.200lbPlus.description"), StravaMeasurementMethod.IMPERIAL),
 	/**
 	 * Up to 54kg
 	 */
-	KG0_54(StravaConfig.string("StravaWeightClass.0-54kg"), Messages.string("StravaWeightClass.0-54kg.description"), StravaMeasurementMethod.METRIC), //$NON-NLS-1$ //$NON-NLS-2$
+	KG0_54(StravaConfig.string("StravaWeightClass.0-54kg"), Messages.string("StravaWeightClass.0-54kg.description"), StravaMeasurementMethod.METRIC),
 	/**
 	 * 55-64kg
 	 */
-	KG55_64(StravaConfig.string("StravaWeightClass.55-64kg"), Messages.string("StravaWeightClass.55-64kg.description"), StravaMeasurementMethod.METRIC), //$NON-NLS-1$ //$NON-NLS-2$
+	KG55_64(StravaConfig.string("StravaWeightClass.55-64kg"), Messages.string("StravaWeightClass.55-64kg.description"), StravaMeasurementMethod.METRIC),
 	/**
 	 * 65-74kg
 	 */
-	KG65_74(StravaConfig.string("StravaWeightClass.65-74kg"), Messages.string("StravaWeightClass.65-74kg.description"), StravaMeasurementMethod.METRIC), //$NON-NLS-1$ //$NON-NLS-2$
+	KG65_74(StravaConfig.string("StravaWeightClass.65-74kg"), Messages.string("StravaWeightClass.65-74kg.description"), StravaMeasurementMethod.METRIC),
 	/**
 	 * 75-84kg
 	 */
-	KG75_84(StravaConfig.string("StravaWeightClass.75-84kg"), Messages.string("StravaWeightClass.75-84kg.description"), StravaMeasurementMethod.METRIC), //$NON-NLS-1$ //$NON-NLS-2$
+	KG75_84(StravaConfig.string("StravaWeightClass.75-84kg"), Messages.string("StravaWeightClass.75-84kg.description"), StravaMeasurementMethod.METRIC),
 	/**
 	 * 85-92kg
 	 */
-	KG85_94(StravaConfig.string("StravaWeightClass.85-94kg"), Messages.string("StravaWeightClass.85-94kg.description"), StravaMeasurementMethod.METRIC), //$NON-NLS-1$ //$NON-NLS-2$
+	KG85_94(StravaConfig.string("StravaWeightClass.85-94kg"), Messages.string("StravaWeightClass.85-94kg.description"), StravaMeasurementMethod.METRIC),
 	/**
 	 * 95kg and over
 	 */
-	KG95PLUS(StravaConfig.string("StravaWeightClass.95kgPlus"), Messages.string("StravaWeightClass.95kgPlus.description"), StravaMeasurementMethod.METRIC), //$NON-NLS-1$ //$NON-NLS-2$
+	KG95PLUS(StravaConfig.string("StravaWeightClass.95kgPlus"), Messages.string("StravaWeightClass.95kgPlus.description"), StravaMeasurementMethod.METRIC),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"), StravaMeasurementMethod.UNKNOWN); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"), StravaMeasurementMethod.UNKNOWN);
 
 	/**
 	 * Used by JSON deserialisation
@@ -92,7 +92,7 @@ public enum StravaWeightClass implements StravaReferenceType<String> {
 	 * @return The matching weight classes
 	 */
 	public static List<StravaWeightClass> listByMeasurementMethod(final StravaMeasurementMethod measurementMethod) {
-		final List<StravaWeightClass> weightClasses = new ArrayList<StravaWeightClass>();
+		final List<StravaWeightClass> weightClasses = new ArrayList<>();
 		if (measurementMethod == StravaMeasurementMethod.UNKNOWN) {
 			return weightClasses;
 		}
@@ -124,7 +124,7 @@ public enum StravaWeightClass implements StravaReferenceType<String> {
 	 * @param description Description
 	 * @param measurementMethod Metric or imperial
 	 */
-	private StravaWeightClass(final String id, final String description, final StravaMeasurementMethod measurementMethod) {
+	StravaWeightClass(final String id, final String description, final StravaMeasurementMethod measurementMethod) {
 		this.id = id;
 		this.description = description;
 		this.measurementMethod = measurementMethod;

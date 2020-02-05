@@ -70,14 +70,9 @@ public class StravaCacheKey<T, U> {
 			return false;
 		}
 		if (this.token == null) {
-			if (other.token != null) {
-				return false;
-			}
-		} else if (!this.token.equals(other.token)) {
-			return false;
-		}
-		return true;
-	}
+            return other.token == null;
+		} else return this.token.equals(other.token);
+    }
 	/**
 	 * @return the class1
 	 */
@@ -131,7 +126,7 @@ public class StravaCacheKey<T, U> {
 	 */
 	@Override
 	public String toString() {
-		return "StravaCacheKey [id=" + this.id + ", token=" + this.token + ", class1=" + this.class1 + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaCacheKey [id=" + this.id + ", token=" + this.token + ", class1=" + this.class1 + "]";
 	}
 
 }

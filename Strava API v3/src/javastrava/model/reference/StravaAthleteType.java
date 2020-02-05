@@ -16,15 +16,15 @@ public enum StravaAthleteType implements StravaReferenceType<Integer> {
 	/**
 	 * Cyclist
 	 */
-	CYCLIST(StravaConfig.integer("StravaAthleteType.cyclist"),Messages.string("StravaAthleteType.cyclist.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CYCLIST(StravaConfig.integer("StravaAthleteType.cyclist"),Messages.string("StravaAthleteType.cyclist.description")),
 	/**
 	 * Runner
 	 */
-	RUNNER(StravaConfig.integer("StravaAthleteType.runner"),Messages.string("StravaAthleteType.runner.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	RUNNER(StravaConfig.integer("StravaAthleteType.runner"),Messages.string("StravaAthleteType.runner.description")),
 	/**
 	 * Unknown
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -56,7 +56,7 @@ public enum StravaAthleteType implements StravaReferenceType<Integer> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaAthleteType(final Integer id, final String description) {
+    StravaAthleteType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

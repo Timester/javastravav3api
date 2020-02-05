@@ -31,7 +31,7 @@ public interface RunningRaceAPI {
 	 *             If the race is private or a security exception has occurred
 	 */
 	@GET("/running_races/{id}")
-	public StravaRunningRace getRace(@Path("id") final Integer id) throws NotFoundException, UnauthorizedException;
+    StravaRunningRace getRace(@Path("id") final Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -48,7 +48,7 @@ public interface RunningRaceAPI {
 	 *             If the race is private or a security exception has occurred
 	 */
 	@GET("/running_races/{id}")
-	public void getRace(@Path("id") final Integer id, final StravaAPICallback<StravaRunningRace> callback);
+    void getRace(@Path("id") final Integer id, final StravaAPICallback<StravaRunningRace> callback);
 
 	/**
 	 * <p>
@@ -64,7 +64,7 @@ public interface RunningRaceAPI {
 	 *             If the race is private or a security exception has occurred
 	 */
 	@GET("/running_races/{id}")
-	public Response getRaceRaw(@Path("id") final Integer id) throws NotFoundException, UnauthorizedException;
+    Response getRaceRaw(@Path("id") final Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -76,7 +76,7 @@ public interface RunningRaceAPI {
 	 * @return List of running races as summary representations
 	 */
 	@GET("/running_races")
-	public StravaRunningRace[] listRaces(@Query("year") final Integer year);
+    StravaRunningRace[] listRaces(@Query("year") final Integer year);
 
 	/**
 	 * <p>
@@ -89,7 +89,7 @@ public interface RunningRaceAPI {
 	 *            Future containing list of running races as summary representations
 	 */
 	@GET("/running_races")
-	public void listRaces(@Query("year") final Integer year, final StravaAPICallback<StravaRunningRace[]> races);
+    void listRaces(@Query("year") final Integer year, final StravaAPICallback<StravaRunningRace[]> races);
 
 	/**
 	 * <p>
@@ -101,5 +101,5 @@ public interface RunningRaceAPI {
 	 * @return List of running races as summary representations
 	 */
 	@GET("/running_races")
-	public Response listRacesRaw(@Query("year") final Integer year);
+    Response listRacesRaw(@Query("year") final Integer year);
 }

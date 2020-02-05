@@ -25,7 +25,7 @@ public class RouteSubTypeSerializer implements JsonSerializer<StravaRouteSubType
 	public StravaRouteSubType deserialize(final JsonElement json, final Type type, final JsonDeserializationContext context)
 			throws JsonParseException {
 		try {
-			return StravaRouteSubType.create(Integer.valueOf(json.getAsInt()));
+			return StravaRouteSubType.create(json.getAsInt());
 		} catch (final NumberFormatException e) {
 			return StravaRouteSubType.UNKNOWN;
 		}

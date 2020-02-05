@@ -114,11 +114,8 @@ public class StravaActivityZone implements StravaEntity {
 		} else if (!this.sensorBased.equals(other.sensorBased)) {
 			return false;
 		}
-		if (this.type != other.type) {
-			return false;
-		}
-		return true;
-	}
+        return this.type == other.type;
+    }
 
 	/**
 	 * @return the customZones
@@ -261,11 +258,11 @@ public class StravaActivityZone implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaActivityZone [score=" + this.score + ", distributionBuckets=" + this.distributionBuckets + ", type=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ this.type + ", resourceState=" //$NON-NLS-1$
-				+ this.resourceState + ", sensorBased=" + this.sensorBased + ", points=" + this.points + ", customZones=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ this.customZones + ", max=" //$NON-NLS-1$
-				+ this.max + "]"; //$NON-NLS-1$
+		return "StravaActivityZone [score=" + this.score + ", distributionBuckets=" + this.distributionBuckets + ", type="
+				+ this.type + ", resourceState=" 
+				+ this.resourceState + ", sensorBased=" + this.sensorBased + ", points=" + this.points + ", customZones="
+				+ this.customZones + ", max=" 
+				+ this.max + "]"; 
 	}
 
 }

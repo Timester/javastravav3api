@@ -1,6 +1,3 @@
-/**
- *
- */
 package javastrava.json.impl.serializer;
 
 import java.lang.reflect.Type;
@@ -22,8 +19,7 @@ public class EventFrequencySerializer implements JsonSerializer<StravaEventFrequ
 
 	@Override
 	public StravaEventFrequency deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {
-		final StravaEventFrequency frequency = StravaEventFrequency.create(json.getAsString());
-		return frequency;
+		return StravaEventFrequency.create(json.getAsString());
 	}
 
 	@Override

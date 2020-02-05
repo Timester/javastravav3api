@@ -19,17 +19,17 @@ public enum StravaSegmentExplorerActivityType implements StravaReferenceType<Str
 	/**
 	 * Running
 	 */
-	RUNNING(StravaConfig.string("StravaSegmentExplorerActivityType.running"), Messages.string("StravaSegmentExplorerActivityType.running.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	RUNNING(StravaConfig.string("StravaSegmentExplorerActivityType.running"), Messages.string("StravaSegmentExplorerActivityType.running.description")),
 	/**
 	 * Riding
 	 */
-	RIDING(StravaConfig.string("StravaSegmentExplorerActivityType.riding"), Messages.string("StravaSegmentExplorerActivityType.riding.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	RIDING(StravaConfig.string("StravaSegmentExplorerActivityType.riding"), Messages.string("StravaSegmentExplorerActivityType.riding.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -65,7 +65,7 @@ public enum StravaSegmentExplorerActivityType implements StravaReferenceType<Str
 	 * @param description
 	 *            Description
 	 */
-	private StravaSegmentExplorerActivityType(final String id, final String description) {
+    StravaSegmentExplorerActivityType(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

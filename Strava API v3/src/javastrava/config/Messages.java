@@ -12,7 +12,7 @@ public class Messages {
 	/**
 	 * Bundle name
 	 */
-	private static final String BUNDLE_NAME = "javastrava-messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "javastrava-messages";
 
 	/**
 	 * The resource bundle itseld

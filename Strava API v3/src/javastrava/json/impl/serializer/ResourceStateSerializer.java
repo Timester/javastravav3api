@@ -25,7 +25,7 @@ public class ResourceStateSerializer implements JsonSerializer<StravaResourceSta
 	public StravaResourceState deserialize(final JsonElement json, final Type type, final JsonDeserializationContext context)
 			throws JsonParseException {
 		try {
-			return StravaResourceState.create(Integer.valueOf(json.getAsInt()));
+			return StravaResourceState.create(json.getAsInt());
 		} catch (final NumberFormatException e) {
 			return StravaResourceState.UNKNOWN;
 		}

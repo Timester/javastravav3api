@@ -76,7 +76,7 @@ public interface WebhookAPI {
 	 * @return Details of the event subscription
 	 */
 	@POST("/subscriptions")
-	public StravaEventSubscription createSubscription(@Query("client_id") Integer clientId, @Query("client_secret") String clientSecret, @Query("object_type_id") StravaSubscriptionObjectType objectType, @Query("aspect_type_id") StravaSubscriptionAspectType aspectType, @Query("callback_url") String callbackURL, @Query("verify_token") String verifyToken);
+    StravaEventSubscription createSubscription(@Query("client_id") Integer clientId, @Query("client_secret") String clientSecret, @Query("object_type_id") StravaSubscriptionObjectType objectType, @Query("aspect_type_id") StravaSubscriptionAspectType aspectType, @Query("callback_url") String callbackURL, @Query("verify_token") String verifyToken);
 
 	/**
 	 * <p>
@@ -120,7 +120,7 @@ public interface WebhookAPI {
 	 * @param callback Callback for execution when the asynchronous call completes
 	 */
 	@POST("/subscriptions")
-	public void createSubscription(@Query("client_id") Integer clientId, @Query("client_secret") String clientSecret, @Query("object_type_id") StravaSubscriptionObjectType objectType, @Query("aspect_type_id") StravaSubscriptionAspectType aspectType, @Query("callback_url") String callbackURL, @Query("verify_token") String verifyToken, StravaAPICallback<StravaEventSubscription> callback);
+    void createSubscription(@Query("client_id") Integer clientId, @Query("client_secret") String clientSecret, @Query("object_type_id") StravaSubscriptionObjectType objectType, @Query("aspect_type_id") StravaSubscriptionAspectType aspectType, @Query("callback_url") String callbackURL, @Query("verify_token") String verifyToken, StravaAPICallback<StravaEventSubscription> callback);
 
 	/**
 	 * <p>
@@ -136,7 +136,7 @@ public interface WebhookAPI {
 	 * @return Returns nothing on success
 	 */
 	@DELETE("/subscriptions/{id}")
-	public StravaResponse deleteSubscription(@Path("id") Integer subscriptionId, @Query("client_id") Integer clientId, @Query("client_secret") String clientSecret);
+    StravaResponse deleteSubscription(@Path("id") Integer subscriptionId, @Query("client_id") Integer clientId, @Query("client_secret") String clientSecret);
 
 	/**
 	 * <p>
@@ -152,7 +152,7 @@ public interface WebhookAPI {
 	 * @param callback Callback for execution when the asynchronous call completes
 	 */
 	@DELETE("/subscriptions/{id}")
-	public void deleteSubscription(@Path("id") Integer subscriptionId, @Query("client_id") Integer clientId, @Query("client_secret") String clientSecret, StravaAPICallback<StravaResponse> callback);
+    void deleteSubscription(@Path("id") Integer subscriptionId, @Query("client_id") Integer clientId, @Query("client_secret") String clientSecret, StravaAPICallback<StravaResponse> callback);
 
 	/**
 	 * <p>
@@ -164,7 +164,7 @@ public interface WebhookAPI {
 	 * @return Returns an array of summary representations of the application's current subscriptions
 	 */
 	@GET("/subscriptions")
-	public StravaEventSubscription[] listSubscriptions(@Query("client_id") Integer clientId, @Query("client_secret") String clientSecret);
+    StravaEventSubscription[] listSubscriptions(@Query("client_id") Integer clientId, @Query("client_secret") String clientSecret);
 
 	/**
 	 * <p>
@@ -176,5 +176,5 @@ public interface WebhookAPI {
 	 * @param callback Callback for execution when the asynchronous call completes
 	 */
 	@GET("/subscriptions")
-	public void listSubscriptions(@Query("client_id") Integer clientId, @Query("client_secret") String clientSecret, StravaAPICallback<StravaEventSubscription[]> callback);
+    void listSubscriptions(@Query("client_id") Integer clientId, @Query("client_secret") String clientSecret, StravaAPICallback<StravaEventSubscription[]> callback);
 }

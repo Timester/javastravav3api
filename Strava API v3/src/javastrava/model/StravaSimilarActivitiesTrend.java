@@ -103,14 +103,9 @@ public class StravaSimilarActivitiesTrend implements StravaEntity {
 			return false;
 		}
 		if (this.speeds == null) {
-			if (other.speeds != null) {
-				return false;
-			}
-		} else if (!this.speeds.equals(other.speeds)) {
-			return false;
-		}
-		return true;
-	}
+            return other.speeds == null;
+		} else return this.speeds.equals(other.speeds);
+    }
 
 	/**
 	 * @return the currentActivityIndex
@@ -227,8 +222,8 @@ public class StravaSimilarActivitiesTrend implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaSimilarActivitiesTrend [speeds=" + this.speeds + ", currentActivityIndex=" + this.currentActivityIndex + ", minSpeed=" + this.minSpeed + ", midSpeed=" + this.midSpeed //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ ", maxSpeed=" + this.maxSpeed //$NON-NLS-1$
-				+ ", direction=" + this.direction + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaSimilarActivitiesTrend [speeds=" + this.speeds + ", currentActivityIndex=" + this.currentActivityIndex + ", minSpeed=" + this.minSpeed + ", midSpeed=" + this.midSpeed
+				+ ", maxSpeed=" + this.maxSpeed 
+				+ ", direction=" + this.direction + "]";
 	}
 }

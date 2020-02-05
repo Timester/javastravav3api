@@ -59,7 +59,7 @@ public class SegmentEffortServiceImpl extends StravaServiceImpl implements Segme
 	 */
 	private SegmentEffortServiceImpl(final Token token) {
 		super(token);
-		this.effortCache = new StravaCacheImpl<StravaSegmentEffort, Long>(StravaSegmentEffort.class, token);
+		this.effortCache = new StravaCacheImpl<>(StravaSegmentEffort.class, token);
 	}
 
 	/**
@@ -116,9 +116,7 @@ public class SegmentEffortServiceImpl extends StravaServiceImpl implements Segme
 	 */
 	@Override
 	public CompletableFuture<StravaSegmentEffort> getSegmentEffortAsync(final Long segmentEffortId) {
-		return StravaServiceImpl.future(() -> {
-			return getSegmentEffort(segmentEffortId);
-		});
+		return StravaServiceImpl.future(() -> getSegmentEffort(segmentEffortId));
 	}
 
 }

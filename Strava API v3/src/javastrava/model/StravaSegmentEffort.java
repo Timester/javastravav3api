@@ -297,14 +297,9 @@ public class StravaSegmentEffort implements StravaCacheableEntity<Long> {
 			return false;
 		}
 		if (this.startIndex == null) {
-			if (other.startIndex != null) {
-				return false;
-			}
-		} else if (!this.startIndex.equals(other.startIndex)) {
-			return false;
-		}
-		return true;
-	}
+            return other.startIndex == null;
+		} else return this.startIndex.equals(other.startIndex);
+    }
 
 	/**
 	 * @return the achievements
@@ -707,16 +702,16 @@ public class StravaSegmentEffort implements StravaCacheableEntity<Long> {
 	 */
 	@Override
 	public String toString() {
-		return "StravaSegmentEffort [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", activity=" + this.activity //$NON-NLS-1$
-				+ ", athlete=" + this.athlete + ", elapsedTime=" + this.elapsedTime + ", movingTime=" + this.movingTime //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", startDate=" + this.startDate //$NON-NLS-1$
-				+ ", startDateLocal=" + this.startDateLocal + ", distance=" + this.distance + ", startIndex=" + this.startIndex //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", endIndex=" + this.endIndex //$NON-NLS-1$
-				+ ", averageCadence=" + this.averageCadence + ", averageWatts=" + this.averageWatts + ", averageHeartrate=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ this.averageHeartrate + ", maxHeartrate=" + this.maxHeartrate + ", segment=" + this.segment + ", komRank=" + this.komRank + ", prRank=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ this.prRank + ", hidden=" //$NON-NLS-1$
-				+ this.hidden + ", isKom=" + this.isKom + ", achievements=" + this.achievements + ", athleteSegmentStats=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ this.athleteSegmentStats + ", deviceWatts=" + this.deviceWatts + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaSegmentEffort [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name
+				+ ", activity=" + this.activity 
+				+ ", athlete=" + this.athlete + ", elapsedTime=" + this.elapsedTime + ", movingTime=" + this.movingTime
+				+ ", startDate=" + this.startDate 
+				+ ", startDateLocal=" + this.startDateLocal + ", distance=" + this.distance + ", startIndex=" + this.startIndex
+				+ ", endIndex=" + this.endIndex 
+				+ ", averageCadence=" + this.averageCadence + ", averageWatts=" + this.averageWatts + ", averageHeartrate="
+				+ this.averageHeartrate + ", maxHeartrate=" + this.maxHeartrate + ", segment=" + this.segment + ", komRank=" + this.komRank + ", prRank="
+				+ this.prRank + ", hidden=" 
+				+ this.hidden + ", isKom=" + this.isKom + ", achievements=" + this.achievements + ", athleteSegmentStats="
+				+ this.athleteSegmentStats + ", deviceWatts=" + this.deviceWatts + "]";
 	}
 }

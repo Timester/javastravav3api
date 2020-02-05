@@ -15,17 +15,17 @@ public enum StravaStreamSeriesDownsamplingType implements StravaReferenceType<St
 	/**
 	 * Downsampling by time
 	 */
-	TIME(StravaConfig.string("StravaStreamSeriesDownsamplingType.time"), Messages.string("StravaStreamSeriesDownsamplingType.time.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	TIME(StravaConfig.string("StravaStreamSeriesDownsamplingType.time"), Messages.string("StravaStreamSeriesDownsamplingType.time.description")),
 	/**
 	 * Downsampling by distance
 	 */
-	DISTANCE(StravaConfig.string("StravaStreamSeriesDownsamplingType.distance"), Messages.string("StravaStreamSeriesDownsamplingType.distance.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	DISTANCE(StravaConfig.string("StravaStreamSeriesDownsamplingType.distance"), Messages.string("StravaStreamSeriesDownsamplingType.distance.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -56,7 +56,7 @@ public enum StravaStreamSeriesDownsamplingType implements StravaReferenceType<St
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaStreamSeriesDownsamplingType(final String id, final String description) {
+    StravaStreamSeriesDownsamplingType(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

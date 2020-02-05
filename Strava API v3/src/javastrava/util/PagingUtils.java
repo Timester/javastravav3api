@@ -27,43 +27,43 @@ public class PagingUtils {
 	 */
 	public static List<Paging> convertToStravaPaging(final Paging inputPaging) {
 		PagingUtils.validatePagingArguments(inputPaging);
-		final List<Paging> stravaPaging = new ArrayList<Paging>();
+		final List<Paging> stravaPaging = new ArrayList<>();
 		if (inputPaging == null) {
-			stravaPaging.add(new Paging(Integer.valueOf(1), StravaConfig.DEFAULT_PAGE_SIZE));
+			stravaPaging.add(new Paging(1, StravaConfig.DEFAULT_PAGE_SIZE));
 			return stravaPaging;
 		}
 
-		if (inputPaging.getPage().intValue() == 0) {
-			inputPaging.setPage(Integer.valueOf(1));
+		if (inputPaging.getPage() == 0) {
+			inputPaging.setPage(1);
 		}
-		if (inputPaging.getPageSize().intValue() == 0) {
+		if (inputPaging.getPageSize() == 0) {
 			inputPaging.setPageSize(StravaConfig.DEFAULT_PAGE_SIZE);
 		}
 
 		// If it's already valid for Strava purposes, just use that
-		if (inputPaging.getPageSize().intValue() <= StravaConfig.MAX_PAGE_SIZE.intValue()) {
+		if (inputPaging.getPageSize() <= StravaConfig.MAX_PAGE_SIZE) {
 			stravaPaging.add(inputPaging);
 			return stravaPaging;
 		}
 
 		// Calculate the first and last elements to be returned
-		final int lastElement = (inputPaging.getPage().intValue() * inputPaging.getPageSize().intValue()) - inputPaging.getIgnoreLastN();
-		final int firstElement = ((inputPaging.getPage().intValue() - 1) * inputPaging.getPageSize().intValue()) + inputPaging.getIgnoreFirstN() + 1;
+		final int lastElement = (inputPaging.getPage() * inputPaging.getPageSize()) - inputPaging.getIgnoreLastN();
+		final int firstElement = ((inputPaging.getPage() - 1) * inputPaging.getPageSize()) + inputPaging.getIgnoreFirstN() + 1;
 
 		// If the last element fits in one page, return one page
-		if (lastElement <= StravaConfig.MAX_PAGE_SIZE.intValue()) {
-			stravaPaging.add(new Paging(Integer.valueOf(1), Integer.valueOf(lastElement), inputPaging.getIgnoreFirstN(), 0));
+		if (lastElement <= StravaConfig.MAX_PAGE_SIZE) {
+			stravaPaging.add(new Paging(1, lastElement, inputPaging.getIgnoreFirstN(), 0));
 			return stravaPaging;
 		}
 
 		// Otherwise, return a series of pages
 		int currentPage = 0;
-		for (int i = 1; i <= lastElement; i = i + StravaConfig.MAX_PAGE_SIZE.intValue()) {
+		for (int i = 1; i <= lastElement; i = i + StravaConfig.MAX_PAGE_SIZE) {
 			currentPage++;
-			if (((currentPage * StravaConfig.MAX_PAGE_SIZE.intValue())) >= firstElement) {
-				final int ignoreLastN = Math.max(0, (currentPage * StravaConfig.MAX_PAGE_SIZE.intValue()) - lastElement);
-				final int ignoreFirstN = Math.max(0, firstElement - ((currentPage - 1) * StravaConfig.MAX_PAGE_SIZE.intValue()) - 1);
-				stravaPaging.add(new Paging(Integer.valueOf(currentPage), StravaConfig.MAX_PAGE_SIZE, ignoreFirstN, ignoreLastN));
+			if (((currentPage * StravaConfig.MAX_PAGE_SIZE)) >= firstElement) {
+				final int ignoreLastN = Math.max(0, (currentPage * StravaConfig.MAX_PAGE_SIZE) - lastElement);
+				final int ignoreFirstN = Math.max(0, firstElement - ((currentPage - 1) * StravaConfig.MAX_PAGE_SIZE) - 1);
+				stravaPaging.add(new Paging(currentPage, StravaConfig.MAX_PAGE_SIZE, ignoreFirstN, ignoreLastN));
 			}
 		}
 		return stravaPaging;
@@ -85,7 +85,7 @@ public class PagingUtils {
 	 */
 	public static <T> List<T> ignoreFirstN(final List<T> list, final int ignoreFirstN) {
 		if (ignoreFirstN < 0) {
-			throw new IllegalArgumentException(Messages.string("PagingUtils.cannotRemove") + ignoreFirstN + Messages.string("PagingUtils.itemsFromAList"));  //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException(Messages.string("PagingUtils.cannotRemove") + ignoreFirstN + Messages.string("PagingUtils.itemsFromAList"));
 		}
 		if (list == null) {
 			return null;
@@ -94,10 +94,10 @@ public class PagingUtils {
 			return list;
 		}
 		if (ignoreFirstN >= list.size()) {
-			return new ArrayList<T>();
+			return new ArrayList<>();
 		}
 		// return list.subList(ignoreFirstN, list.size() - 1);
-		final ArrayList<T> returnList = new ArrayList<T>();
+		final ArrayList<T> returnList = new ArrayList<>();
 		for (int i = ignoreFirstN; i < list.size(); i++) {
 			returnList.add(list.get(i));
 		}
@@ -119,7 +119,7 @@ public class PagingUtils {
 	 */
 	public static <T> List<T> ignoreLastN(final List<T> list, final int ignoreLastN) {
 		if (ignoreLastN < 0) {
-			throw new IllegalArgumentException(Messages.string("PagingUtils.cannotRemove") + ignoreLastN + Messages.string("PagingUtils.itemsFromAList")); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException(Messages.string("PagingUtils.cannotRemove") + ignoreLastN + Messages.string("PagingUtils.itemsFromAList"));
 		}
 		if (list == null) {
 			return null;
@@ -128,7 +128,7 @@ public class PagingUtils {
 			return list;
 		}
 		if (ignoreLastN >= list.size()) {
-			return new ArrayList<T>();
+			return new ArrayList<>();
 		}
 		return list.subList(0, list.size() - ignoreLastN);
 	}
@@ -145,17 +145,17 @@ public class PagingUtils {
 		if (pagingInstruction == null) {
 			return;
 		}
-		if (pagingInstruction.getPage().intValue() < 0) {
-			throw new IllegalArgumentException(Messages.string("PagingUtils.pageArgumentTooLow")); //$NON-NLS-1$
+		if (pagingInstruction.getPage() < 0) {
+			throw new IllegalArgumentException(Messages.string("PagingUtils.pageArgumentTooLow")); 
 		}
-		if (pagingInstruction.getPageSize().intValue() < 0) {
-			throw new IllegalArgumentException(Messages.string("PagingUtils.perPageArgumentTooLow")); //$NON-NLS-1$
+		if (pagingInstruction.getPageSize() < 0) {
+			throw new IllegalArgumentException(Messages.string("PagingUtils.perPageArgumentTooLow")); 
 		}
-		if ((pagingInstruction.getIgnoreLastN() > 0) && (pagingInstruction.getIgnoreLastN() > pagingInstruction.getPageSize().intValue())) {
-			throw new IllegalArgumentException(Messages.string("PagingUtils.IgnoreTooHigh")); //$NON-NLS-1$
+		if ((pagingInstruction.getIgnoreLastN() > 0) && (pagingInstruction.getIgnoreLastN() > pagingInstruction.getPageSize())) {
+			throw new IllegalArgumentException(Messages.string("PagingUtils.IgnoreTooHigh")); 
 		}
-		if ((pagingInstruction.getIgnoreFirstN() > 0) && (pagingInstruction.getIgnoreFirstN() > pagingInstruction.getPageSize().intValue())) {
-			throw new IllegalArgumentException(Messages.string("PagingUtils.IgnoreTooHigh")); //$NON-NLS-1$
+		if ((pagingInstruction.getIgnoreFirstN() > 0) && (pagingInstruction.getIgnoreFirstN() > pagingInstruction.getPageSize())) {
+			throw new IllegalArgumentException(Messages.string("PagingUtils.IgnoreTooHigh")); 
 		}
 	}
 

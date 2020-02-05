@@ -17,33 +17,33 @@ public enum StravaClimbCategory implements StravaReferenceType<Integer> {
 	/**
 	 * Hors categorie
 	 */
-	HORS_CATEGORIE(StravaConfig.integer("StravaClimbCategory.hors_categorie"), Messages.string("StravaClimbCategory.hors_categorie.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	HORS_CATEGORIE(StravaConfig.integer("StravaClimbCategory.hors_categorie"), Messages.string("StravaClimbCategory.hors_categorie.description")),
 	/**
 	 * Category 1
 	 */
-	CATEGORY1(StravaConfig.integer("StravaClimbCategory.cat1"), Messages.string("StravaClimbCategory.cat1.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CATEGORY1(StravaConfig.integer("StravaClimbCategory.cat1"), Messages.string("StravaClimbCategory.cat1.description")),
 	/**
 	 * Category 2
 	 */
-	CATEGORY2(StravaConfig.integer("StravaClimbCategory.cat2"), Messages.string("StravaClimbCategory.cat2.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CATEGORY2(StravaConfig.integer("StravaClimbCategory.cat2"), Messages.string("StravaClimbCategory.cat2.description")),
 	/**
 	 * Category 3
 	 */
-	CATEGORY3(StravaConfig.integer("StravaClimbCategory.cat3"), Messages.string("StravaClimbCategory.cat3.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CATEGORY3(StravaConfig.integer("StravaClimbCategory.cat3"), Messages.string("StravaClimbCategory.cat3.description")),
 	/**
 	 * Category 4
 	 */
-	CATEGORY4(StravaConfig.integer("StravaClimbCategory.cat4"), Messages.string("StravaClimbCategory.cat4.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CATEGORY4(StravaConfig.integer("StravaClimbCategory.cat4"), Messages.string("StravaClimbCategory.cat4.description")),
 	/**
 	 * Category 5
 	 */
-	FLAT(StravaConfig.integer("StravaClimbCategory.no_category"),Messages.string("StravaClimbCategory.no_category.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	FLAT(StravaConfig.integer("StravaClimbCategory.no_category"),Messages.string("StravaClimbCategory.no_category.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -75,7 +75,7 @@ public enum StravaClimbCategory implements StravaReferenceType<Integer> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaClimbCategory(final Integer id, final String description) {
+    StravaClimbCategory(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

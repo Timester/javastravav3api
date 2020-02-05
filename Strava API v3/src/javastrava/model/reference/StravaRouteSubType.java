@@ -14,27 +14,27 @@ public enum StravaRouteSubType implements StravaReferenceType<Integer> {
 	/**
 	 * Road
 	 */
-	ROAD(StravaConfig.integer("StravaRouteSubType.road"), Messages.string("StravaRouteSubType.road.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	ROAD(StravaConfig.integer("StravaRouteSubType.road"), Messages.string("StravaRouteSubType.road.description")),  
 	/**
 	 * Mountain bike
 	 */
-	MTB(StravaConfig.integer("StravaRouteSubType.mtb"), Messages.string("StravaRouteSubType.mtb.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	MTB(StravaConfig.integer("StravaRouteSubType.mtb"), Messages.string("StravaRouteSubType.mtb.description")),  
 	/**
 	 * Cross
 	 */
-	CX(StravaConfig.integer("StravaRouteSubType.cx"), Messages.string("StravaRouteSubType.cx.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CX(StravaConfig.integer("StravaRouteSubType.cx"), Messages.string("StravaRouteSubType.cx.description")),  
 	/**
 	 * Trail
 	 */
-	TRAIL(StravaConfig.integer("StravaRouteSubType.trail"), Messages.string("StravaRouteSubType.trail.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TRAIL(StravaConfig.integer("StravaRouteSubType.trail"), Messages.string("StravaRouteSubType.trail.description")),  
 	/**
 	 * Mixed terrain
 	 */
-	MIXED(StravaConfig.integer("StravaRouteSubType.mixed"), Messages.string("StravaRouteSubType.mixed.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	MIXED(StravaConfig.integer("StravaRouteSubType.mixed"), Messages.string("StravaRouteSubType.mixed.description")),  
 	/**
 	 * Unknown type
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));  
 
 	/**
 	 * @param id
@@ -64,7 +64,7 @@ public enum StravaRouteSubType implements StravaReferenceType<Integer> {
 	 * @param description
 	 *            Description
 	 */
-	private StravaRouteSubType(final Integer id, final String description) {
+    StravaRouteSubType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

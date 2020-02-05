@@ -27,7 +27,7 @@ public class InvalidTokenException extends RuntimeException implements StravaAPI
 	 * @param cause Underlying cause
 	 */
 	public InvalidTokenException(final String status, final StravaResponse response, final Throwable cause) {
-		super(status + " : " + (response == null ? "" : response.toString()),cause); //$NON-NLS-1$ //$NON-NLS-2$
+		super(status + " : " + (response == null ? "" : response.toString()),cause);
 		this.response = response;
 	}
 

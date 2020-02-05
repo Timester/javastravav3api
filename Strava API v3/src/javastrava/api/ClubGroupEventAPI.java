@@ -41,7 +41,7 @@ public interface ClubGroupEventAPI {
 	 *             If the authenticated athlete does not have permission to delete the event
 	 */
 	@DELETE("/group_events/{id}")
-	public void deleteEvent(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
+    void deleteEvent(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -58,7 +58,7 @@ public interface ClubGroupEventAPI {
 	 *             If the authenticated athlete does not have permission to delete the event
 	 */
 	@DELETE("/group_events/{id}")
-	public void deleteEvent(@Path("id") Integer id, StravaAPICallback<Void> callback) throws NotFoundException, UnauthorizedException;
+    void deleteEvent(@Path("id") Integer id, StravaAPICallback<Void> callback) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -72,7 +72,7 @@ public interface ClubGroupEventAPI {
 	 *             If the event does not exist
 	 */
 	@GET("/group_events/{id}")
-	public StravaClubEvent getEvent(@Path("id") Integer id) throws NotFoundException;
+    StravaClubEvent getEvent(@Path("id") Integer id) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -87,7 +87,7 @@ public interface ClubGroupEventAPI {
 	 *             If the event does not exist
 	 */
 	@GET("/group_events/{id}")
-	public void getEvent(@Path("id") Integer id, StravaAPICallback<StravaClubEvent> callback) throws NotFoundException;
+    void getEvent(@Path("id") Integer id, StravaAPICallback<StravaClubEvent> callback) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -101,7 +101,7 @@ public interface ClubGroupEventAPI {
 	 *             If the event does not exist
 	 */
 	@GET("/group_events/{id}")
-	public Response getEventRaw(@Path("id") Integer id) throws NotFoundException;
+    Response getEventRaw(@Path("id") Integer id) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -118,7 +118,7 @@ public interface ClubGroupEventAPI {
 	 *             if the {@link Token access token} does not have {@link AuthorisationScope#WRITE write scope}
 	 */
 	@POST("/group_events/{id}/rsvps")
-	public StravaClubEventJoinResponse joinEvent(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
+    StravaClubEventJoinResponse joinEvent(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -136,7 +136,7 @@ public interface ClubGroupEventAPI {
 	 *             if the {@link Token access token} does not have {@link AuthorisationScope#WRITE write scope}
 	 */
 	@POST("/group_events/{id}/rsvps")
-	public void joinEvent(@Path("id") Integer id, StravaAPICallback<StravaClubEventJoinResponse> callback) throws NotFoundException, UnauthorizedException;
+    void joinEvent(@Path("id") Integer id, StravaAPICallback<StravaClubEventJoinResponse> callback) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -153,7 +153,7 @@ public interface ClubGroupEventAPI {
 	 *             if the {@link Token access token} does not have {@link AuthorisationScope#WRITE write scope}
 	 */
 	@POST("/group_events/{id}/rsvps")
-	public Response joinEventRaw(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
+    Response joinEventRaw(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -170,7 +170,7 @@ public interface ClubGroupEventAPI {
 	 *             if the {@link Token access token} does not have {@link AuthorisationScope#WRITE write scope}
 	 */
 	@DELETE("/group_events/{id}/rsvps")
-	public StravaClubEventJoinResponse leaveEvent(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
+    StravaClubEventJoinResponse leaveEvent(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -188,7 +188,7 @@ public interface ClubGroupEventAPI {
 	 *             if the {@link Token access token} does not have {@link AuthorisationScope#WRITE write scope}
 	 */
 	@DELETE("/group_events/{id}/rsvps")
-	public void leaveEvent(@Path("id") Integer id, StravaAPICallback<StravaClubEventJoinResponse> callback) throws NotFoundException, UnauthorizedException;
+    void leaveEvent(@Path("id") Integer id, StravaAPICallback<StravaClubEventJoinResponse> callback) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -205,7 +205,7 @@ public interface ClubGroupEventAPI {
 	 *             if the {@link Token access token} does not have {@link AuthorisationScope#WRITE write scope}
 	 */
 	@DELETE("/group_events/{id}/rsvps")
-	public Response leaveEventRaw(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
+    Response leaveEventRaw(@Path("id") Integer id) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -231,7 +231,7 @@ public interface ClubGroupEventAPI {
 	 *             If the event is private??
 	 */
 	@GET("/group_events/{id}/athletes")
-	public StravaAthlete[] listEventJoinedAthletes(@Path("id") Integer id, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, UnauthorizedException;
+    StravaAthlete[] listEventJoinedAthletes(@Path("id") Integer id, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, UnauthorizedException;
 
 	/**
 	 * <p>
@@ -258,7 +258,7 @@ public interface ClubGroupEventAPI {
 	 *             If the event is private??
 	 */
 	@GET("/group_events/{id}/athletes")
-	public void listEventJoinedAthletes(@Path("id") Integer id, @Query("page") final Integer page, @Query("per_page") final Integer perPage, StravaAPICallback<StravaAthlete[]> callback)
+    void listEventJoinedAthletes(@Path("id") Integer id, @Query("page") final Integer page, @Query("per_page") final Integer perPage, StravaAPICallback<StravaAthlete[]> callback)
 			throws NotFoundException, UnauthorizedException;
 
 	/**
@@ -285,6 +285,6 @@ public interface ClubGroupEventAPI {
 	 *             If the event is private??
 	 */
 	@GET("/group_events/{id}/athletes")
-	public Response listEventJoinedAthletesRaw(@Path("id") Integer id, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, UnauthorizedException;
+    Response listEventJoinedAthletesRaw(@Path("id") Integer id, @Query("page") final Integer page, @Query("per_page") final Integer perPage) throws NotFoundException, UnauthorizedException;
 
 }

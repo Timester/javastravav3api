@@ -17,11 +17,11 @@ public interface StravaAPIException {
 	 * 
 	 * @return the response
 	 */
-	public StravaResponse getResponse();
+    StravaResponse getResponse();
 
 	/**
 	 * @param response
 	 *            the response to set
 	 */
-	public void setResponse(final StravaResponse response);
+    void setResponse(final StravaResponse response);
 }

@@ -16,5 +16,5 @@ public interface StravaService {
 	 * returned
 	 * </p>
 	 */
-	public void clearCache();
+    void clearCache();
 }

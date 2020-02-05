@@ -16,19 +16,19 @@ public enum StravaResourceState implements StravaReferenceType<Integer> {
 	/**
 	 * Resource is currently being updated
 	 */
-	UPDATING(StravaConfig.integer("StravaResourceState.updating"), Messages.string("StravaResourceState.updating.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	UPDATING(StravaConfig.integer("StravaResourceState.updating"), Messages.string("StravaResourceState.updating.description")),
 	/**
 	 * This is a representation of the resource which contains the id ONLY (other than the resource state)
 	 */
-	META(StravaConfig.integer("StravaResourceState.meta"), Messages.string("StravaResourceState.meta.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	META(StravaConfig.integer("StravaResourceState.meta"), Messages.string("StravaResourceState.meta.description")),
 	/**
 	 * This is a summary representation of the resource
 	 */
-	SUMMARY(StravaConfig.integer("StravaResourceState.summary"), Messages.string("StravaResourceState.summary.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	SUMMARY(StravaConfig.integer("StravaResourceState.summary"), Messages.string("StravaResourceState.summary.description")),
 	/**
 	 * This is a detailed representation of the resource
 	 */
-	DETAILED(StravaConfig.integer("StravaResourceState.detailed"), Messages.string("StravaResourceState.detailed.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	DETAILED(StravaConfig.integer("StravaResourceState.detailed"), Messages.string("StravaResourceState.detailed.description")),
 
 	/**
 	 * <p>
@@ -38,13 +38,13 @@ public enum StravaResourceState implements StravaReferenceType<Integer> {
 	 * Will be returned as an empty object with only the id and resourceState set.
 	 * </p>
 	 */
-	PRIVATE(StravaConfig.integer("StravaResourceState.private"), Messages.string("StravaResourceState.private.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	PRIVATE(StravaConfig.integer("StravaResourceState.private"), Messages.string("StravaResourceState.private.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -81,7 +81,7 @@ public enum StravaResourceState implements StravaReferenceType<Integer> {
 	 * @param description
 	 *            Description
 	 */
-	private StravaResourceState(final Integer id, final String description) {
+    StravaResourceState(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

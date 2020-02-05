@@ -11,19 +11,19 @@ public enum StravaTerrainType implements StravaReferenceType<Integer> {
 	/**
 	 * Mostly flat
 	 */
-	MOSTLY_FLAT(StravaConfig.integer("StravaTerrainType.mostly_flat"), Messages.string("StravaTerrainType.mostly_flat.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	MOSTLY_FLAT(StravaConfig.integer("StravaTerrainType.mostly_flat"), Messages.string("StravaTerrainType.mostly_flat.description")),
 	/**
 	 * Rolling hills
 	 */
-	ROLLING_HILLS(StravaConfig.integer("StravaTerrainType.rolling_hills"), Messages.string("StravaTerrainType.rolling_hills.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	ROLLING_HILLS(StravaConfig.integer("StravaTerrainType.rolling_hills"), Messages.string("StravaTerrainType.rolling_hills.description")),
 	/**
 	 * Killer climbs
 	 */
-	KILLER_CLIMBS(StravaConfig.integer("StravaTerrainType.killer_climbs"), Messages.string("StravaTerrainType.killer_climbs.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	KILLER_CLIMBS(StravaConfig.integer("StravaTerrainType.killer_climbs"), Messages.string("StravaTerrainType.killer_climbs.description")),
 	/**
 	 * Unknown
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Create the one from the integer id
@@ -54,7 +54,7 @@ public enum StravaTerrainType implements StravaReferenceType<Integer> {
 	 * @param id Identifier
 	 * @param description Description
 	 */
-	private StravaTerrainType(final Integer id, final String description) {
+    StravaTerrainType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

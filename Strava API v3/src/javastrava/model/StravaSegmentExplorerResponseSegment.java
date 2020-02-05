@@ -149,14 +149,9 @@ public class StravaSegmentExplorerResponseSegment implements StravaEntity {
 			return false;
 		}
 		if (this.startLatlng == null) {
-			if (other.startLatlng != null) {
-				return false;
-			}
-		} else if (!this.startLatlng.equals(other.startLatlng)) {
-			return false;
-		}
-		return true;
-	}
+            return other.startLatlng == null;
+		} else return this.startLatlng.equals(other.startLatlng);
+    }
 
 	/**
 	 * @return the avgGrade
@@ -347,10 +342,10 @@ public class StravaSegmentExplorerResponseSegment implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaSegmentExplorerResponseSegment [id=" + this.id + ", name=" + this.name + ", climbCategory=" + this.climbCategory + ", climbCategoryDesc=" + this.climbCategoryDesc + ", avgGrade=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+		return "StravaSegmentExplorerResponseSegment [id=" + this.id + ", name=" + this.name + ", climbCategory=" + this.climbCategory + ", climbCategoryDesc=" + this.climbCategoryDesc + ", avgGrade="     //$NON-NLS-5$
 				+ this.avgGrade
-				+ ", startLatlng=" + this.startLatlng + ", endLatlng=" + this.endLatlng + ", elevDifference=" + this.elevDifference + ", distance=" + this.distance + ", points=" + this.points //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ ", resourceState=" //$NON-NLS-1$
-				+ this.resourceState + "]"; //$NON-NLS-1$
+				+ ", startLatlng=" + this.startLatlng + ", endLatlng=" + this.endLatlng + ", elevDifference=" + this.elevDifference + ", distance=" + this.distance + ", points=" + this.points     //$NON-NLS-5$
+				+ ", resourceState=" 
+				+ this.resourceState + "]"; 
 	}
 }

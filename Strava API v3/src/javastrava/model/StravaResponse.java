@@ -52,14 +52,9 @@ public class StravaResponse implements StravaEntity {
 			return false;
 		}
 		if (this.message == null) {
-			if (other.message != null) {
-				return false;
-			}
-		} else if (!this.message.equals(other.message)) {
-			return false;
-		}
-		return true;
-	}
+            return other.message == null;
+		} else return this.message.equals(other.message);
+    }
 
 	/**
 	 * @return the errors
@@ -113,6 +108,6 @@ public class StravaResponse implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaResponse [message=" + this.message + ", errors=" + this.errors + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "StravaResponse [message=" + this.message + ", errors=" + this.errors + "]";
 	}
 }

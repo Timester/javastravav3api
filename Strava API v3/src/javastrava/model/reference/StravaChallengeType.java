@@ -16,22 +16,22 @@ public enum StravaChallengeType implements StravaReferenceType<String> {
 	/**
 	 * Cumulative challenge
 	 */
-	CUMULATIVE_CHALLENGE(StravaConfig.string("StravaChallengeType.cumulative"), Messages.string("StravaChallengeType.cumulative.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CUMULATIVE_CHALLENGE(StravaConfig.string("StravaChallengeType.cumulative"), Messages.string("StravaChallengeType.cumulative.description")),
 
 	/**
 	 * Single segment challenge
 	 */
-	SEGMENT_CHALLENGE(StravaConfig.string("StravaChallengeType.segment"), Messages.string("StravaChallengeType.segment.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	SEGMENT_CHALLENGE(StravaConfig.string("StravaChallengeType.segment"), Messages.string("StravaChallengeType.segment.description")),
 
 	/**
 	 * Single activity challenge
 	 */
-	SINGLE_ACTIVITY_CHALLENGE(StravaConfig.string("StravaChallengeType.singleActivity"), Messages.string("StravaChallengeType.singleActivity.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	SINGLE_ACTIVITY_CHALLENGE(StravaConfig.string("StravaChallengeType.singleActivity"), Messages.string("StravaChallengeType.singleActivity.description")),
 
 	/**
 	 * Unknown
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$//$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * @param string
@@ -58,7 +58,7 @@ public enum StravaChallengeType implements StravaReferenceType<String> {
 	 */
 	private String description;
 
-	private StravaChallengeType(final String id, final String description) {
+	StravaChallengeType(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

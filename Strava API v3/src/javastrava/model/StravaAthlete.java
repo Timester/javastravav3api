@@ -368,14 +368,9 @@ public class StravaAthlete implements StravaCacheableEntity<Integer> {
 			return false;
 		}
 		if (this.weight == null) {
-			if (other.weight != null) {
-				return false;
-			}
-		} else if (!this.weight.equals(other.weight)) {
-			return false;
-		}
-		return true;
-	}
+            return other.weight == null;
+		} else return this.weight.equals(other.weight);
+    }
 
 	/**
 	 * @return the approveFollowers
@@ -873,11 +868,11 @@ public class StravaAthlete implements StravaCacheableEntity<Integer> {
 
 	@Override
 	public String toString() {
-		return "StravaAthlete [id=" + this.id + ", resourceState=" + this.resourceState + ", firstname=" + this.firstname + ", lastname=" + this.lastname + ", profileMedium=" + this.profileMedium //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ ", profile=" + this.profile + ", city=" + this.city + ", state=" + this.state + ", country=" + this.country + ", sex=" + this.sex + ", friend=" + this.friend + ", follower=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$
-				+ this.follower + ", premium=" + this.premium + ", createdAt=" + this.createdAt + ", updatedAt=" + this.updatedAt + ", approveFollowers=" + this.approveFollowers + ", followerCount=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ this.followerCount + ", friendCount=" + this.friendCount + ", mutualFriendCount=" + this.mutualFriendCount + ", datePreference=" + this.datePreference + ", measurementPreference=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ this.measurementPreference + ", email=" + this.email + ", ftp=" + this.ftp + ", clubs=" + this.clubs + ", bikes=" + this.bikes + ", shoes=" + this.shoes + ", weight=" + this.weight //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ ", badgeTypeId=" + this.badgeTypeId + ", athleteType=" + this.athleteType + ", username=" + this.username + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaAthlete [id=" + this.id + ", resourceState=" + this.resourceState + ", firstname=" + this.firstname + ", lastname=" + this.lastname + ", profileMedium=" + this.profileMedium     //$NON-NLS-5$
+				+ ", profile=" + this.profile + ", city=" + this.city + ", state=" + this.state + ", country=" + this.country + ", sex=" + this.sex + ", friend=" + this.friend + ", follower="     //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$
+				+ this.follower + ", premium=" + this.premium + ", createdAt=" + this.createdAt + ", updatedAt=" + this.updatedAt + ", approveFollowers=" + this.approveFollowers + ", followerCount="     //$NON-NLS-5$
+				+ this.followerCount + ", friendCount=" + this.friendCount + ", mutualFriendCount=" + this.mutualFriendCount + ", datePreference=" + this.datePreference + ", measurementPreference="
+				+ this.measurementPreference + ", email=" + this.email + ", ftp=" + this.ftp + ", clubs=" + this.clubs + ", bikes=" + this.bikes + ", shoes=" + this.shoes + ", weight=" + this.weight     //$NON-NLS-5$ //$NON-NLS-6$
+				+ ", badgeTypeId=" + this.badgeTypeId + ", athleteType=" + this.athleteType + ", username=" + this.username + "]";
 	}
 }

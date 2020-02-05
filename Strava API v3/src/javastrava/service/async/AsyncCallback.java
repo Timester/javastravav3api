@@ -9,5 +9,5 @@ public interface  AsyncCallback<T> {
 	/**
 	 * @return A T
 	 */
-	public T run();
+    T run();
 }

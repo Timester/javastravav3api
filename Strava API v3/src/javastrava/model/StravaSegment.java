@@ -431,14 +431,9 @@ public class StravaSegment implements StravaCacheableEntity<Integer> {
 			return false;
 		}
 		if (this.updatedAt == null) {
-			if (other.updatedAt != null) {
-				return false;
-			}
-		} else if (!this.updatedAt.equals(other.updatedAt)) {
-			return false;
-		}
-		return true;
-	}
+            return other.updatedAt == null;
+		} else return this.updatedAt.equals(other.updatedAt);
+    }
 
 	/**
 	 * @return the activityType
@@ -1001,18 +996,18 @@ public class StravaSegment implements StravaCacheableEntity<Integer> {
 	 */
 	@Override
 	public String toString() {
-		return "StravaSegment [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", activityType=" + this.activityType + ", distance=" + this.distance //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ ", averageGrade=" + this.averageGrade //$NON-NLS-1$
-				+ ", maximumGrade=" + this.maximumGrade + ", elevationHigh=" + this.elevationHigh + ", elevationLow=" + this.elevationLow + ", startLatlng=" + this.startLatlng + ", endLatlng=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+		return "StravaSegment [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", activityType=" + this.activityType + ", distance=" + this.distance     //$NON-NLS-5$
+				+ ", averageGrade=" + this.averageGrade 
+				+ ", maximumGrade=" + this.maximumGrade + ", elevationHigh=" + this.elevationHigh + ", elevationLow=" + this.elevationLow + ", startLatlng=" + this.startLatlng + ", endLatlng="     //$NON-NLS-5$
 				+ this.endLatlng
-				+ ", climbCategory=" + this.climbCategory + ", city=" + this.city + ", state=" + this.state + ", country=" + this.country + ", privateSegment=" + this.privateSegment + ", starred=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.starred + ", createdAt=" //$NON-NLS-1$
-				+ this.createdAt + ", updatedAt=" + this.updatedAt + ", totalElevationGain=" + this.totalElevationGain + ", map=" + this.map + ", effortCount=" + this.effortCount + ", athleteCount=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+				+ ", climbCategory=" + this.climbCategory + ", city=" + this.city + ", state=" + this.state + ", country=" + this.country + ", privateSegment=" + this.privateSegment + ", starred="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.starred + ", createdAt=" 
+				+ this.createdAt + ", updatedAt=" + this.updatedAt + ", totalElevationGain=" + this.totalElevationGain + ", map=" + this.map + ", effortCount=" + this.effortCount + ", athleteCount="     //$NON-NLS-5$
 				+ this.athleteCount
-				+ ", hazardous=" + this.hazardous + ", starCount=" + this.starCount + ", athletePrEffort=" + this.athletePrEffort + ", starredDate=" + this.starredDate + ", startLatitude=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+				+ ", hazardous=" + this.hazardous + ", starCount=" + this.starCount + ", athletePrEffort=" + this.athletePrEffort + ", starredDate=" + this.starredDate + ", startLatitude="     //$NON-NLS-5$
 				+ this.startLatitude
-				+ ", startLongitude=" + this.startLongitude + ", endLatitude=" + this.endLatitude + ", endLongitude=" + this.endLongitude + ", prTime=" + this.prTime + ", athleteSegmentStats=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+				+ ", startLongitude=" + this.startLongitude + ", endLatitude=" + this.endLatitude + ", endLongitude=" + this.endLongitude + ", prTime=" + this.prTime + ", athleteSegmentStats="     //$NON-NLS-5$
 				+ this.athleteSegmentStats
-				+ "]"; //$NON-NLS-1$
+				+ "]"; 
 	}
 }

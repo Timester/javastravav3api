@@ -14,5 +14,5 @@ public interface StravaEntity {
 	/**
 	 * @return Return the resource state of the entity
 	 */
-	public StravaResourceState getResourceState();
+    StravaResourceState getResourceState();
 }

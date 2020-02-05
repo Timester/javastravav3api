@@ -251,14 +251,9 @@ public class StravaPhoto implements StravaCacheableEntity<Integer> {
 			return false;
 		}
 		if (this.usePrimaryPhoto == null) {
-			if (other.usePrimaryPhoto != null) {
-				return false;
-			}
-		} else if (!this.usePrimaryPhoto.equals(other.usePrimaryPhoto)) {
-			return false;
-		}
-		return true;
-	}
+            return other.usePrimaryPhoto == null;
+		} else return this.usePrimaryPhoto.equals(other.usePrimaryPhoto);
+    }
 
 	/**
 	 * @return the activityId
@@ -580,11 +575,11 @@ public class StravaPhoto implements StravaCacheableEntity<Integer> {
 
 	@Override
 	public String toString() {
-		return "StravaPhoto [id=" + this.id + ", activityId=" + this.activityId + ", resourceState=" + this.resourceState + ", ref=" + this.ref + ", uid=" + this.uid + ", caption=" + this.caption //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ ", type=" + this.type //$NON-NLS-1$
-				+ ", uploadedAt=" + this.uploadedAt + ", createdAt=" + this.createdAt + ", location=" + this.location + ", source=" + this.source + ", urls=" + this.urls + ", uniqueId=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.uniqueId + ", sizes=" + this.sizes //$NON-NLS-1$
-				+ ", activityName=" + this.activityName + ", createdAtLocal=" + this.createdAtLocal + ", athleteId=" + this.athleteId + ", defaultPhoto=" + this.defaultPhoto + ", usePrimaryPhoto=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ this.usePrimaryPhoto + "]"; //$NON-NLS-1$
+		return "StravaPhoto [id=" + this.id + ", activityId=" + this.activityId + ", resourceState=" + this.resourceState + ", ref=" + this.ref + ", uid=" + this.uid + ", caption=" + this.caption     //$NON-NLS-5$ //$NON-NLS-6$
+				+ ", type=" + this.type 
+				+ ", uploadedAt=" + this.uploadedAt + ", createdAt=" + this.createdAt + ", location=" + this.location + ", source=" + this.source + ", urls=" + this.urls + ", uniqueId="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.uniqueId + ", sizes=" + this.sizes 
+				+ ", activityName=" + this.activityName + ", createdAtLocal=" + this.createdAtLocal + ", athleteId=" + this.athleteId + ", defaultPhoto=" + this.defaultPhoto + ", usePrimaryPhoto="     //$NON-NLS-5$
+				+ this.usePrimaryPhoto + "]"; 
 	}
 }

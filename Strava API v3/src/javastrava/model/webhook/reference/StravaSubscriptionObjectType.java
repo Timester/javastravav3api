@@ -12,11 +12,11 @@ public enum StravaSubscriptionObjectType implements StravaReferenceType<Integer>
 	/**
 	 * Activities
 	 */
-	ACTIVITY(StravaConfig.integer("StravaSubscriptionObjectType.activity"), Messages.string("StravaSubscriptionObjectType.activity.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	ACTIVITY(StravaConfig.integer("StravaSubscriptionObjectType.activity"), Messages.string("StravaSubscriptionObjectType.activity.description")),
 	/**
 	 * Unknown - shouldn't happen but may if the API implementation changes
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * @param id the id
@@ -44,7 +44,7 @@ public enum StravaSubscriptionObjectType implements StravaReferenceType<Integer>
 	 * @param id Identifier
 	 * @param description Description
 	 */
-	private StravaSubscriptionObjectType(final Integer id, final String description) {
+    StravaSubscriptionObjectType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

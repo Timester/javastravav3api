@@ -299,14 +299,9 @@ public class StravaClub implements StravaCacheableEntity<Integer> {
 			return false;
 		}
 		if (this.verified == null) {
-			if (other.verified != null) {
-				return false;
-			}
-		} else if (!this.verified.equals(other.verified)) {
-			return false;
-		}
-		return true;
-	}
+            return other.verified == null;
+		} else return this.verified.equals(other.verified);
+    }
 
 	/**
 	 * @return the admin status of the authenticated athlete
@@ -692,10 +687,10 @@ public class StravaClub implements StravaCacheableEntity<Integer> {
 
 	@Override
 	public String toString() {
-		return "StravaClub [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", profileMedium=" + this.profileMedium + ", profile=" + this.profile + ", description=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.description + ", clubType=" + this.clubType + ", sportType=" + this.sportType + ", city=" + this.city + ", state=" + this.state + ", country=" + this.country + ", privateClub=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-				+ this.privateClub + ", memberCount=" + this.memberCount + ", featured=" + this.featured + ", membership=" + this.membership + ", admin=" + this.admin + ", owner=" + this.owner //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ ", followingCount=" + this.followingCount + ", url=" + this.url + ", verified=" + this.verified + ", postCount=" + this.postCount + ", coverPhoto=" + this.coverPhoto //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ ", coverPhotoSmall=" + this.coverPhotoSmall + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaClub [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", profileMedium=" + this.profileMedium + ", profile=" + this.profile + ", description="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.description + ", clubType=" + this.clubType + ", sportType=" + this.sportType + ", city=" + this.city + ", state=" + this.state + ", country=" + this.country + ", privateClub="     //$NON-NLS-5$ //$NON-NLS-6$
+				+ this.privateClub + ", memberCount=" + this.memberCount + ", featured=" + this.featured + ", membership=" + this.membership + ", admin=" + this.admin + ", owner=" + this.owner     //$NON-NLS-5$
+				+ ", followingCount=" + this.followingCount + ", url=" + this.url + ", verified=" + this.verified + ", postCount=" + this.postCount + ", coverPhoto=" + this.coverPhoto     //$NON-NLS-5$
+				+ ", coverPhotoSmall=" + this.coverPhotoSmall + "]";
 	}
 }

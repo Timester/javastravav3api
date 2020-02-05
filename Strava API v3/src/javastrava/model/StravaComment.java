@@ -93,14 +93,9 @@ public class StravaComment implements StravaCacheableEntity<Integer> {
 			return false;
 		}
 		if (this.text == null) {
-			if (other.text != null) {
-				return false;
-			}
-		} else if (!this.text.equals(other.text)) {
-			return false;
-		}
-		return true;
-	}
+            return other.text == null;
+		} else return this.text.equals(other.text);
+    }
 
 	/**
 	 * @return the activityId
@@ -215,8 +210,8 @@ public class StravaComment implements StravaCacheableEntity<Integer> {
 	 */
 	@Override
 	public String toString() {
-		return "StravaComment [id=" + this.id + ", resourceState=" + this.resourceState + ", activityId=" + this.activityId //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", text=" + this.text //$NON-NLS-1$
-				+ ", athlete=" + this.athlete + ", createdAt=" + this.createdAt + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "StravaComment [id=" + this.id + ", resourceState=" + this.resourceState + ", activityId=" + this.activityId
+				+ ", text=" + this.text 
+				+ ", athlete=" + this.athlete + ", createdAt=" + this.createdAt + "]";
 	}
 }

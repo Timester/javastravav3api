@@ -17,37 +17,37 @@ public enum StravaWorkoutType implements StravaReferenceType<Integer> {
 	/**
 	 * Default run
 	 */
-	DEFAULT_RUN(StravaConfig.integer("StravaWorkoutType.defaultRun"), Messages.string("StravaWorkoutType.defaultRun.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	DEFAULT_RUN(StravaConfig.integer("StravaWorkoutType.defaultRun"), Messages.string("StravaWorkoutType.defaultRun.description")),
 	/**
 	 * Race
 	 */
-	RACE_RUN(StravaConfig.integer("StravaWorkoutType.raceRun"), Messages.string("StravaWorkoutType.raceRun.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	RACE_RUN(StravaConfig.integer("StravaWorkoutType.raceRun"), Messages.string("StravaWorkoutType.raceRun.description")),
 	/**
 	 * Long run
 	 */
-	LONG_RUN(StravaConfig.integer("StravaWorkoutType.longRun"), Messages.string("StravaWorkoutType.longRun.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	LONG_RUN(StravaConfig.integer("StravaWorkoutType.longRun"), Messages.string("StravaWorkoutType.longRun.description")),
 	/**
 	 * Workout
 	 */
-	WORKOUT_RUN(StravaConfig.integer("StravaWorkoutType.workoutRun"), Messages.string("StravaWorkoutType.workoutRun.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	WORKOUT_RUN(StravaConfig.integer("StravaWorkoutType.workoutRun"), Messages.string("StravaWorkoutType.workoutRun.description")),
 	/**
 	 * Default ride
 	 */
-	DEFAULT_RIDE(StravaConfig.integer("StravaWorkoutType.defaultRide"), Messages.string("StravaWorkoutType.defaultRide.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	DEFAULT_RIDE(StravaConfig.integer("StravaWorkoutType.defaultRide"), Messages.string("StravaWorkoutType.defaultRide.description")),
 	/**
 	 * Race
 	 */
-	RACE_RIDE(StravaConfig.integer("StravaWorkoutType.raceRide"), Messages.string("StravaWorkoutType.raceRide.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	RACE_RIDE(StravaConfig.integer("StravaWorkoutType.raceRide"), Messages.string("StravaWorkoutType.raceRide.description")),
 	/**
 	 * Workout
 	 */
-	WORKOUT_RIDE(StravaConfig.integer("StravaWorkoutType.workoutRide"), Messages.string("StravaWorkoutType.workoutRide.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	WORKOUT_RIDE(StravaConfig.integer("StravaWorkoutType.workoutRide"), Messages.string("StravaWorkoutType.workoutRide.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -85,7 +85,7 @@ public enum StravaWorkoutType implements StravaReferenceType<Integer> {
 	 * @param description
 	 *            Description
 	 */
-	private StravaWorkoutType(final Integer id, final String description) {
+    StravaWorkoutType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

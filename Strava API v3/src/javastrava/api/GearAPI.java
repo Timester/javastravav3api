@@ -26,7 +26,7 @@ public interface GearAPI {
 	 *             If the gear with the given id doesn't exist
 	 */
 	@GET("/gear/{id}")
-	public StravaGear getGear(@Path("id") final String gearId) throws NotFoundException;
+    StravaGear getGear(@Path("id") final String gearId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.GearService#getGear(java.lang.String)
@@ -39,7 +39,7 @@ public interface GearAPI {
 	 *             If the gear with the given id doesn't exist
 	 */
 	@GET("/gear/{id}")
-	public void getGear(@Path("id") final String gearId, StravaAPICallback<StravaGear> callback) throws NotFoundException;
+    void getGear(@Path("id") final String gearId, StravaAPICallback<StravaGear> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.GearService#getGear(java.lang.String)
@@ -51,6 +51,6 @@ public interface GearAPI {
 	 *             If the gear with the given id doesn't exist
 	 */
 	@GET("/gear/{id}")
-	public Response getGearRaw(@Path("id") final String gearId) throws NotFoundException;
+    Response getGearRaw(@Path("id") final String gearId) throws NotFoundException;
 
 }

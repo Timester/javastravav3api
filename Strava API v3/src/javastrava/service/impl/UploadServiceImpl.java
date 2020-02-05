@@ -72,9 +72,7 @@ public class UploadServiceImpl extends StravaServiceImpl implements UploadServic
 	 */
 	@Override
 	public CompletableFuture<StravaUploadResponse> checkUploadStatusAsync(final Long uploadId) throws UnauthorizedException {
-		return StravaServiceImpl.future(() -> {
-			return checkUploadStatus(uploadId);
-		});
+		return StravaServiceImpl.future(() -> checkUploadStatus(uploadId));
 	}
 
 	/**
@@ -95,15 +93,15 @@ public class UploadServiceImpl extends StravaServiceImpl implements UploadServic
 			final Boolean _private, final Boolean trainer, final Boolean commute, final String dataType, final String externalId,
 			final File file) {
 		if (file == null) {
-			throw new IllegalArgumentException(Messages.string("UploadServiceImpl.cannotUploadNullFile")); //$NON-NLS-1$
+			throw new IllegalArgumentException(Messages.string("UploadServiceImpl.cannotUploadNullFile")); 
 		}
 		if (!file.exists() || file.isDirectory()) {
 			throw new IllegalArgumentException(
-					String.format(Messages.string("UploadServiceImpl.fileDoesNotExist"), file.getName())); //$NON-NLS-1$
+					String.format(Messages.string("UploadServiceImpl.fileDoesNotExist"), file.getName())); 
 		}
 		try {
 			return this.api.upload(activityType, name, description, _private, trainer, commute, dataType, externalId,
-					new TypedFile("text/xml", file)); //$NON-NLS-1$
+					new TypedFile("text/xml", file)); 
 		} catch (final BadRequestException e) {
 			throw new IllegalArgumentException(e);
 		}
@@ -118,9 +116,7 @@ public class UploadServiceImpl extends StravaServiceImpl implements UploadServic
 	public CompletableFuture<StravaUploadResponse> uploadAsync(final StravaActivityType activityType, final String name,
 			final String description, final Boolean _private, final Boolean trainer, final Boolean commute, final String dataType,
 			final String externalId, final File file) {
-		return StravaServiceImpl.future(() -> {
-			return upload(activityType, name, description, _private, trainer, commute, dataType, externalId, file);
-		});
+		return StravaServiceImpl.future(() -> upload(activityType, name, description, _private, trainer, commute, dataType, externalId, file));
 	}
 
 }

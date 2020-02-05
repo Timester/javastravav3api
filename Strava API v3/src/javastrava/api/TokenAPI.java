@@ -28,7 +28,7 @@ public interface TokenAPI {
 	 */
 	@FormUrlEncoded
 	@POST("/oauth/deauthorize")
-	public void deauthorise(@Field("access_token") final String accessToken, final StravaAPICallback<TokenResponse> callback) throws UnauthorizedException;
+    void deauthorise(@Field("access_token") final String accessToken, final StravaAPICallback<TokenResponse> callback) throws UnauthorizedException;
 
 	/**
 	 * @see TokenService#deauthorise(javastrava.auth.model.Token)
@@ -41,6 +41,6 @@ public interface TokenAPI {
 	 */
 	@FormUrlEncoded
 	@POST("/oauth/deauthorize")
-	public TokenResponse deauthoriseToken(@Field("access_token") final String accessToken) throws UnauthorizedException;
+    TokenResponse deauthoriseToken(@Field("access_token") final String accessToken) throws UnauthorizedException;
 
 }

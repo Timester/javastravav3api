@@ -26,8 +26,7 @@ implements JsonSerializer<StravaClubMembershipStatus>, JsonDeserializer<StravaCl
 	@Override
 	public StravaClubMembershipStatus deserialize(final JsonElement json, final Type type, final JsonDeserializationContext context)
 			throws JsonParseException {
-		final StravaClubMembershipStatus status = StravaClubMembershipStatus.create(json.getAsString());
-		return status;
+        return StravaClubMembershipStatus.create(json.getAsString());
 	}
 
 	/**

@@ -69,13 +69,8 @@ public class StravaVideo implements StravaEntity {
 			return false;
 		}
 		if (this.stillImageUrl == null) {
-			if (other.stillImageUrl != null) {
-				return false;
-			}
-		} else if (!this.stillImageUrl.equals(other.stillImageUrl)) {
-			return false;
-		}
-		return true;
+			return other.stillImageUrl == null;
+		} else return this.stillImageUrl.equals(other.stillImageUrl);
 	}
 
 	/**
@@ -157,7 +152,7 @@ public class StravaVideo implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaVideo [id=" + this.id + ", stillImageUrl=" + this.stillImageUrl + ", badgeImageUrl=" + this.badgeImageUrl + ", resourceState=" + this.resourceState + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+		return "StravaVideo [id=" + this.id + ", stillImageUrl=" + this.stillImageUrl + ", badgeImageUrl=" + this.badgeImageUrl + ", resourceState=" + this.resourceState + "]";     //$NON-NLS-5$
 	}
 
 }

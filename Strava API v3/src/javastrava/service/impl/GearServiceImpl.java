@@ -64,7 +64,7 @@ public class GearServiceImpl extends StravaServiceImpl implements GearService {
 	 */
 	private GearServiceImpl(final Token token) {
 		super(token);
-		this.gearCache = new StravaCacheImpl<StravaGear, String>(StravaGear.class, token);
+		this.gearCache = new StravaCacheImpl<>(StravaGear.class, token);
 	}
 
 	/**
@@ -110,9 +110,7 @@ public class GearServiceImpl extends StravaServiceImpl implements GearService {
 	 */
 	@Override
 	public CompletableFuture<StravaGear> getGearAsync(final String gearId) {
-		return StravaServiceImpl.future(() -> {
-			return getGear(gearId);
-		});
+		return StravaServiceImpl.future(() -> getGear(gearId));
 	}
 
 }

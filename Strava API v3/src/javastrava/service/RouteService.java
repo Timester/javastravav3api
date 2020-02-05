@@ -28,7 +28,7 @@ public interface RouteService extends StravaService {
 	 *            The identifier of the route to retrieve
 	 * @return The route
 	 */
-	public StravaRoute getRoute(@Path("id") Integer routeId);
+    StravaRoute getRoute(@Path("id") Integer routeId);
 
 	/**
 	 * <p>
@@ -41,7 +41,7 @@ public interface RouteService extends StravaService {
 	 *            The identifier of the route to retrieve
 	 * @return The future on which to execute get() to retrieve the route
 	 */
-	public CompletableFuture<StravaRoute> getRouteAsync(Integer routeId);
+    CompletableFuture<StravaRoute> getRouteAsync(Integer routeId);
 
 	/**
 	 * <p>
@@ -53,7 +53,7 @@ public interface RouteService extends StravaService {
 	 *            The athlete id whose routes should be listed
 	 * @return The route
 	 */
-	public List<StravaRoute> listAthleteRoutes(Integer id);
+    List<StravaRoute> listAthleteRoutes(Integer id);
 
 	/**
 	 * <p>
@@ -65,6 +65,6 @@ public interface RouteService extends StravaService {
 	 *            The athlete id whose routes should be listed
 	 * @return The future to execute get() on to return the routes
 	 */
-	public CompletableFuture<List<StravaRoute>> listAthleteRoutesAsync(Integer id);
+    CompletableFuture<List<StravaRoute>> listAthleteRoutesAsync(Integer id);
 
 }

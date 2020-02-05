@@ -1,6 +1,3 @@
-/**
- *
- */
 package javastrava.service;
 
 import java.util.List;
@@ -26,7 +23,7 @@ public interface RunningRaceService extends StravaService {
 	 *            The id of the race to be retrieved
 	 * @return A detailed representation of the running race
 	 */
-	public StravaRunningRace getRace(final Integer id);
+	StravaRunningRace getRace(final Integer id);
 
 	/**
 	 * <p>
@@ -37,7 +34,7 @@ public interface RunningRaceService extends StravaService {
 	 *            The id of the race to be retrieved
 	 * @return A future which will return a detailed representation of the running race
 	 */
-	public CompletableFuture<StravaRunningRace> getRaceAsync(final Integer id);
+	CompletableFuture<StravaRunningRace> getRaceAsync(final Integer id);
 
 	/**
 	 * <p>
@@ -48,7 +45,7 @@ public interface RunningRaceService extends StravaService {
 	 *            (Optional) restrict results to the given year
 	 * @return List of running races as summary representations
 	 */
-	public List<StravaRunningRace> listRaces(final Integer year);
+	List<StravaRunningRace> listRaces(final Integer year);
 
 	/**
 	 * <p>
@@ -59,6 +56,6 @@ public interface RunningRaceService extends StravaService {
 	 *            (Optional) restrict results to the given year
 	 * @return Future containing list of running races as summary representations
 	 */
-	public CompletableFuture<List<StravaRunningRace>> listRacesAsync(final Integer year);
+	CompletableFuture<List<StravaRunningRace>> listRacesAsync(final Integer year);
 
 }

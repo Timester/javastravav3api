@@ -151,7 +151,7 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 	 */
 	@Override
 	public CompletableFuture<StravaAthlete> getAuthenticatedAthleteAsync() {
-		return StravaServiceImpl.future(() -> getAuthenticatedAthlete());
+		return StravaServiceImpl.future(this::getAuthenticatedAthlete);
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 	 */
 	@Override
 	public CompletableFuture<StravaAthleteZones> getAuthenticatedAthleteZonesAsync() {
-		return StravaServiceImpl.future(() -> getAuthenticatedAthleteZones());
+		return StravaServiceImpl.future(this::getAuthenticatedAthleteZones);
 	}
 
 	/**
@@ -180,10 +180,9 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 	@Override
 	public List<StravaAthlete> listAllAthleteFriends(final Integer athleteId) {
 		// Always get from Strava, not from cache, as there's no way to be sure the cache is up to date
-		final List<StravaAthlete> athletes = PagingHandler.handleListAll(thisPage -> listAthleteFriends(athleteId, thisPage));
 
 		// Return them
-		return athletes;
+		return PagingHandler.handleListAll(thisPage -> listAthleteFriends(athleteId, thisPage));
 	}
 
 	/**
@@ -232,7 +231,7 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 	 */
 	@Override
 	public List<StravaAthlete> listAllAuthenticatedAthleteFriends() {
-		return PagingHandler.handleListAll(thisPage -> listAuthenticatedAthleteFriends(thisPage));
+		return PagingHandler.handleListAll(this::listAuthenticatedAthleteFriends);
 	}
 
 	/**
@@ -240,7 +239,7 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 	 */
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listAllAuthenticatedAthleteFriendsAsync() {
-		return StravaServiceImpl.future(() -> listAllAuthenticatedAthleteFriends());
+		return StravaServiceImpl.future(this::listAllAuthenticatedAthleteFriends);
 	}
 
 	/**
@@ -262,7 +261,7 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaAthlete>();
+			return new ArrayList<>();
 		}
 
 		// Put them in the cache so they can be read back later
@@ -307,7 +306,7 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaSegmentEffort>();
+			return new ArrayList<>();
 		}
 
 		this.effortCache.putAll(efforts);
@@ -350,7 +349,7 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaAthlete>();
+			return new ArrayList<>();
 		}
 
 		this.athleteCache.putAll(athletes);
@@ -400,7 +399,7 @@ public class AthleteServiceImpl extends StravaServiceImpl implements AthleteServ
 	 */
 	@Override
 	public CompletableFuture<List<StravaAthlete>> listAuthenticatedAthleteFriendsAsync() {
-		return StravaServiceImpl.future(() -> listAuthenticatedAthleteFriends());
+		return StravaServiceImpl.future(this::listAuthenticatedAthleteFriends);
 	}
 
 	/**

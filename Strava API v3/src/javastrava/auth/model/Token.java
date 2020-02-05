@@ -290,10 +290,7 @@ public class Token implements StravaEntity {
 	 * @return <code>true</code> if the token contains the {@link AuthorisationScope#WRITE}
 	 */
 	public boolean hasWriteAccess() {
-		if ((this.scopes != null) && this.scopes.contains(AuthorisationScope.WRITE)) {
-			return true;
-		}
-		return false;
+		return (this.scopes != null) && this.scopes.contains(AuthorisationScope.WRITE);
 	}
 
 	/**
@@ -369,9 +366,9 @@ public class Token implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "Token [athlete=" + this.athlete + ", token=" + this.accessToken + ", scopes=" + this.scopes + ", services=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ this.services + ", tokenType=" //$NON-NLS-1$
-				+ this.tokenType + "]"; //$NON-NLS-1$
+		return "Token [athlete=" + this.athlete + ", token=" + this.accessToken + ", scopes=" + this.scopes + ", services="
+				+ this.services + ", tokenType="
+				+ this.tokenType + "]";
 	}
 
 }

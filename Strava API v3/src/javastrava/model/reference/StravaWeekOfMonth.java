@@ -13,27 +13,27 @@ public enum StravaWeekOfMonth implements StravaReferenceType<Integer> {
 	/**
 	 * First week
 	 */
-	FIRST(StravaConfig.integer("StravaWeekOfMonth.first"), Messages.string("StravaWeekOfMonth.first.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	FIRST(StravaConfig.integer("StravaWeekOfMonth.first"), Messages.string("StravaWeekOfMonth.first.description")),
 	/**
 	 * Second week
 	 */
-	SECOND(StravaConfig.integer("StravaWeekOfMonth.second"), Messages.string("StravaWeekOfMonth.second.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	SECOND(StravaConfig.integer("StravaWeekOfMonth.second"), Messages.string("StravaWeekOfMonth.second.description")),
 	/**
 	 * Second week
 	 */
-	THIRD(StravaConfig.integer("StravaWeekOfMonth.third"), Messages.string("StravaWeekOfMonth.third.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	THIRD(StravaConfig.integer("StravaWeekOfMonth.third"), Messages.string("StravaWeekOfMonth.third.description")),
 	/**
 	 * Second week
 	 */
-	FOURTH(StravaConfig.integer("StravaWeekOfMonth.fourth"), Messages.string("StravaWeekOfMonth.fourth.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	FOURTH(StravaConfig.integer("StravaWeekOfMonth.fourth"), Messages.string("StravaWeekOfMonth.fourth.description")),
 	/**
 	 * Last
 	 */
-	LAST(StravaConfig.integer("StravaWeekOfMonth.last"), Messages.string("StravaWeekOfMonth.last.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	LAST(StravaConfig.integer("StravaWeekOfMonth.last"), Messages.string("StravaWeekOfMonth.last.description")),
 	/**
 	 * Unknown
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON serialisation
@@ -70,7 +70,7 @@ public enum StravaWeekOfMonth implements StravaReferenceType<Integer> {
 	 * @param description
 	 *            Description
 	 */
-	private StravaWeekOfMonth(Integer id, String description) {
+    StravaWeekOfMonth(Integer id, String description) {
 		this.id = id;
 		this.description = description;
 	}

@@ -26,14 +26,9 @@ public class StravaClubEventViewerPermissions implements StravaEntity {
 		}
 		final StravaClubEventViewerPermissions other = (StravaClubEventViewerPermissions) obj;
 		if (this.edit == null) {
-			if (other.edit != null) {
-				return false;
-			}
-		} else if (!this.edit.equals(other.edit)) {
-			return false;
-		}
-		return true;
-	}
+            return other.edit == null;
+		} else return this.edit.equals(other.edit);
+    }
 
 	/**
 	 * @return The edit permission
@@ -65,7 +60,7 @@ public class StravaClubEventViewerPermissions implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaClubEventViewerPermissions [edit=" + this.edit + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaClubEventViewerPermissions [edit=" + this.edit + "]";
 	}
 
 }

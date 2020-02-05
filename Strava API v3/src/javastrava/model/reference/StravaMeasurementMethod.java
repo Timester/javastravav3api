@@ -16,17 +16,17 @@ public enum StravaMeasurementMethod implements StravaReferenceType<String> {
 	/**
 	 * Imperial units
 	 */
-	IMPERIAL(StravaConfig.string("StravaMeasurementMethod.imperial"), Messages.string("StravaMeasurementMethod.imperial.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	IMPERIAL(StravaConfig.string("StravaMeasurementMethod.imperial"), Messages.string("StravaMeasurementMethod.imperial.description")),
 	/**
 	 * Metric
 	 */
-	METRIC(StravaConfig.string("StravaMeasurementMethod.metric"), Messages.string("StravaMeasurementMethod.metric.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	METRIC(StravaConfig.string("StravaMeasurementMethod.metric"), Messages.string("StravaMeasurementMethod.metric.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -57,7 +57,7 @@ public enum StravaMeasurementMethod implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaMeasurementMethod(final String id, final String description) {
+    StravaMeasurementMethod(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

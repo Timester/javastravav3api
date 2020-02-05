@@ -38,33 +38,33 @@ public class StravaStreamSerializer implements JsonSerializer<StravaStream>, Jso
 		}
 
 		// Get the type, as that will determine what the deserialization should do
-		final StravaStreamType streamType = (StravaStreamType) context.deserialize(json.get("type"), StravaStreamType.class); //$NON-NLS-1$
+		final StravaStreamType streamType = context.deserialize(json.get("type"), StravaStreamType.class);
 
-		final JsonArray array = json.getAsJsonArray("data"); //$NON-NLS-1$
+		final JsonArray array = json.getAsJsonArray("data"); 
 		List<StravaMapPoint> points = null;
 		List<Float> data = null;
 		List<Boolean> moving = null;
 		if (streamType == StravaStreamType.MAPPOINT) {
-			points = new ArrayList<StravaMapPoint>();
+			points = new ArrayList<>();
 			for (final JsonElement arrayElement : array) {
-				final Float latitude = Float.valueOf(arrayElement.getAsJsonArray().get(0).getAsFloat());
-				final Float longitude = Float.valueOf(arrayElement.getAsJsonArray().get(1).getAsFloat());
+				final Float latitude = arrayElement.getAsJsonArray().get(0).getAsFloat();
+				final Float longitude = arrayElement.getAsJsonArray().get(1).getAsFloat();
 				final StravaMapPoint point = new StravaMapPoint(latitude, longitude);
 				points.add(point);
 			}
 		} else if (streamType == StravaStreamType.MOVING) {
-			moving = new ArrayList<Boolean>();
+			moving = new ArrayList<>();
 			for (final JsonElement arrayElement : array) {
-				final Boolean bool = Boolean.valueOf(arrayElement.getAsBoolean());
+				final Boolean bool = arrayElement.getAsBoolean();
 				moving.add(bool);
 			}
 		} else {
-			data = new ArrayList<Float>();
+			data = new ArrayList<>();
 			for (final JsonElement arrayElement : array) {
 				if (arrayElement.isJsonNull()) {
 					data.add(null);
 				} else {
-					final Float dataElement = Float.valueOf(arrayElement.getAsFloat());
+					final Float dataElement = arrayElement.getAsFloat();
 					data.add(dataElement);
 				}
 			}
@@ -74,13 +74,13 @@ public class StravaStreamSerializer implements JsonSerializer<StravaStream>, Jso
 		stream.setData(data);
 		stream.setMapPoints(points);
 		stream.setMoving(moving);
-		final JsonElement originalSizeElement = json.get("original_size");//$NON-NLS-1$
+		final JsonElement originalSizeElement = json.get("original_size");
 		if (originalSizeElement != null) {
-			stream.setOriginalSize(new Integer(originalSizeElement.getAsInt()));
+			stream.setOriginalSize(originalSizeElement.getAsInt());
 		}
-		stream.setResolution((StravaStreamResolutionType) context.deserialize(json.get("resolution"), //$NON-NLS-1$
+		stream.setResolution(context.deserialize(json.get("resolution"),
 				StravaStreamResolutionType.class));
-		stream.setSeriesType((StravaStreamSeriesDownsamplingType) context.deserialize(json.get("series_type"), //$NON-NLS-1$
+		stream.setSeriesType(context.deserialize(json.get("series_type"),
 				StravaStreamSeriesDownsamplingType.class));
 		stream.setType(streamType);
 		return stream;
@@ -92,12 +92,12 @@ public class StravaStreamSerializer implements JsonSerializer<StravaStream>, Jso
 	@Override
 	public JsonElement serialize(final StravaStream stream, final Type type, final JsonSerializationContext context) {
 		final JsonObject element = new JsonObject();
-		element.add("original_size", context.serialize(stream.getOriginalSize())); //$NON-NLS-1$
-		element.add("resolution", context.serialize(stream.getResolution())); //$NON-NLS-1$
-		element.add("series_type", context.serialize(stream.getSeriesType())); //$NON-NLS-1$
-		element.add("type", context.serialize(stream.getType())); //$NON-NLS-1$
+		element.add("original_size", context.serialize(stream.getOriginalSize())); 
+		element.add("resolution", context.serialize(stream.getResolution())); 
+		element.add("series_type", context.serialize(stream.getSeriesType())); 
+		element.add("type", context.serialize(stream.getType())); 
 		final JsonArray dataArray = new JsonArray();
-		element.add("data", dataArray); //$NON-NLS-1$
+		element.add("data", dataArray); 
 		if (stream.getType() == StravaStreamType.MAPPOINT) {
 			for (final StravaMapPoint point : stream.getMapPoints()) {
 				dataArray.add(context.serialize(point));

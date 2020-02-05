@@ -46,14 +46,9 @@ public class StravaAthleteZones implements StravaEntity {
 			return false;
 		}
 		if (this.power == null) {
-			if (other.power != null) {
-				return false;
-			}
-		} else if (!this.power.equals(other.power)) {
-			return false;
-		}
-		return true;
-	}
+            return other.power == null;
+		} else return this.power.equals(other.power);
+    }
 
 	/**
 	 * @return the heartRate
@@ -101,6 +96,6 @@ public class StravaAthleteZones implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaAthleteZones [heartRate=" + this.heartRate + ", power=" + this.power + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "StravaAthleteZones [heartRate=" + this.heartRate + ", power=" + this.power + "]";
 	}
 }

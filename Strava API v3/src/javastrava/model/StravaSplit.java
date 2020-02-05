@@ -122,14 +122,9 @@ public class StravaSplit implements StravaEntity {
 			return false;
 		}
 		if (this.split == null) {
-			if (other.split != null) {
-				return false;
-			}
-		} else if (!this.split.equals(other.split)) {
-			return false;
-		}
-		return true;
-	}
+            return other.split == null;
+		} else return this.split.equals(other.split);
+    }
 
 	/**
 	 * @return the averageHeartrate
@@ -278,7 +273,7 @@ public class StravaSplit implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaSplit [distance=" + this.distance + ", elapsedTime=" + this.elapsedTime + ", elevationDifference=" + this.elevationDifference + ", movingTime=" + this.movingTime + ", split=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ this.split + ", averageHeartrate=" + this.averageHeartrate + ", averageSpeed=" + this.averageSpeed + ", paceZone=" + this.paceZone + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaSplit [distance=" + this.distance + ", elapsedTime=" + this.elapsedTime + ", elevationDifference=" + this.elevationDifference + ", movingTime=" + this.movingTime + ", split="     //$NON-NLS-5$
+				+ this.split + ", averageHeartrate=" + this.averageHeartrate + ", averageSpeed=" + this.averageSpeed + ", paceZone=" + this.paceZone + "]";
 	}
 }

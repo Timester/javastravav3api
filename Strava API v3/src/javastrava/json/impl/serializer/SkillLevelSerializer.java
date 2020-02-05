@@ -22,8 +22,7 @@ public class SkillLevelSerializer implements JsonSerializer<StravaSkillLevel>, J
 	@Override
 	public StravaSkillLevel deserialize(final JsonElement json, final Type type, final JsonDeserializationContext context) throws JsonParseException {
 		try {
-			final StravaSkillLevel activityType = StravaSkillLevel.create(Integer.valueOf(json.getAsInt()));
-			return activityType;
+			return StravaSkillLevel.create(json.getAsInt());
 		} catch (final NumberFormatException e) {
 			throw new JsonParseException(e);
 		}

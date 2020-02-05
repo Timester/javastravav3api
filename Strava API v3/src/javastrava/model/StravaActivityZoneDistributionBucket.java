@@ -59,14 +59,9 @@ public class StravaActivityZoneDistributionBucket implements StravaEntity {
 			return false;
 		}
 		if (this.time == null) {
-			if (other.time != null) {
-				return false;
-			}
-		} else if (!this.time.equals(other.time)) {
-			return false;
-		}
-		return true;
-	}
+            return other.time == null;
+		} else return this.time.equals(other.time);
+    }
 
 	/**
 	 * @return the max
@@ -134,6 +129,6 @@ public class StravaActivityZoneDistributionBucket implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaActivityZoneDistributionBucket [max=" + this.max + ", min=" + this.min + ", time=" + this.time + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaActivityZoneDistributionBucket [max=" + this.max + ", min=" + this.min + ", time=" + this.time + "]";
 	}
 }

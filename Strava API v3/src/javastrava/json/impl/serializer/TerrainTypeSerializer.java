@@ -21,8 +21,7 @@ public class TerrainTypeSerializer implements JsonSerializer<StravaTerrainType>,
 	@Override
 	public StravaTerrainType deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {
 		try {
-			final StravaTerrainType terrainType = StravaTerrainType.create(Integer.valueOf(json.getAsInt()));
-			return terrainType;
+			return StravaTerrainType.create(json.getAsInt());
 		} catch (final NumberFormatException e) {
 			throw new JsonParseException(e);
 		}

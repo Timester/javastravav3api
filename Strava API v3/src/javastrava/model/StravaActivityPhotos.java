@@ -65,14 +65,9 @@ public class StravaActivityPhotos implements StravaEntity {
 			return false;
 		}
 		if (this.usePrimaryPhoto == null) {
-			if (other.usePrimaryPhoto != null) {
-				return false;
-			}
-		} else if (!this.usePrimaryPhoto.equals(other.usePrimaryPhoto)) {
-			return false;
-		}
-		return true;
-	}
+            return other.usePrimaryPhoto == null;
+		} else return this.usePrimaryPhoto.equals(other.usePrimaryPhoto);
+    }
 
 	/**
 	 * @return the count
@@ -141,7 +136,7 @@ public class StravaActivityPhotos implements StravaEntity {
 
 	@Override
 	public String toString() {
-		return "StravaActivityPhotos [primary=" + this.primary + ", count=" + this.count + ", usePrimaryPhoto=" + this.usePrimaryPhoto + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaActivityPhotos [primary=" + this.primary + ", count=" + this.count + ", usePrimaryPhoto=" + this.usePrimaryPhoto + "]";
 	}
 
 }

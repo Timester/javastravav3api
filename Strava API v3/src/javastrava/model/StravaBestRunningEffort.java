@@ -170,14 +170,9 @@ public class StravaBestRunningEffort implements StravaEntity {
 			return false;
 		}
 		if (this.startDateLocal == null) {
-			if (other.startDateLocal != null) {
-				return false;
-			}
-		} else if (!this.startDateLocal.equals(other.startDateLocal)) {
-			return false;
-		}
-		return true;
-	}
+            return other.startDateLocal == null;
+		} else return this.startDateLocal.equals(other.startDateLocal);
+    }
 
 	/**
 	 * @return the activity
@@ -403,9 +398,9 @@ public class StravaBestRunningEffort implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaBestRunningEffort [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", segment=" + this.segment //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ ", activity=" + this.activity + ", athlete=" + this.athlete + ", komRank=" + this.komRank + ", prRank=" + this.prRank + ", elapsedTime=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-				+ this.elapsedTime + ", movingTime=" + this.movingTime + ", startDate=" + this.startDate + ", startDateLocal=" + this.startDateLocal //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", distance=" + this.distance + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+		return "StravaBestRunningEffort [id=" + this.id + ", resourceState=" + this.resourceState + ", name=" + this.name + ", segment=" + this.segment
+				+ ", activity=" + this.activity + ", athlete=" + this.athlete + ", komRank=" + this.komRank + ", prRank=" + this.prRank + ", elapsedTime="     //$NON-NLS-5$
+				+ this.elapsedTime + ", movingTime=" + this.movingTime + ", startDate=" + this.startDate + ", startDateLocal=" + this.startDateLocal
+				+ ", distance=" + this.distance + "]";
 	}
 }

@@ -89,7 +89,7 @@ public class RouteServiceImpl extends StravaServiceImpl implements RouteService 
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaRoute>();
+			return new ArrayList<>();
 		}
 	}
 

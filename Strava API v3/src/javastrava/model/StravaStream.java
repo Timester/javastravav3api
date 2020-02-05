@@ -105,11 +105,8 @@ public class StravaStream implements StravaEntity {
 		if (this.seriesType != other.seriesType) {
 			return false;
 		}
-		if (this.type != other.type) {
-			return false;
-		}
-		return true;
-	}
+        return this.type == other.type;
+    }
 
 	/**
 	 * @return the data
@@ -243,8 +240,8 @@ public class StravaStream implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaStream [type=" + this.type + ", data=" + this.data + ", mapPoints=" + this.mapPoints + ", moving=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ this.moving + ", seriesType=" //$NON-NLS-1$
-				+ this.seriesType + ", originalSize=" + this.originalSize + ", resolution=" + this.resolution + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "StravaStream [type=" + this.type + ", data=" + this.data + ", mapPoints=" + this.mapPoints + ", moving="
+				+ this.moving + ", seriesType=" 
+				+ this.seriesType + ", originalSize=" + this.originalSize + ", resolution=" + this.resolution + "]";
 	}
 }

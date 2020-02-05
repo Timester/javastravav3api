@@ -193,14 +193,9 @@ public class StravaSegmentLeaderboardEntry implements StravaEntity {
 			return false;
 		}
 		if (this.startDateLocal == null) {
-			if (other.startDateLocal != null) {
-				return false;
-			}
-		} else if (!this.startDateLocal.equals(other.startDateLocal)) {
-			return false;
-		}
-		return true;
-	}
+            return other.startDateLocal == null;
+		} else return this.startDateLocal.equals(other.startDateLocal);
+    }
 
 	/**
 	 * @return the activityId
@@ -462,14 +457,14 @@ public class StravaSegmentLeaderboardEntry implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaSegmentLeaderboardEntry [athleteName=" + this.athleteName + ", athleteId=" + this.athleteId //$NON-NLS-1$ //$NON-NLS-2$
-				+ ", athleteGender=" + this.athleteGender //$NON-NLS-1$
-				+ ", averageHr=" + this.averageHr + ", averageWatts=" + this.averageWatts + ", distance=" + this.distance //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", elapsedTime=" + this.elapsedTime //$NON-NLS-1$
-				+ ", movingTime=" + this.movingTime + ", startDate=" + this.startDate + ", startDateLocal=" + this.startDateLocal //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", activityId=" //$NON-NLS-1$
-				+ this.activityId + ", effortId=" + this.effortId + ", rank=" + this.rank + ", athleteProfile=" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ this.athleteProfile + ", neighborhoodIndex=" //$NON-NLS-1$
-				+ this.neighborhoodIndex + "]"; //$NON-NLS-1$
+		return "StravaSegmentLeaderboardEntry [athleteName=" + this.athleteName + ", athleteId=" + this.athleteId
+				+ ", athleteGender=" + this.athleteGender 
+				+ ", averageHr=" + this.averageHr + ", averageWatts=" + this.averageWatts + ", distance=" + this.distance
+				+ ", elapsedTime=" + this.elapsedTime 
+				+ ", movingTime=" + this.movingTime + ", startDate=" + this.startDate + ", startDateLocal=" + this.startDateLocal
+				+ ", activityId=" 
+				+ this.activityId + ", effortId=" + this.effortId + ", rank=" + this.rank + ", athleteProfile="
+				+ this.athleteProfile + ", neighborhoodIndex=" 
+				+ this.neighborhoodIndex + "]"; 
 	}
 }

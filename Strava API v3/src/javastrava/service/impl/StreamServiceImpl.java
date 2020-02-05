@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
 
 import javastrava.auth.model.Token;
 import javastrava.config.Messages;
@@ -38,8 +37,7 @@ public class StreamServiceImpl extends StravaServiceImpl implements StreamServic
 	 */
 	private static StravaStreamType[] getAllStreamTypes() {
 		final List<StravaStreamType> types = Arrays.asList(StravaStreamType.values());
-		final List<StravaStreamType> returnList = types.stream().filter(type -> type != StravaStreamType.UNKNOWN).collect(Collectors.toList());
-		return returnList.toArray(new StravaStreamType[returnList.size()]);
+		return types.stream().filter(type -> type != StravaStreamType.UNKNOWN).toArray(StravaStreamType[]::new);
 	}
 
 	/**
@@ -81,11 +79,11 @@ public class StreamServiceImpl extends StravaServiceImpl implements StreamServic
 		if (types.length == 1) {
 			return types[0].toString();
 		}
-		String typeString = types[0].toString();
+		StringBuilder typeString = new StringBuilder(types[0].toString());
 		for (int i = 1; i < types.length; i++) {
-			typeString = typeString + "," + types[i].toString(); //$NON-NLS-1$
+			typeString.append(",").append(types[i].toString());
 		}
-		return typeString;
+		return typeString.toString();
 	}
 
 	/**
@@ -100,15 +98,15 @@ public class StreamServiceImpl extends StravaServiceImpl implements StreamServic
 	 */
 	private static void validateArguments(final StravaStreamResolutionType resolution, final StravaStreamSeriesDownsamplingType seriesType, final StravaStreamType... types) {
 		if (resolution == StravaStreamResolutionType.UNKNOWN) {
-			throw new IllegalArgumentException(Messages.string("StreamServiceImpl.invalidStreamResolutionType") + resolution); //$NON-NLS-1$
+			throw new IllegalArgumentException(Messages.string("StreamServiceImpl.invalidStreamResolutionType") + resolution); 
 		}
 		if (seriesType == StravaStreamSeriesDownsamplingType.UNKNOWN) {
-			throw new IllegalArgumentException(Messages.string("StreamServiceImpl.invalidStreamSeriesDownsamplingType") + seriesType); //$NON-NLS-1$
+			throw new IllegalArgumentException(Messages.string("StreamServiceImpl.invalidStreamSeriesDownsamplingType") + seriesType); 
 		}
 		if (types != null) {
 			for (final StravaStreamType type : types) {
 				if (type == StravaStreamType.UNKNOWN) {
-					throw new IllegalArgumentException(Messages.string("StreamServiceImpl.invalidStreamType") + type); //$NON-NLS-1$
+					throw new IllegalArgumentException(Messages.string("StreamServiceImpl.invalidStreamType") + type); 
 				}
 			}
 		}
@@ -175,7 +173,7 @@ public class StreamServiceImpl extends StravaServiceImpl implements StreamServic
 		} catch (final BadRequestException e) {
 			throw new IllegalArgumentException(e);
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaStream>();
+			return new ArrayList<>();
 		}
 
 		// TODO This is a workaround for issue javastrava-api #21
@@ -284,7 +282,7 @@ public class StreamServiceImpl extends StravaServiceImpl implements StreamServic
 		validateArguments(resolution, seriesType, types);
 		StravaStreamType[] typesToGet = types;
 		if (seriesType == StravaStreamSeriesDownsamplingType.TIME) {
-			throw new IllegalArgumentException(Messages.string("StreamServiceImpl.cannotDownsampleSegmentByTime")); //$NON-NLS-1$
+			throw new IllegalArgumentException(Messages.string("StreamServiceImpl.cannotDownsampleSegmentByTime")); 
 		}
 		if ((types == null) || (types.length == 0)) {
 			typesToGet = getAllStreamTypes();

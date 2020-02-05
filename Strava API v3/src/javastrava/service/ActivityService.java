@@ -54,7 +54,7 @@ public interface ActivityService extends StravaService {
 	 * @throws BadRequestException
 	 *             if the comment is invalid
 	 */
-	public StravaComment createComment(final Long activityId, final String text) throws NotFoundException, BadRequestException;
+    StravaComment createComment(final Long activityId, final String text) throws NotFoundException, BadRequestException;
 
 	/**
 	 * <p>
@@ -85,7 +85,7 @@ public interface ActivityService extends StravaService {
 	 * @throws BadRequestException
 	 *             if the comment is invalid
 	 */
-	public StravaComment createComment(final StravaComment comment) throws NotFoundException, BadRequestException;
+    StravaComment createComment(final StravaComment comment) throws NotFoundException, BadRequestException;
 
 	/**
 	 * <p>
@@ -118,7 +118,7 @@ public interface ActivityService extends StravaService {
 	 * @throws BadRequestException
 	 *             if the comment is invalid
 	 */
-	public CompletableFuture<StravaComment> createCommentAsync(final Long activityId, final String text) throws NotFoundException, BadRequestException;
+    CompletableFuture<StravaComment> createCommentAsync(final Long activityId, final String text) throws NotFoundException, BadRequestException;
 
 	/**
 	 * <p>
@@ -151,7 +151,7 @@ public interface ActivityService extends StravaService {
 	 *            The {@link StravaActivity activity} to be uploaded
 	 * @return The activity as it was uploaded on Strava
 	 */
-	public StravaActivity createManualActivity(final StravaActivity activity);
+    StravaActivity createManualActivity(final StravaActivity activity);
 
 	/**
 	 * <p>
@@ -184,7 +184,7 @@ public interface ActivityService extends StravaService {
 	 *            The {@link StravaActivity activity} to be uploaded
 	 * @return (A {@link CompletableFuture} which returns) The activity as it was uploaded on Strava
 	 */
-	public CompletableFuture<StravaActivity> createManualActivityAsync(final StravaActivity activity);
+    CompletableFuture<StravaActivity> createManualActivityAsync(final StravaActivity activity);
 
 	/**
 	 * <p>
@@ -213,7 +213,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             If the activity does not exist
 	 */
-	public StravaActivity deleteActivity(final Long activityId) throws NotFoundException;
+    StravaActivity deleteActivity(final Long activityId) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -242,7 +242,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             If the activity does not exist
 	 */
-	public StravaActivity deleteActivity(final StravaActivity activity) throws NotFoundException;
+    StravaActivity deleteActivity(final StravaActivity activity) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -271,7 +271,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             If the activity does not exist
 	 */
-	public CompletableFuture<StravaActivity> deleteActivityAsync(final Long activityId) throws NotFoundException;
+    CompletableFuture<StravaActivity> deleteActivityAsync(final Long activityId) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -285,7 +285,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             if the activity or the comment does exist
 	 */
-	public void deleteComment(final Long activityId, final Integer commentId) throws NotFoundException;
+    void deleteComment(final Long activityId, final Integer commentId) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -297,7 +297,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             If the comment does not exist on Strava
 	 */
-	public void deleteComment(final StravaComment comment) throws NotFoundException;
+    void deleteComment(final StravaComment comment) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -312,7 +312,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             if the activity or the comment does exist
 	 */
-	public CompletableFuture<Void> deleteCommentAsync(final Long activityId, final Integer commentId) throws NotFoundException;
+    CompletableFuture<Void> deleteCommentAsync(final Long activityId, final Integer commentId) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -325,7 +325,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             If the comment does not exist on Strava
 	 */
-	public CompletableFuture<Void> deleteCommentAsync(final StravaComment comment) throws NotFoundException;
+    CompletableFuture<Void> deleteCommentAsync(final StravaComment comment) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -360,7 +360,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity activity} to be returned
 	 * @return Returns a detailed representation if the {@link StravaActivity activity} is owned by the requesting athlete. Returns a summary representation for all other requests.
 	 */
-	public StravaActivity getActivity(final Long activityId);
+    StravaActivity getActivity(final Long activityId);
 
 	/**
 	 * <p>
@@ -397,7 +397,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) Used to include all segment efforts in the result (if omitted or <code>false</code> then only "important" efforts are returned).
 	 * @return Returns a detailed representation if the {@link StravaActivity activity} is owned by the requesting athlete. Returns a summary representation for all other requests.
 	 */
-	public StravaActivity getActivity(final Long activityId, final Boolean includeAllEfforts);
+    StravaActivity getActivity(final Long activityId, final Boolean includeAllEfforts);
 
 	/**
 	 * <p>
@@ -433,7 +433,7 @@ public interface ActivityService extends StravaService {
 	 * @return (A {@link CompletableFuture} which returns) Returns a detailed representation if the {@link StravaActivity activity} is owned by the requesting athlete. Returns a summary representation
 	 *         for all other requests.
 	 */
-	public CompletableFuture<StravaActivity> getActivityAsync(final Long activityId);
+    CompletableFuture<StravaActivity> getActivityAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -471,7 +471,7 @@ public interface ActivityService extends StravaService {
 	 * @return (A {@link CompletableFuture} which returns) Returns a detailed representation if the {@link StravaActivity activity} is owned by the requesting athlete. Returns a summary representation
 	 *         for all other requests.
 	 */
-	public CompletableFuture<StravaActivity> getActivityAsync(final Long activityId, final Boolean includeAllEfforts);
+    CompletableFuture<StravaActivity> getActivityAsync(final Long activityId, final Boolean includeAllEfforts);
 
 	/**
 	 * <p>
@@ -487,7 +487,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             If the activity does not exist on Strava
 	 */
-	public void giveKudos(final Long activityId) throws NotFoundException;
+    void giveKudos(final Long activityId) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -504,7 +504,7 @@ public interface ActivityService extends StravaService {
 	 * @throws NotFoundException
 	 *             If the activity does not exist on Strava
 	 */
-	public CompletableFuture<Void> giveKudosAsync(final Long activityId) throws NotFoundException;
+    CompletableFuture<Void> giveKudosAsync(final Long activityId) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -541,7 +541,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity} for which {@link StravaComment comments} should be returned
 	 * @return List of comments
 	 */
-	public List<StravaComment> listActivityComments(final Long activityId);
+    List<StravaComment> listActivityComments(final Long activityId);
 
 	/**
 	 * <p>
@@ -584,7 +584,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) Include markdown in comments (default is <code>false</code> - i.e. filter out
 	 * @return List of comments
 	 */
-	public List<StravaComment> listActivityComments(final Long activityId, final Boolean markdown);
+    List<StravaComment> listActivityComments(final Long activityId, final Boolean markdown);
 
 	/**
 	 * <p>
@@ -625,7 +625,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return List of comments
 	 */
-	public List<StravaComment> listActivityComments(final Long activityId, final Boolean markdown, final Paging pagingInstruction);
+    List<StravaComment> listActivityComments(final Long activityId, final Boolean markdown, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -664,7 +664,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) Paging instructions. If not provided then the first page is returned.
 	 * @return List of comments
 	 */
-	public List<StravaComment> listActivityComments(final Long activityId, final Paging pagingInstruction);
+    List<StravaComment> listActivityComments(final Long activityId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -701,7 +701,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity} for which {@link StravaComment comments} should be returned
 	 * @return (A {@link CompletableFuture} which returns) List of comments
 	 */
-	public CompletableFuture<List<StravaComment>> listActivityCommentsAsync(final Long activityId);
+    CompletableFuture<List<StravaComment>> listActivityCommentsAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -744,7 +744,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) Include markdown in comments (default is <code>false</code> - i.e. filter out
 	 * @return (A {@link CompletableFuture} which returns) List of comments
 	 */
-	public CompletableFuture<List<StravaComment>> listActivityCommentsAsync(final Long activityId, final Boolean markdown);
+    CompletableFuture<List<StravaComment>> listActivityCommentsAsync(final Long activityId, final Boolean markdown);
 
 	/**
 	 * <p>
@@ -785,7 +785,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return (A {@link CompletableFuture} which returns) List of comments
 	 */
-	public CompletableFuture<List<StravaComment>> listActivityCommentsAsync(final Long activityId, final Boolean markdown, final Paging pagingInstruction);
+    CompletableFuture<List<StravaComment>> listActivityCommentsAsync(final Long activityId, final Boolean markdown, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -824,7 +824,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) Paging instructions. If not provided then the first page is returned.
 	 * @return (A {@link CompletableFuture} which returns) List of comments
 	 */
-	public CompletableFuture<List<StravaComment>> listActivityCommentsAsync(final Long activityId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaComment>> listActivityCommentsAsync(final Long activityId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -854,7 +854,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity} for which kudoers are to be listed
 	 * @return Returns an array of {@link StravaAthlete athlete} summary objects.
 	 */
-	public List<StravaAthlete> listActivityKudoers(final Long activityId);
+    List<StravaAthlete> listActivityKudoers(final Long activityId);
 
 	/**
 	 * <p>
@@ -886,7 +886,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaAthlete athlete} summary objects.
 	 */
-	public List<StravaAthlete> listActivityKudoers(final Long activityId, final Paging pagingInstruction);
+    List<StravaAthlete> listActivityKudoers(final Long activityId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -916,7 +916,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity} for which kudoers are to be listed
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaAthlete athlete} summary objects.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listActivityKudoersAsync(final Long activityId);
+    CompletableFuture<List<StravaAthlete>> listActivityKudoersAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -948,7 +948,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaAthlete athlete} summary objects.
 	 */
-	public CompletableFuture<List<StravaAthlete>> listActivityKudoersAsync(final Long activityId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaAthlete>> listActivityKudoersAsync(final Long activityId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -973,7 +973,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity} for which laps should be returned
 	 * @return Returns an array of {@link StravaLap lap} effort summaries
 	 */
-	public List<StravaLap> listActivityLaps(final Long activityId);
+    List<StravaLap> listActivityLaps(final Long activityId);
 
 	/**
 	 * <p>
@@ -998,7 +998,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity} for which laps should be returned
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaLap lap} effort summaries
 	 */
-	public CompletableFuture<List<StravaLap>> listActivityLapsAsync(final Long activityId);
+    CompletableFuture<List<StravaLap>> listActivityLapsAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -1032,7 +1032,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity} for which photos are to be listed
 	 * @return Returns an array of {@link StravaPhoto photo} objects.
 	 */
-	public List<StravaPhoto> listActivityPhotos(final Long activityId);
+    List<StravaPhoto> listActivityPhotos(final Long activityId);
 
 	/**
 	 * <p>
@@ -1066,7 +1066,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity} for which photos are to be listed
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaPhoto photo} objects.
 	 */
-	public CompletableFuture<List<StravaPhoto>> listActivityPhotosAsync(final Long activityId);
+    CompletableFuture<List<StravaPhoto>> listActivityPhotosAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -1099,7 +1099,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity activity} for which zones should be returned
 	 * @return Returns an array of {@link StravaActivityZone activity zones} for the {@link StravaActivity} identified
 	 */
-	public List<StravaActivityZone> listActivityZones(final Long activityId);
+    List<StravaActivityZone> listActivityZones(final Long activityId);
 
 	/**
 	 * <p>
@@ -1132,7 +1132,7 @@ public interface ActivityService extends StravaService {
 	 *            The id of the {@link StravaActivity activity} for which zones should be returned
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaActivityZone activity zones} for the {@link StravaActivity} identified
 	 */
-	public CompletableFuture<List<StravaActivityZone>> listActivityZonesAsync(final Long activityId);
+    CompletableFuture<List<StravaActivityZone>> listActivityZonesAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -1155,7 +1155,7 @@ public interface ActivityService extends StravaService {
 	 *            The activity whose comments should be listed
 	 * @return All comments on the activity
 	 */
-	public List<StravaComment> listAllActivityComments(final Long activityId);
+    List<StravaComment> listAllActivityComments(final Long activityId);
 
 	/**
 	 * <p>
@@ -1178,7 +1178,7 @@ public interface ActivityService extends StravaService {
 	 *            The activity whose comments should be listed
 	 * @return (A {@link CompletableFuture} which returns) All comments on the activity
 	 */
-	public CompletableFuture<List<StravaComment>> listAllActivityCommentsAsync(final Long activityId);
+    CompletableFuture<List<StravaComment>> listAllActivityCommentsAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -1201,7 +1201,7 @@ public interface ActivityService extends StravaService {
 	 *            The activity whose kudoers should be listed
 	 * @return All athletes who have kudoed the activity
 	 */
-	public List<StravaAthlete> listAllActivityKudoers(final Long activityId);
+    List<StravaAthlete> listAllActivityKudoers(final Long activityId);
 
 	/**
 	 * <p>
@@ -1224,7 +1224,7 @@ public interface ActivityService extends StravaService {
 	 *            The activity whose kudoers should be listed
 	 * @return (A {@link CompletableFuture} which returns) All athletes who have kudoed the activity
 	 */
-	public CompletableFuture<List<StravaAthlete>> listAllActivityKudoersAsync(final Long activityId);
+    CompletableFuture<List<StravaAthlete>> listAllActivityKudoersAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -1243,7 +1243,7 @@ public interface ActivityService extends StravaService {
 	 *
 	 * @return Returns an array of {@link StravaActivity} summary representations sorted newest first by default.
 	 */
-	public List<StravaActivity> listAllAuthenticatedAthleteActivities();
+    List<StravaActivity> listAllAuthenticatedAthleteActivities();
 
 	/**
 	 * <p>
@@ -1266,7 +1266,7 @@ public interface ActivityService extends StravaService {
 	 *            Return only rides started AFTER this data/time
 	 * @return Returns an array of {@link StravaActivity} summary representations sorted newest first by default.
 	 */
-	public List<StravaActivity> listAllAuthenticatedAthleteActivities(final LocalDateTime before, final LocalDateTime after);
+    List<StravaActivity> listAllAuthenticatedAthleteActivities(final LocalDateTime before, final LocalDateTime after);
 
 	/**
 	 * <p>
@@ -1285,7 +1285,7 @@ public interface ActivityService extends StravaService {
 	 *
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaActivity} summary representations sorted newest first by default.
 	 */
-	public CompletableFuture<List<StravaActivity>> listAllAuthenticatedAthleteActivitiesAsync();
+    CompletableFuture<List<StravaActivity>> listAllAuthenticatedAthleteActivitiesAsync();
 
 	/**
 	 * <p>
@@ -1308,7 +1308,7 @@ public interface ActivityService extends StravaService {
 	 *            Return only rides started AFTER this data/time
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaActivity} summary representations sorted newest first by default.
 	 */
-	public CompletableFuture<List<StravaActivity>> listAllAuthenticatedAthleteActivitiesAsync(final LocalDateTime before, final LocalDateTime after);
+    CompletableFuture<List<StravaActivity>> listAllAuthenticatedAthleteActivitiesAsync(final LocalDateTime before, final LocalDateTime after);
 
 	/**
 	 * <p>
@@ -1331,7 +1331,7 @@ public interface ActivityService extends StravaService {
 	 *
 	 * @return Returns an array of activity summary representations sorted newest first by start_date.
 	 */
-	public List<StravaActivity> listAllFriendsActivities();
+    List<StravaActivity> listAllFriendsActivities();
 
 	/**
 	 * <p>
@@ -1354,7 +1354,7 @@ public interface ActivityService extends StravaService {
 	 *
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of activity summary representations sorted newest first by start_date.
 	 */
-	public CompletableFuture<List<StravaActivity>> listAllFriendsActivitiesAsync();
+    CompletableFuture<List<StravaActivity>> listAllFriendsActivitiesAsync();
 
 	/**
 	 * <p>
@@ -1377,7 +1377,7 @@ public interface ActivityService extends StravaService {
 	 *            The activity identifier
 	 * @return List of Strava activities that Strava has determined are related to this one
 	 */
-	public List<StravaActivity> listAllRelatedActivities(final Long activityId);
+    List<StravaActivity> listAllRelatedActivities(final Long activityId);
 
 	/**
 	 * <p>
@@ -1400,7 +1400,7 @@ public interface ActivityService extends StravaService {
 	 *            The activity identifier
 	 * @return (A {@link CompletableFuture} which returns) List of Strava activities that Strava has determined are related to this one
 	 */
-	public CompletableFuture<List<StravaActivity>> listAllRelatedActivitiesAsync(final Long activityId);
+    CompletableFuture<List<StravaActivity>> listAllRelatedActivitiesAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -1419,7 +1419,7 @@ public interface ActivityService extends StravaService {
 	 *
 	 * @return Returns an array of {@link StravaActivity} summary representations sorted newest first by default.
 	 */
-	public List<StravaActivity> listAuthenticatedAthleteActivities();
+    List<StravaActivity> listAuthenticatedAthleteActivities();
 
 	/**
 	 * <p>
@@ -1442,7 +1442,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) result will start with activities whose start_date is after this value, sorted oldest first
 	 * @return Returns an array of {@link StravaActivity} summary representations sorted newest first by default. Will be sorted oldest first if the after parameter is used.
 	 */
-	public List<StravaActivity> listAuthenticatedAthleteActivities(final LocalDateTime before, final LocalDateTime after);
+    List<StravaActivity> listAuthenticatedAthleteActivities(final LocalDateTime before, final LocalDateTime after);
 
 	/**
 	 * <p>
@@ -1471,7 +1471,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaActivity} summary representations sorted newest first by default. Will be sorted oldest first if the after parameter is used.
 	 */
-	public List<StravaActivity> listAuthenticatedAthleteActivities(final LocalDateTime before, final LocalDateTime after, final Paging pagingInstruction);
+    List<StravaActivity> listAuthenticatedAthleteActivities(final LocalDateTime before, final LocalDateTime after, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1492,7 +1492,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of {@link StravaActivity} summary representations sorted newest first by default. Will be sorted oldest first if the after parameter is used.
 	 */
-	public List<StravaActivity> listAuthenticatedAthleteActivities(final Paging pagingInstruction);
+    List<StravaActivity> listAuthenticatedAthleteActivities(final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1511,7 +1511,7 @@ public interface ActivityService extends StravaService {
 	 *
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaActivity} summary representations sorted newest first by default.
 	 */
-	public CompletableFuture<List<StravaActivity>> listAuthenticatedAthleteActivitiesAsync();
+    CompletableFuture<List<StravaActivity>> listAuthenticatedAthleteActivitiesAsync();
 
 	/**
 	 * <p>
@@ -1535,7 +1535,7 @@ public interface ActivityService extends StravaService {
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaActivity} summary representations sorted newest first by default. Will be sorted oldest first if the after
 	 *         parameter is used.
 	 */
-	public CompletableFuture<List<StravaActivity>> listAuthenticatedAthleteActivitiesAsync(final LocalDateTime before, final LocalDateTime after);
+    CompletableFuture<List<StravaActivity>> listAuthenticatedAthleteActivitiesAsync(final LocalDateTime before, final LocalDateTime after);
 
 	/**
 	 * <p>
@@ -1565,7 +1565,7 @@ public interface ActivityService extends StravaService {
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaActivity} summary representations sorted newest first by default. Will be sorted oldest first if the after
 	 *         parameter is used.
 	 */
-	public CompletableFuture<List<StravaActivity>> listAuthenticatedAthleteActivitiesAsync(final LocalDateTime before, final LocalDateTime after, final Paging pagingInstruction);
+    CompletableFuture<List<StravaActivity>> listAuthenticatedAthleteActivitiesAsync(final LocalDateTime before, final LocalDateTime after, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1587,7 +1587,7 @@ public interface ActivityService extends StravaService {
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of {@link StravaActivity} summary representations sorted newest first by default. Will be sorted oldest first if the after
 	 *         parameter is used.
 	 */
-	public CompletableFuture<List<StravaActivity>> listAuthenticatedAthleteActivitiesAsync(final Paging pagingInstruction);
+    CompletableFuture<List<StravaActivity>> listAuthenticatedAthleteActivitiesAsync(final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1606,7 +1606,7 @@ public interface ActivityService extends StravaService {
 	 *
 	 * @return Returns an array of activity summary representations sorted newest first by start_date.
 	 */
-	public List<StravaActivity> listFriendsActivities();
+    List<StravaActivity> listFriendsActivities();
 
 	/**
 	 * <p>
@@ -1627,7 +1627,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return Returns an array of activity summary representations sorted newest first by start_date.
 	 */
-	public List<StravaActivity> listFriendsActivities(final Paging pagingInstruction);
+    List<StravaActivity> listFriendsActivities(final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1646,7 +1646,7 @@ public interface ActivityService extends StravaService {
 	 *
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of activity summary representations sorted newest first by start_date.
 	 */
-	public CompletableFuture<List<StravaActivity>> listFriendsActivitiesAsync();
+    CompletableFuture<List<StravaActivity>> listFriendsActivitiesAsync();
 
 	/**
 	 * <p>
@@ -1667,7 +1667,7 @@ public interface ActivityService extends StravaService {
 	 *            (Optional) The page to be returned
 	 * @return (A {@link CompletableFuture} which returns) Returns an array of activity summary representations sorted newest first by start_date.
 	 */
-	public CompletableFuture<List<StravaActivity>> listFriendsActivitiesAsync(final Paging pagingInstruction);
+    CompletableFuture<List<StravaActivity>> listFriendsActivitiesAsync(final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1686,7 +1686,7 @@ public interface ActivityService extends StravaService {
 	 *            StravaActivity id for which related activities should be listed
 	 * @return List of related activities (not including the main activity)
 	 */
-	public List<StravaActivity> listRelatedActivities(final Long activityId);
+    List<StravaActivity> listRelatedActivities(final Long activityId);
 
 	/**
 	 * <p>
@@ -1707,7 +1707,7 @@ public interface ActivityService extends StravaService {
 	 *            Paging instructions
 	 * @return List of related activities (not including the main activity)
 	 */
-	public List<StravaActivity> listRelatedActivities(final Long activityId, final Paging pagingInstruction);
+    List<StravaActivity> listRelatedActivities(final Long activityId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1726,7 +1726,7 @@ public interface ActivityService extends StravaService {
 	 *            StravaActivity id for which related activities should be listed
 	 * @return (A {@link CompletableFuture} which returns) List of related activities (not including the main activity)
 	 */
-	public CompletableFuture<List<StravaActivity>> listRelatedActivitiesAsync(final Long activityId);
+    CompletableFuture<List<StravaActivity>> listRelatedActivitiesAsync(final Long activityId);
 
 	/**
 	 * <p>
@@ -1747,7 +1747,7 @@ public interface ActivityService extends StravaService {
 	 *            Paging instructions
 	 * @return (A {@link CompletableFuture} which returns) List of related activities (not including the main activity)
 	 */
-	public CompletableFuture<List<StravaActivity>> listRelatedActivitiesAsync(final Long activityId, final Paging pagingInstruction);
+    CompletableFuture<List<StravaActivity>> listRelatedActivitiesAsync(final Long activityId, final Paging pagingInstruction);
 
 	/**
 	 * <p>
@@ -1777,7 +1777,7 @@ public interface ActivityService extends StravaService {
 	 *             If the activity with the given id does not exist
 	 *
 	 */
-	public StravaActivity updateActivity(final Long activityId, final StravaActivityUpdate activity) throws NotFoundException;
+    StravaActivity updateActivity(final Long activityId, final StravaActivityUpdate activity) throws NotFoundException;
 
 	/**
 	 * <p>
@@ -1807,5 +1807,5 @@ public interface ActivityService extends StravaService {
 	 *             If the activity with the given id does not exist
 	 *
 	 */
-	public CompletableFuture<StravaActivity> updateActivityAsync(final Long activityId, final StravaActivityUpdate activity) throws NotFoundException;
+    CompletableFuture<StravaActivity> updateActivityAsync(final Long activityId, final StravaActivityUpdate activity) throws NotFoundException;
 }

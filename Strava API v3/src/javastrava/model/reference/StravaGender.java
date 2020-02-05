@@ -16,17 +16,17 @@ public enum StravaGender implements StravaReferenceType<String> {
 	/**
 	 * Male
 	 */
-	MALE(StravaConfig.string("StravaGender.male"), Messages.string("StravaGender.male.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	MALE(StravaConfig.string("StravaGender.male"), Messages.string("StravaGender.male.description")),
 	/**
 	 * Female
 	 */
-	FEMALE(StravaConfig.string("StravaGender.female"), Messages.string("StravaGender.female.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	FEMALE(StravaConfig.string("StravaGender.female"), Messages.string("StravaGender.female.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -57,7 +57,7 @@ public enum StravaGender implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaGender(final String id, final String description) {
+    StravaGender(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

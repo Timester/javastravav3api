@@ -130,11 +130,8 @@ public class StravaActivityUpdate implements StravaEntity {
 		} else if (!this.trainer.equals(other.trainer)) {
 			return false;
 		}
-		if (this.type != other.type) {
-			return false;
-		}
-		return true;
-	}
+        return this.type == other.type;
+    }
 
 	/**
 	 * @return the commute
@@ -268,8 +265,8 @@ public class StravaActivityUpdate implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaActivityUpdate [name=" + this.name + ", type=" + this.type + ", privateActivity=" + this.privateActivity + ", commute=" + this.commute //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-				+ ", trainer=" + this.trainer + ", gearId=" + this.gearId + ", description=" + this.description + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaActivityUpdate [name=" + this.name + ", type=" + this.type + ", privateActivity=" + this.privateActivity + ", commute=" + this.commute
+				+ ", trainer=" + this.trainer + ", gearId=" + this.gearId + ", description=" + this.description + "]";
 	}
 
 }

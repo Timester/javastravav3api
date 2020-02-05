@@ -58,7 +58,7 @@ public class RunningRaceServiceImpl extends StravaServiceImpl implements Running
 	 */
 	private RunningRaceServiceImpl(final Token token) {
 		super(token);
-		this.runningRaceCache = new StravaCacheImpl<StravaRunningRace, Integer>(StravaRunningRace.class, token);
+		this.runningRaceCache = new StravaCacheImpl<>(StravaRunningRace.class, token);
 	}
 
 	@Override
@@ -82,9 +82,7 @@ public class RunningRaceServiceImpl extends StravaServiceImpl implements Running
 
 	@Override
 	public CompletableFuture<StravaRunningRace> getRaceAsync(Integer id) {
-		return StravaServiceImpl.future(() -> {
-			return getRace(id);
-		});
+		return StravaServiceImpl.future(() -> getRace(id));
 	}
 
 	@Override
@@ -94,15 +92,13 @@ public class RunningRaceServiceImpl extends StravaServiceImpl implements Running
 		} catch (final NotFoundException e) {
 			return null;
 		} catch (final UnauthorizedException e) {
-			return new ArrayList<StravaRunningRace>();
+			return new ArrayList<>();
 		}
 	}
 
 	@Override
 	public CompletableFuture<List<StravaRunningRace>> listRacesAsync(Integer year) {
-		return StravaServiceImpl.future(() -> {
-			return listRaces(year);
-		});
+		return StravaServiceImpl.future(() -> listRaces(year));
 	}
 
 }

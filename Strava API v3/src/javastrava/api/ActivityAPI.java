@@ -47,7 +47,7 @@ public interface ActivityAPI {
 	 *             If the comment text is null or the empty string
 	 */
 	@POST("/activities/{id}/comments")
-	public StravaComment createComment(@Path("id") final Long activityId, @Query("text") final String text) throws BadRequestException, NotFoundException;
+    StravaComment createComment(@Path("id") final Long activityId, @Query("text") final String text) throws BadRequestException, NotFoundException;
 
 	/**
 	 * @see ActivityService#createComment(Long, String)
@@ -64,7 +64,7 @@ public interface ActivityAPI {
 	 *             If the comment text is null or the empty string
 	 */
 	@POST("/activities/{id}/comments")
-	public void createComment(@Path("id") final Long activityId, @Query("text") final String text, final StravaAPICallback<StravaComment> callback) throws BadRequestException, NotFoundException;
+    void createComment(@Path("id") final Long activityId, @Query("text") final String text, final StravaAPICallback<StravaComment> callback) throws BadRequestException, NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#createManualActivity(javastrava.model.StravaActivity)
@@ -76,7 +76,7 @@ public interface ActivityAPI {
 	 *             If the activity is malformed and can't be uploaded
 	 */
 	@POST("/activities")
-	public StravaActivity createManualActivity(@Body final StravaActivity activity) throws BadRequestException;
+    StravaActivity createManualActivity(@Body final StravaActivity activity) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#createManualActivity(javastrava.model.StravaActivity)
@@ -89,7 +89,7 @@ public interface ActivityAPI {
 	 *             If the activity is malformed and can't be uploaded
 	 */
 	@POST("/activities")
-	public void createManualActivity(@Body final StravaActivity activity, final StravaAPICallback<StravaActivity> callback) throws BadRequestException;
+    void createManualActivity(@Body final StravaActivity activity, final StravaAPICallback<StravaActivity> callback) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#deleteActivity(java.lang.Long)
@@ -101,7 +101,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@DELETE("/activities/{id}")
-	public StravaActivity deleteActivity(@Path("id") final Long id) throws NotFoundException;
+    StravaActivity deleteActivity(@Path("id") final Long id) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#deleteActivity(java.lang.Long)
@@ -114,7 +114,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@DELETE("/activities/{id}")
-	public void deleteActivity(@Path("id") final Long activityId, final StravaAPICallback<StravaActivity> callback) throws NotFoundException;
+    void deleteActivity(@Path("id") final Long activityId, final StravaAPICallback<StravaActivity> callback) throws NotFoundException;
 
 	/**
 	 * @see ActivityService#deleteComment(Long, Integer)
@@ -128,7 +128,7 @@ public interface ActivityAPI {
 	 *             If the comment does not exist
 	 */
 	@DELETE("/activities/{activityId}/comments/{commentId}")
-	public StravaResponse deleteComment(@Path("activityId") final Long activityId, @Path("commentId") final Integer commentId) throws NotFoundException;
+    StravaResponse deleteComment(@Path("activityId") final Long activityId, @Path("commentId") final Integer commentId) throws NotFoundException;
 
 	/**
 	 * @see ActivityService#deleteComment(Long, Integer)
@@ -143,7 +143,7 @@ public interface ActivityAPI {
 	 *             If the comment does not exist
 	 */
 	@DELETE("/activities/{activityId}/comments/{commentId}")
-	public void deleteComment(@Path("activityId") final Long activityId, @Path("commentId") final Integer commentId, final StravaAPICallback<StravaResponse> callback) throws NotFoundException;
+    void deleteComment(@Path("activityId") final Long activityId, @Path("commentId") final Integer commentId, final StravaAPICallback<StravaResponse> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#getActivity(java.lang.Long, java.lang.Boolean)
@@ -157,7 +157,7 @@ public interface ActivityAPI {
 	 *             If the activity does not exist
 	 */
 	@GET("/activities/{id}")
-	public StravaActivity getActivity(@Path("id") final Long id, @Query("include_all_efforts") final Boolean includeAllEfforts) throws NotFoundException;
+    StravaActivity getActivity(@Path("id") final Long id, @Query("include_all_efforts") final Boolean includeAllEfforts) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#getActivity(java.lang.Long, java.lang.Boolean)
@@ -172,7 +172,7 @@ public interface ActivityAPI {
 	 *             If the activity does not exist
 	 */
 	@GET("/activities/{id}")
-	public void getActivity(@Path("id") final Long id, @Query("include_all_efforts") final Boolean includeAllEfforts, final StravaAPICallback<StravaActivity> callback) throws NotFoundException;
+    void getActivity(@Path("id") final Long id, @Query("include_all_efforts") final Boolean includeAllEfforts, final StravaAPICallback<StravaActivity> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#getActivity(java.lang.Long, java.lang.Boolean)
@@ -186,7 +186,7 @@ public interface ActivityAPI {
 	 *             If the activity does not exist
 	 */
 	@GET("/activities/{id}")
-	public Response getActivityRaw(@Path("id") final Long id, @Query("include_all_efforts") final Boolean includeAllEfforts) throws NotFoundException;
+    Response getActivityRaw(@Path("id") final Long id, @Query("include_all_efforts") final Boolean includeAllEfforts) throws NotFoundException;
 
 	/**
 	 * @see ActivityService#giveKudos(Long)
@@ -198,7 +198,7 @@ public interface ActivityAPI {
 	 *             if the activity does not exist
 	 */
 	@POST("/activities/{id}/kudos")
-	public StravaResponse giveKudos(@Path("id") final Long activityId) throws NotFoundException;
+    StravaResponse giveKudos(@Path("id") final Long activityId) throws NotFoundException;
 
 	/**
 	 * @see ActivityService#giveKudos(Long)
@@ -211,7 +211,7 @@ public interface ActivityAPI {
 	 *             if the activity does not exist
 	 */
 	@POST("/activities/{id}/kudos")
-	public void giveKudos(@Path("id") final Long activityId, final StravaAPICallback<StravaResponse> callback) throws NotFoundException;
+    void giveKudos(@Path("id") final Long activityId, final StravaAPICallback<StravaResponse> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityComments(Long, Boolean, javastrava.util.Paging)
@@ -231,8 +231,8 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/comments")
-	public StravaComment[] listActivityComments(@Path("id") final Long activityId, @Query("markdown") final Boolean markdown, @Query("page") final Integer page,
-			@Query("per_page") final Integer perPage) throws NotFoundException, BadRequestException;
+    StravaComment[] listActivityComments(@Path("id") final Long activityId, @Query("markdown") final Boolean markdown, @Query("page") final Integer page,
+                                         @Query("per_page") final Integer perPage) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityComments(Long, Boolean, javastrava.util.Paging)
@@ -253,8 +253,8 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/comments")
-	public void listActivityComments(@Path("id") final Long activityId, @Query("markdown") final Boolean markdown, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
-			final StravaAPICallback<StravaComment[]> callback) throws NotFoundException, BadRequestException;
+    void listActivityComments(@Path("id") final Long activityId, @Query("markdown") final Boolean markdown, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
+                              final StravaAPICallback<StravaComment[]> callback) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityComments(Long, Boolean, javastrava.util.Paging)
@@ -274,7 +274,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/comments")
-	public Response listActivityCommentsRaw(@Path("id") final Long activityId, @Query("markdown") final Boolean markdown, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    Response listActivityCommentsRaw(@Path("id") final Long activityId, @Query("markdown") final Boolean markdown, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -293,7 +293,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/kudos")
-	public StravaAthlete[] listActivityKudoers(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    StravaAthlete[] listActivityKudoers(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -313,7 +313,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/kudos")
-	public void listActivityKudoers(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
+    void listActivityKudoers(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaAthlete[]> callback)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -332,7 +332,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/kudos")
-	public Response listActivityKudoersRaw(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    Response listActivityKudoersRaw(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -345,7 +345,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/laps")
-	public StravaLap[] listActivityLaps(@Path("id") final Long activityId) throws NotFoundException;
+    StravaLap[] listActivityLaps(@Path("id") final Long activityId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityLaps(java.lang.Long)
@@ -358,7 +358,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/laps")
-	public void listActivityLaps(@Path("id") final Long activityId, final StravaAPICallback<StravaLap[]> callback) throws NotFoundException;
+    void listActivityLaps(@Path("id") final Long activityId, final StravaAPICallback<StravaLap[]> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityLaps(java.lang.Long)
@@ -370,7 +370,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/laps")
-	public Response listActivityLapsRaw(@Path("id") final Long activityId) throws NotFoundException;
+    Response listActivityLapsRaw(@Path("id") final Long activityId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityPhotos(java.lang.Long)
@@ -382,7 +382,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/photos")
-	public StravaPhoto[] listActivityPhotos(@Path("id") final Long activityId) throws NotFoundException;
+    StravaPhoto[] listActivityPhotos(@Path("id") final Long activityId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityPhotos(java.lang.Long)
@@ -395,7 +395,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/photos")
-	public void listActivityPhotos(@Path("id") final Long activityId, final StravaAPICallback<StravaPhoto[]> callback) throws NotFoundException;
+    void listActivityPhotos(@Path("id") final Long activityId, final StravaAPICallback<StravaPhoto[]> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityPhotos(java.lang.Long)
@@ -407,7 +407,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/photos")
-	public Response listActivityPhotosRaw(@Path("id") final Long activityId) throws NotFoundException;
+    Response listActivityPhotosRaw(@Path("id") final Long activityId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityZones(java.lang.Long)
@@ -419,7 +419,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/zones")
-	public StravaActivityZone[] listActivityZones(@Path("id") final Long activityId) throws NotFoundException;
+    StravaActivityZone[] listActivityZones(@Path("id") final Long activityId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityZones(java.lang.Long)
@@ -432,7 +432,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/zones")
-	public void listActivityZones(@Path("id") final Long activityId, final StravaAPICallback<StravaActivityZone[]> callback) throws NotFoundException;
+    void listActivityZones(@Path("id") final Long activityId, final StravaAPICallback<StravaActivityZone[]> callback) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listActivityZones(java.lang.Long)
@@ -444,7 +444,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@GET("/activities/{id}/zones")
-	public Response listActivityZonesRaw(@Path("id") final Long activityId) throws NotFoundException;
+    Response listActivityZonesRaw(@Path("id") final Long activityId) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listAuthenticatedAthleteActivities(LocalDateTime, LocalDateTime, javastrava.util.Paging)
@@ -462,8 +462,8 @@ public interface ActivityAPI {
 	 *             If paging instructions are invalid
 	 */
 	@GET("/athlete/activities")
-	public StravaActivity[] listAuthenticatedAthleteActivities(@Query("before") final Integer before, @Query("after") final Integer after, @Query("page") final Integer page,
-			@Query("per_page") final Integer perPage) throws BadRequestException;
+    StravaActivity[] listAuthenticatedAthleteActivities(@Query("before") final Integer before, @Query("after") final Integer after, @Query("page") final Integer page,
+                                                        @Query("per_page") final Integer perPage) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listAuthenticatedAthleteActivities(LocalDateTime, LocalDateTime, javastrava.util.Paging)
@@ -482,8 +482,8 @@ public interface ActivityAPI {
 	 *             If paging instructions are invalid
 	 */
 	@GET("/athlete/activities")
-	public void listAuthenticatedAthleteActivities(@Query("before") final Integer before, @Query("after") final Integer after, @Query("page") final Integer page,
-			@Query("per_page") final Integer perPage, final StravaAPICallback<StravaActivity[]> callback) throws BadRequestException;
+    void listAuthenticatedAthleteActivities(@Query("before") final Integer before, @Query("after") final Integer after, @Query("page") final Integer page,
+                                            @Query("per_page") final Integer perPage, final StravaAPICallback<StravaActivity[]> callback) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listAuthenticatedAthleteActivities(LocalDateTime, LocalDateTime, javastrava.util.Paging)
@@ -501,8 +501,8 @@ public interface ActivityAPI {
 	 *             If paging instructions are invalid
 	 */
 	@GET("/athlete/activities")
-	public Response listAuthenticatedAthleteActivitiesRaw(@Query("before") final Integer before, @Query("after") final Integer after, @Query("page") final Integer page,
-			@Query("per_page") final Integer perPage) throws BadRequestException;
+    Response listAuthenticatedAthleteActivitiesRaw(@Query("before") final Integer before, @Query("after") final Integer after, @Query("page") final Integer page,
+                                                   @Query("per_page") final Integer perPage) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listFriendsActivities(javastrava.util.Paging)
@@ -516,7 +516,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/following")
-	public StravaActivity[] listFriendsActivities(@Query("page") final Integer page, @Query("per_page") final Integer perPage) throws BadRequestException;
+    StravaActivity[] listFriendsActivities(@Query("page") final Integer page, @Query("per_page") final Integer perPage) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listFriendsActivities(javastrava.util.Paging)
@@ -531,7 +531,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/following")
-	public void listFriendsActivities(@Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaActivity[]> callback) throws BadRequestException;
+    void listFriendsActivities(@Query("page") final Integer page, @Query("per_page") final Integer perPage, final StravaAPICallback<StravaActivity[]> callback) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listFriendsActivities(javastrava.util.Paging)
@@ -545,7 +545,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/following")
-	public Response listFriendsActivitiesRaw(@Query("page") final Integer page, @Query("per_page") final Integer perPage) throws BadRequestException;
+    Response listFriendsActivitiesRaw(@Query("page") final Integer page, @Query("per_page") final Integer perPage) throws BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listRelatedActivities(java.lang.Long, javastrava.util.Paging)
@@ -563,7 +563,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/related")
-	public StravaActivity[] listRelatedActivities(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    StravaActivity[] listRelatedActivities(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -583,8 +583,8 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/related")
-	public void listRelatedActivities(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
-			final StravaAPICallback<StravaActivity[]> callback) throws NotFoundException, BadRequestException;
+    void listRelatedActivities(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage,
+                               final StravaAPICallback<StravaActivity[]> callback) throws NotFoundException, BadRequestException;
 
 	/**
 	 * @see javastrava.service.ActivityService#listRelatedActivities(java.lang.Long, javastrava.util.Paging)
@@ -602,7 +602,7 @@ public interface ActivityAPI {
 	 *             If the paging instructions are invalid
 	 */
 	@GET("/activities/{id}/related")
-	public Response listRelatedActivitiesRaw(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
+    Response listRelatedActivitiesRaw(@Path("id") final Long activityId, @Query("page") final Integer page, @Query("per_page") final Integer perPage)
 			throws NotFoundException, BadRequestException;
 
 	/**
@@ -617,7 +617,7 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@PUT("/activities/{id}")
-	public StravaActivity updateActivity(@Path("id") final Long activityId, @Body final StravaActivityUpdate activity) throws NotFoundException;
+    StravaActivity updateActivity(@Path("id") final Long activityId, @Body final StravaActivityUpdate activity) throws NotFoundException;
 
 	/**
 	 * @see javastrava.service.ActivityService#updateActivity(Long, StravaActivityUpdate)
@@ -632,5 +632,5 @@ public interface ActivityAPI {
 	 *             If the activity doesn't exist
 	 */
 	@PUT("/activities/{id}")
-	public void updateActivity(@Path("id") final Long activityId, @Body final StravaActivityUpdate activity, final StravaAPICallback<StravaActivity> callback) throws NotFoundException;
+    void updateActivity(@Path("id") final Long activityId, @Body final StravaActivityUpdate activity, final StravaAPICallback<StravaActivity> callback) throws NotFoundException;
 }

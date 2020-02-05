@@ -16,53 +16,53 @@ public enum StravaStreamType implements StravaReferenceType<String> {
 	/**
 	 * Time
 	 */
-	TIME(StravaConfig.string("StravaStreamType.time"), Messages.string("StravaStreamType.time.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TIME(StravaConfig.string("StravaStreamType.time"), Messages.string("StravaStreamType.time.description")),
 	/**
 	 * Map points (locations)
 	 */
-	MAPPOINT(StravaConfig.string("StravaStreamType.location"), Messages.string("StravaStreamType.location.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	MAPPOINT(StravaConfig.string("StravaStreamType.location"), Messages.string("StravaStreamType.location.description")),
 	/**
 	 * Distance
 	 */
-	DISTANCE(StravaConfig.string("StravaStreamType.distance"), Messages.string("StravaStreamType.distance.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	DISTANCE(StravaConfig.string("StravaStreamType.distance"), Messages.string("StravaStreamType.distance.description")),
 	/**
 	 * Altitude
 	 */
-	ALTITUDE(StravaConfig.string("StravaStreamType.altitude"), Messages.string("StravaStreamType.altitude.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	ALTITUDE(StravaConfig.string("StravaStreamType.altitude"), Messages.string("StravaStreamType.altitude.description")),
 	/**
 	 * Speed
 	 */
-	VELOCITY(StravaConfig.string("StravaStreamType.velocity"), Messages.string("StravaStreamType.velocity.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	VELOCITY(StravaConfig.string("StravaStreamType.velocity"), Messages.string("StravaStreamType.velocity.description")),
 	/**
 	 * Heart rate
 	 */
-	HEARTRATE(StravaConfig.string("StravaStreamType.heartrate"), Messages.string("StravaStreamType.heartrate.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	HEARTRATE(StravaConfig.string("StravaStreamType.heartrate"), Messages.string("StravaStreamType.heartrate.description")),
 	/**
 	 * Cadence
 	 */
-	CADENCE(StravaConfig.string("StravaStreamType.cadence"), Messages.string("StravaStreamType.cadence.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	CADENCE(StravaConfig.string("StravaStreamType.cadence"), Messages.string("StravaStreamType.cadence.description")),
 	/**
 	 * Power
 	 */
-	POWER(StravaConfig.string("StravaStreamType.power"), Messages.string("StravaStreamType.power.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	POWER(StravaConfig.string("StravaStreamType.power"), Messages.string("StravaStreamType.power.description")),
 	/**
 	 * Temperature
 	 */
-	TEMPERATURE(StravaConfig.string("StravaStreamType.temperature"), Messages.string("StravaStreamType.temperature.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	TEMPERATURE(StravaConfig.string("StravaStreamType.temperature"), Messages.string("StravaStreamType.temperature.description")),
 	/**
 	 * Moving (as a series of booleans, indicating whether the athlete was moving or not at each point
 	 */
-	MOVING(StravaConfig.string("StravaStreamType.moving"), Messages.string("StravaStreamType.moving.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	MOVING(StravaConfig.string("StravaStreamType.moving"), Messages.string("StravaStreamType.moving.description")),
 	/**
 	 * Grade
 	 */
-	GRADE(StravaConfig.string("StravaStreamType.grade"), Messages.string("StravaStreamType.grade.description")), //$NON-NLS-1$ //$NON-NLS-2$
+	GRADE(StravaConfig.string("StravaStreamType.grade"), Messages.string("StravaStreamType.grade.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -93,7 +93,7 @@ public enum StravaStreamType implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaStreamType(final String id, final String description) {
+    StravaStreamType(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

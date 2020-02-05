@@ -27,7 +27,7 @@ public class StravaAPIRateLimitException extends RuntimeException implements Str
 	 * @param cause Underlying cause of the exception
 	 */
 	public StravaAPIRateLimitException(final String status, final StravaResponse response, final Throwable cause) {
-		super(status + " : " + (response == null ? null : response.toString()), cause); //$NON-NLS-1$
+		super(status + " : " + (response == null ? null : response.toString()), cause); 
 		setResponse(response);
 	}
 

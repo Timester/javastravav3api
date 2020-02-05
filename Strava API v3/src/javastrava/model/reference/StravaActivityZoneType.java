@@ -17,17 +17,17 @@ public enum StravaActivityZoneType implements StravaReferenceType<String> {
 	/**
 	 * Heart rate
 	 */
-	HEARTRATE(StravaConfig.string("StravaActivityZoneType.heartrate"), Messages.string("StravaActivityZoneType.heartrate.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	HEARTRATE(StravaConfig.string("StravaActivityZoneType.heartrate"), Messages.string("StravaActivityZoneType.heartrate.description")),
 	/**
 	 * Power
 	 */
-	POWER(StravaConfig.string("StravaActivityZoneType.power"), Messages.string("StravaActivityZoneType.power.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	POWER(StravaConfig.string("StravaActivityZoneType.power"), Messages.string("StravaActivityZoneType.power.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.string("Common.unknown"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -58,7 +58,7 @@ public enum StravaActivityZoneType implements StravaReferenceType<String> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaActivityZoneType(final String id, final String description) {
+    StravaActivityZoneType(final String id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

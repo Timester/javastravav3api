@@ -59,14 +59,9 @@ public class StravaAPIError implements StravaEntity {
 			return false;
 		}
 		if (this.resource == null) {
-			if (other.resource != null) {
-				return false;
-			}
-		} else if (!this.resource.equals(other.resource)) {
-			return false;
-		}
-		return true;
-	}
+            return other.resource == null;
+		} else return this.resource.equals(other.resource);
+    }
 
 	/**
 	 * @return the code
@@ -136,6 +131,6 @@ public class StravaAPIError implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaAPIError [resource=" + this.resource + ", field=" + this.field + ", code=" + this.code + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		return "StravaAPIError [resource=" + this.resource + ", field=" + this.field + ", code=" + this.code + "]";
 	}
 }

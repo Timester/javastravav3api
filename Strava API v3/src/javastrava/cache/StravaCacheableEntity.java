@@ -16,5 +16,5 @@ public interface StravaCacheableEntity<U> extends StravaEntity {
 	/**
 	 * @return The entity's identifier
 	 */
-	public U getId();
+    U getId();
 }

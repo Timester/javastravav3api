@@ -16,25 +16,25 @@ public enum StravaFrameType implements StravaReferenceType<Integer> {
 	/**
 	 * Mountain bike
 	 */
-	MOUNTAIN_BIKE(StravaConfig.integer("StravaFrameType.mountain_bike"), Messages.string("StravaFrameType.mountain_bike.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	MOUNTAIN_BIKE(StravaConfig.integer("StravaFrameType.mountain_bike"), Messages.string("StravaFrameType.mountain_bike.description")),
 	/**
 	 * Cross bike
 	 */
-	CROSS(StravaConfig.integer("StravaFrameType.cross"), Messages.string("StravaFrameType.cross.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	CROSS(StravaConfig.integer("StravaFrameType.cross"), Messages.string("StravaFrameType.cross.description")),
 	/**
 	 * Road bike
 	 */
-	ROAD(StravaConfig.integer("StravaFrameType.road"), Messages.string("StravaFrameType.road.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	ROAD(StravaConfig.integer("StravaFrameType.road"), Messages.string("StravaFrameType.road.description")),
 	/**
 	 * Time trial bike
 	 */
-	TIME_TRIAL(StravaConfig.integer("StravaFrameType.tt"), Messages.string("StravaFrameType.tt.description")),  //$NON-NLS-1$ //$NON-NLS-2$
+	TIME_TRIAL(StravaConfig.integer("StravaFrameType.tt"), Messages.string("StravaFrameType.tt.description")),
 	/**
 	 * <p>
 	 * Should never occur but may if Strava API behaviour has changed
 	 * </p>
 	 */
-	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description")); //$NON-NLS-1$ //$NON-NLS-2$
+	UNKNOWN(StravaConfig.integer("Common.unknown.integer"), Messages.string("Common.unknown.description"));
 
 	/**
 	 * Used by JSON deserialisation
@@ -65,7 +65,7 @@ public enum StravaFrameType implements StravaReferenceType<Integer> {
 	 * @param id Identifier - also used when serialising/deserialising to JSON
 	 * @param description Description
 	 */
-	private StravaFrameType(final Integer id, final String description) {
+    StravaFrameType(final Integer id, final String description) {
 		this.id = id;
 		this.description = description;
 	}

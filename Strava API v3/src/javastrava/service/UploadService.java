@@ -62,7 +62,7 @@ public interface UploadService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If the authenticated user does not have write access
 	 */
-	public StravaUploadResponse checkUploadStatus(final Long uploadId) throws UnauthorizedException;
+    StravaUploadResponse checkUploadStatus(final Long uploadId) throws UnauthorizedException;
 
 	/**
 	 * <p>
@@ -82,7 +82,7 @@ public interface UploadService extends StravaService {
 	 * @throws UnauthorizedException
 	 *             If the authenticated user does not have write access
 	 */
-	public CompletableFuture<StravaUploadResponse> checkUploadStatusAsync(final Long uploadId) throws UnauthorizedException;
+    CompletableFuture<StravaUploadResponse> checkUploadStatusAsync(final Long uploadId) throws UnauthorizedException;
 
 	/**
 	 * <p>
@@ -123,9 +123,9 @@ public interface UploadService extends StravaService {
 	 *         successful submission the request will return 201 Created. If there was an error the request will return 400 Bad
 	 *         Request.
 	 */
-	public StravaUploadResponse upload(final StravaActivityType activityType, final String name, final String description,
-			final Boolean _private, final Boolean trainer, final Boolean commute, final String dataType, final String externalId,
-			final File file);
+    StravaUploadResponse upload(final StravaActivityType activityType, final String name, final String description,
+                                final Boolean _private, final Boolean trainer, final Boolean commute, final String dataType, final String externalId,
+                                final File file);
 
 	/**
 	 * <p>
@@ -166,7 +166,7 @@ public interface UploadService extends StravaService {
 	 *         successful submission the request will return 201 Created. If there was an error the request will return 400 Bad
 	 *         Request.
 	 */
-	public CompletableFuture<StravaUploadResponse> uploadAsync(final StravaActivityType activityType, final String name,
-			final String description, final Boolean _private, final Boolean trainer, final Boolean commute, final String dataType,
-			final String externalId, final File file);
+    CompletableFuture<StravaUploadResponse> uploadAsync(final StravaActivityType activityType, final String name,
+                                                        final String description, final Boolean _private, final Boolean trainer, final Boolean commute, final String dataType,
+                                                        final String externalId, final File file);
 }

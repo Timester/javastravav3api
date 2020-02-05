@@ -27,7 +27,7 @@ public class StravaAPINetworkException extends RuntimeException implements Strav
 	 * @param cause Underlying cause of the exception
 	 */
 	public StravaAPINetworkException(final String status, final StravaResponse response, final Throwable cause) {
-		super(status + " : " + (response == null ? null : response.toString()), cause); //$NON-NLS-1$
+		super(status + " : " + (response == null ? null : response.toString()), cause); 
 		setResponse(response);
 	}
 

@@ -93,11 +93,8 @@ public class StravaClubAnnouncement implements StravaEntity {
 		} else if (!this.message.equals(other.message)) {
 			return false;
 		}
-		if (this.resourceState != other.resourceState) {
-			return false;
-		}
-		return true;
-	}
+        return this.resourceState == other.resourceState;
+    }
 
 	/**
 	 * @return the athlete
@@ -211,8 +208,8 @@ public class StravaClubAnnouncement implements StravaEntity {
 	 */
 	@Override
 	public String toString() {
-		return "StravaClubAnnouncement [id=" + this.id + ", resourceState=" + this.resourceState + ", clubId=" + this.clubId //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				+ ", athlete=" + this.athlete //$NON-NLS-1$
-				+ ", createdAt=" + this.createdAt + ", message=" + this.message + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "StravaClubAnnouncement [id=" + this.id + ", resourceState=" + this.resourceState + ", clubId=" + this.clubId
+				+ ", athlete=" + this.athlete 
+				+ ", createdAt=" + this.createdAt + ", message=" + this.message + "]";
 	}
 }

@@ -73,7 +73,7 @@ public interface WebhookService extends StravaService {
 	 *            The verification token Strava should use when validating your endpoint
 	 * @return Details as stored on Strava
 	 */
-	public StravaEventSubscription createSubscription(Integer clientId, String clientSecret, StravaEventSubscription subscription, String verifyToken);
+    StravaEventSubscription createSubscription(Integer clientId, String clientSecret, StravaEventSubscription subscription, String verifyToken);
 
 	/**
 	 * <p>
@@ -120,7 +120,7 @@ public interface WebhookService extends StravaService {
 	 *            The verification token Strava should use when validating your endpoint
 	 * @return Details as stored on Strava
 	 */
-	public CompletableFuture<StravaEventSubscription> createSubscriptionAsync(Integer clientId, String clientSecret, StravaEventSubscription subscription, String verifyToken);
+    CompletableFuture<StravaEventSubscription> createSubscriptionAsync(Integer clientId, String clientSecret, StravaEventSubscription subscription, String verifyToken);
 
 	/**
 	 * <p>
@@ -138,7 +138,7 @@ public interface WebhookService extends StravaService {
 	 * @param id
 	 *            Unique identifier of the subscription to be deleted
 	 */
-	public void deleteSubscription(Integer clientId, String clientSecret, Integer id);
+    void deleteSubscription(Integer clientId, String clientSecret, Integer id);
 
 	/**
 	 * <p>
@@ -157,7 +157,7 @@ public interface WebhookService extends StravaService {
 	 *            Unique identifier of the subscription to be deleted
 	 * @return Future to call get() on when ready
 	 */
-	public CompletableFuture<Void> deleteSubscriptionAsync(Integer clientId, String clientSecret, Integer id);
+    CompletableFuture<Void> deleteSubscriptionAsync(Integer clientId, String clientSecret, Integer id);
 
 	/**
 	 * <p>
@@ -170,7 +170,7 @@ public interface WebhookService extends StravaService {
 	 *            The application's client secret (see <a href="https://www.strava.com/settings/api">https://www.strava.com/settings/api</a>)
 	 * @return List of current subscriptions for this application
 	 */
-	public List<StravaEventSubscription> listSubscriptions(Integer clientId, String clientSecret);
+    List<StravaEventSubscription> listSubscriptions(Integer clientId, String clientSecret);
 
 	/**
 	 * <p>
@@ -183,5 +183,5 @@ public interface WebhookService extends StravaService {
 	 *            The application's client secret (see <a href="https://www.strava.com/settings/api">https://www.strava.com/settings/api</a>)
 	 * @return List of current subscriptions for this application
 	 */
-	public CompletableFuture<List<StravaEventSubscription>> listSubscriptionsAsync(Integer clientId, String clientSecret);
+    CompletableFuture<List<StravaEventSubscription>> listSubscriptionsAsync(Integer clientId, String clientSecret);
 }
